@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap');
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg-app: #f5f1e8;
+  --bg-panel: rgba(250, 248, 242, 0.88);
+  --bg-soft: #ede7db;
+  --line: rgba(35, 66, 50, 0.12);
+  --line-strong: rgba(35, 66, 50, 0.2);
+  --text-main: #1d241f;
+  --text-muted: #687469;
+  --accent: #234232;
+  --accent-soft: #dce3d2;
+  --shadow: 0 18px 45px rgba(30, 46, 35, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(220, 227, 210, 0.65), transparent 34%),
+    linear-gradient(180deg, #faf8f2 0%, #f5f1e8 100%);
+  color: var(--text-main);
+  font-family: 'Manrope', sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(35, 66, 50, 0.16);
+}
+
+.glass-panel {
+  backdrop-filter: blur(18px);
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.soft-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(35, 66, 50, 0.22) transparent;
+}
+
+.soft-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.soft-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(35, 66, 50, 0.18);
+  border-radius: 999px;
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  margin-bottom: 12px;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 18px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(29, 36, 31, 0.12) !important;
+}
