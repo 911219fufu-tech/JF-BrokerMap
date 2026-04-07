@@ -8,8 +8,10 @@
     "address": "30-02 39th Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "ARC",
     "website": "https://arclivinglic.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "leasing@arclivinglic.com",
@@ -30,8 +32,10 @@
     "address": "29-59 Northern Blvd, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "SVEN",
     "website": "https://www.svenlic.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "svenleasing@durst.org",
@@ -52,8 +56,10 @@
     "address": "29-22 Northern Blvd, Queens, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "ALTA+",
     "website": "https://altalic.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [],
     "phones": [
@@ -71,8 +77,10 @@
     "address": "42-12 28th St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Tower 28",
     "website": "https://heatherwood.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "Lea@heatherwood.com"
@@ -94,8 +102,10 @@
     "address": "28-16 Jackson Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Jackson Park",
     "website": "https://jacksonparklic.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "leasing@jacksonparklic.com"
@@ -115,8 +125,10 @@
     "address": "27-03 42nd Rd, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "27 on 27th",
     "website": "https://heatherwood.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -135,8 +147,10 @@
     "address": "42-20 24th St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "1 QPS",
     "website": "https://stonehengenyc.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "shuser@stonehengenyc.com"
@@ -154,8 +168,10 @@
     "address": "43-10 Crescent St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Linc LIC",
     "website": "https://rockrose.com/",
+    "availability": "",
     "op": "1 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -175,8 +191,10 @@
     "address": "43-22 Queens St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Eagle Lofts",
     "website": "https://rockrose.com/",
+    "availability": "",
     "op": "1 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -196,8 +214,10 @@
     "address": "44-28 Purves St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "The Forge",
     "website": "https://renttheforge.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "INFO@RentTheForge.com"
@@ -217,8 +237,10 @@
     "address": "27-19 44th Dr, Queens, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Watermark",
     "website": "https://watermarklic.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -236,8 +258,10 @@
     "address": "27-05 Thomson Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "8 Court",
     "website": "https://8courtsq.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "info@8court.com"
@@ -257,8 +281,10 @@
     "address": "43-25 Hunter St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Hayden LIC",
     "website": "https://rockrose.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -307,7 +333,7 @@
     "flags": [
       "Terrace options"
     ],
-    "notes": "Dogs allowed. Availability page: https://www.5pointzlic.com/availability"
+    "notes": "Dogs allowed."
   },
   {
     "id": 17,
@@ -318,8 +344,10 @@
     "address": "23-15 44th Rd, Queens, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Lumen",
     "website": "https://lumenlic.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "lumen@mns.com"
@@ -339,8 +367,10 @@
     "address": "",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Cove",
     "website": "",
+    "availability": "",
     "op": "1 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -360,8 +390,10 @@
     "address": "41-34 Crescent St, Astoria, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Packard Square",
     "website": "",
+    "availability": "",
     "op": "",
     "emails": [
       "info@packardsquare.com"
@@ -379,8 +411,10 @@
     "address": "46-15 Center Blvd, Long Island City, NY 11109",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "4615 CB",
     "website": "https://www.maltdrive.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -398,8 +432,10 @@
     "address": "46-10 Center Blvd, Long Island City, NY 11109",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "4610 CB",
     "website": "https://www.maltdrive.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -417,8 +453,10 @@
     "address": "47-05 Center Blvd, Long Island City, NY 11109",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "4705 CB",
     "website": "https://rockrose.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -436,8 +474,10 @@
     "address": "52-03 Center Blvd, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "5203 CB",
     "website": "https://www.maltdrive.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "MaltDriveLeasing@tfc.com"
@@ -457,8 +497,10 @@
     "address": "52-41 Center Blvd, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "5241 CB",
     "website": "https://www.maltdrive.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "emil.popicg@tfc.com"
@@ -478,8 +520,10 @@
     "address": "1-15 57th Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Gotham Point",
     "website": "https://www.gothampoint.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "Leasing@GothamPoint.com"
@@ -499,8 +543,10 @@
     "address": "51-01 39th Ave, Sunnyside, NY 11104",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Sunnyside",
     "website": "https://sunnysidegardenapts.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -518,8 +564,10 @@
     "address": "43-46 51st St, Queens, NY 11377",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Fifty11",
     "website": "https://fifty11.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [],
@@ -535,8 +583,10 @@
     "address": "46-09 69th St, Woodside, NY 11377",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Woodside",
     "website": "https://woodside-central.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "Inna.Kukharuk@corcoran.com"
@@ -554,8 +604,10 @@
     "address": "72-01 Queens Blvd, Woodside, NY 11377",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Sola",
     "website": "https://solawoodside.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "mc@mns.com"
@@ -576,8 +628,10 @@
     "address": "97-77 Queens Blvd, Rego Park, NY 11374",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "K&Q",
     "website": "https://kingsqueensapts.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "RAinfo@realtyoperations.com"
@@ -597,8 +651,10 @@
     "address": "61-55 Junction Blvd, Rego Park, NY 11374",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Alexander",
     "website": "https://alexanderregopark.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "alexanderny@researchapartments.com"
@@ -619,8 +675,10 @@
     "address": "62-60 99th St, Rego Park, NY 11374",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Drake",
     "website": "https://rentthedrake.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "listings@vrenyc.com"
@@ -640,8 +698,10 @@
     "address": "97-12 65th Rd Lobby, Rego Park, NY 11374",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Vista65",
     "website": "https://vista65.com/",
+    "availability": "",
     "op": "1 month net OP",
     "emails": [
       "vista65@nestseekers.com"
@@ -659,8 +719,10 @@
     "address": "104-20 Queens Blvd, Forest Hills, NY 11375",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Parker",
     "website": "https://parkertowers.com/",
+    "availability": "",
     "op": "1 OP",
     "emails": [
       "liveparker@beamliving.com",
@@ -681,8 +743,10 @@
     "address": "37-46 72nd St, Flushing, NY 11372",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Roosevelt Parc Apartments",
     "website": "",
+    "availability": "",
     "op": "",
     "emails": [
       "leasing@rooseveltparc.com"
@@ -700,8 +764,10 @@
     "address": "86-55 Broadway, Elmhurst, NY 11373",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "The Elm East",
     "website": "",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -719,8 +785,10 @@
     "address": "LeFrak City Apartments, 59-17 Junction Blvd, Elmhurst, NY 11373",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "LeFrak City Apartments",
     "website": "",
+    "availability": "",
     "op": "",
     "emails": [
       "RAinfo@realtyoperations.com"
@@ -738,8 +806,10 @@
     "address": "505 Summit Ave, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "505 Summit",
     "website": "https://505summit.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -757,8 +827,10 @@
     "address": "532 Summit Ave, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Urby JSQ",
     "website": "https://urby.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -776,8 +848,10 @@
     "address": "32 Oakland Ave, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Overlook",
     "website": "https://overlookflats.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -795,8 +869,10 @@
     "address": "632 Newark Ave, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "632 Newark",
     "website": "https://cmpnd.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -814,8 +890,10 @@
     "address": "28 Cottage St, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "28 Cottage",
     "website": "https://cmpnd.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -833,8 +911,10 @@
     "address": "9 Homestead Pl, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "9 Homestead",
     "website": "https://cmpnd.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -852,8 +932,10 @@
     "address": "26 Van Reipen Ave, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "26 Van Reipen",
     "website": "https://26vanreipen.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -871,8 +953,10 @@
     "address": "36 Journal Square Plaza, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "The Journal",
     "website": "https://journaljc.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -890,8 +974,10 @@
     "address": "97 Newkirk St, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "MRK",
     "website": "https://mrkjsq.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -909,8 +995,10 @@
     "address": "85 Van Reypen St, Jersey City, NJ 07306",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "85 Van Reypen",
     "website": "https://goldberg-realty.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -928,8 +1016,10 @@
     "address": "400 Claremont Ave, Jersey City, NJ 07304",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "3 Acres",
     "website": "https://3acresjc.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -947,8 +1037,10 @@
     "address": "132 Yale Ave, Jersey City, NJ 07304",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Agnes",
     "website": "https://theagnes001.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -966,8 +1058,10 @@
     "address": "1200 S 5th St, Harrison, NJ 07029",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Cobalt",
     "website": "https://cobaltlofts.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -985,8 +1079,10 @@
     "address": "1100 S 5th St, Harrison, NJ 07029",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Wyldes",
     "website": "https://thewyldes.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1004,8 +1100,10 @@
     "address": "1200 Frank E Rodgers Blvd S, Harrison, NJ 07029",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Steel Works",
     "website": "https://steelworksapts.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1023,8 +1121,10 @@
     "address": "200 Angelo Cifelli Dr, Harrison, NJ 07029",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Urby Harrison",
     "website": "https://urby.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1042,8 +1142,10 @@
     "address": "555 S 1st St, Harrison, NJ 07029",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "The Eddy",
     "website": "https://ironstate.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1061,8 +1163,10 @@
     "address": "522 22nd St, Union City, NJ 07087",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Bella Vista",
     "website": "",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1080,8 +1184,10 @@
     "address": "515 32nd St, Union City, NJ 07087",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Flora",
     "website": "https://cpddev.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1099,8 +1205,10 @@
     "address": "119 Peter St, Union City, NJ 07087",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Marq-Roxy",
     "website": "https://themarqnj.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [],
@@ -1116,8 +1224,10 @@
     "address": "123 44th St, Union City, NJ 07087",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "ONE23",
     "website": "https://one23living.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1135,12 +1245,618 @@
     "address": "4906 Broadway, Union City, NJ 07087",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Horizon",
     "website": "https://liveathorizonheights.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
       "(201) 865-3291"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 158,
+    "name": "Bisby at Newport",
+    "lat": 40.732082,
+    "lng": -74.032163,
+    "area": "Newport",
+    "address": "30 Park Ln N, Jersey City, NJ 07310",
+    "price": "3698-4928",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3698"
+      },
+      {
+        "type": "1B",
+        "price": "4648-4928"
+      }
+    ],
+    "mapLabel": "Bisby",
+    "website": "https://bisby.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 159,
+    "name": "Beach at Newport",
+    "lat": 40.732191,
+    "lng": -74.031327,
+    "area": "Newport",
+    "address": "180 River Dr N, Jersey City, NJ 07310",
+    "price": "3738-6382",
+    "type": [
+      "Studio",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3738"
+      },
+      {
+        "type": "2B",
+        "price": "6382"
+      }
+    ],
+    "mapLabel": "Beach",
+    "website": "https://www.newportrentals.com/GMB",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 160,
+    "name": "Laguna at Newport",
+    "lat": 40.731001,
+    "lng": -74.031325,
+    "area": "Newport",
+    "address": "45 Park Ln S, Jersey City, NJ 07310",
+    "price": "4318-6646",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4318-4428"
+      },
+      {
+        "type": "2B",
+        "price": "6116-6646"
+      }
+    ],
+    "mapLabel": "Laguna",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/laguna/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 161,
+    "name": "Ellipse at Newport",
+    "lat": 40.730871,
+    "lng": -74.030266,
+    "area": "Newport",
+    "address": "25 Park Ln S, Jersey City, NJ 07310",
+    "price": "3713-7096",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3713-3823"
+      },
+      {
+        "type": "1B",
+        "price": "4748-4907"
+      },
+      {
+        "type": "2B",
+        "price": "6621-7096"
+      }
+    ],
+    "mapLabel": "Ellipse",
+    "website": "https://www.newportrentals.com/?lf_source=1590",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 162,
+    "name": "Parkside West at Newport",
+    "lat": 40.730284,
+    "lng": -74.033941,
+    "area": "Newport",
+    "address": "40 Newport Pkwy, Jersey City, NJ 07310",
+    "price": "2688-4949",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2688-2918"
+      },
+      {
+        "type": "1B",
+        "price": "3066-3126"
+      },
+      {
+        "type": "2B",
+        "price": "3567-3772"
+      },
+      {
+        "type": "3B",
+        "price": "4440-4949"
+      }
+    ],
+    "mapLabel": "Parkside",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/parkside-west/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Newport Rentals Apartments."
+  },
+  {
+    "id": 163,
+    "name": "Parkside East at Newport",
+    "lat": 40.729771,
+    "lng": -74.033625,
+    "area": "Newport",
+    "address": "30 Newport Pkwy, Jersey City, NJ 07310",
+    "price": "2793-4720",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2793-2893"
+      },
+      {
+        "type": "1B",
+        "price": "3041-3955"
+      },
+      {
+        "type": "2B",
+        "price": "3547-3677"
+      },
+      {
+        "type": "3B",
+        "price": "4635-4720"
+      }
+    ],
+    "mapLabel": "Parkside East",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/parkside-east/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Newport Rentals Apartments."
+  },
+  {
+    "id": 164,
+    "name": "Aquablu at Newport",
+    "lat": 40.730192,
+    "lng": -74.03156,
+    "area": "Newport",
+    "address": "110 River Dr S, Jersey City, NJ 07310",
+    "price": "3518-6186",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3518"
+      },
+      {
+        "type": "1B",
+        "price": "4093-4293"
+      },
+      {
+        "type": "2B",
+        "price": "5841-6186"
+      }
+    ],
+    "mapLabel": "Aquablu",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/aquablu/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Newport Rentals Apartments."
+  },
+  {
+    "id": 165,
+    "name": "Waterside Square North at Newport",
+    "lat": 40.728665,
+    "lng": -74.032844,
+    "area": "Newport",
+    "address": "55 River Dr S, Jersey City, NJ 07310",
+    "price": "3096-3980",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3096-3211"
+      },
+      {
+        "type": "2B",
+        "price": "3887-3980"
+      }
+    ],
+    "mapLabel": "Waterside N",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/waterside-square-north/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(877) 408-2349"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Newport Rentals Apartments."
+  },
+  {
+    "id": 166,
+    "name": "Waterside Square South at Newport",
+    "lat": 40.727914,
+    "lng": -74.032552,
+    "area": "Newport",
+    "address": "35 River Dr S, Jersey City, NJ 07310",
+    "price": "2893-4217",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2893-3063"
+      },
+      {
+        "type": "1B",
+        "price": "3146-3271"
+      },
+      {
+        "type": "2B",
+        "price": "4217"
+      }
+    ],
+    "mapLabel": "Waterside S",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/waterside-square-south/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Floor 1 at Newport Rentals Apartments."
+  },
+  {
+    "id": 167,
+    "name": "East Hampton at Newport",
+    "lat": 40.727725,
+    "lng": -74.030896,
+    "area": "Newport",
+    "address": "30 River Ct, Jersey City, NJ 07310",
+    "price": "3253-5463",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3253-3393"
+      },
+      {
+        "type": "1B",
+        "price": "3665-4040"
+      },
+      {
+        "type": "2B",
+        "price": "5173-5463"
+      }
+    ],
+    "mapLabel": "East Hampton",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/east-hampton/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Floor 1 at Newport Tower Suites."
+  },
+  {
+    "id": 168,
+    "name": "Southampton at Newport",
+    "lat": 40.72742,
+    "lng": -74.031696,
+    "area": "Newport",
+    "address": "20 River Ct Apartment-1009, Jersey City, NJ 07310",
+    "price": "3505-5138",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3505-3955"
+      },
+      {
+        "type": "2B",
+        "price": "4978-5138"
+      }
+    ],
+    "mapLabel": "Southampton",
+    "website": "https://www.newportrentals.com/?lf_source=1590",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(877) 408-2349"
+    ],
+    "flags": [],
+    "notes": "Floor 1 at Newport Rentals Apartments."
+  },
+  {
+    "id": 169,
+    "name": "Newport",
+    "lat": 40.726615,
+    "lng": -74.031777,
+    "area": "Newport",
+    "address": "1 River Ct, Jersey City, NJ 07310",
+    "price": "3248-5162",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3248-3393"
+      },
+      {
+        "type": "1B",
+        "price": "3685-4145"
+      },
+      {
+        "type": "2B",
+        "price": "4752-5162"
+      }
+    ],
+    "mapLabel": "Newport",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/riverside/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Floor 1 at Newport Rentals Apartments."
+  },
+  {
+    "id": 170,
+    "name": "Atlantic at Newport",
+    "lat": 40.726678,
+    "lng": -74.030818,
+    "area": "Newport",
+    "address": "31 River Ct, Jersey City, NJ 07310",
+    "price": "3810-5482",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3810-4115"
+      },
+      {
+        "type": "2B",
+        "price": "5338-5482"
+      }
+    ],
+    "mapLabel": "Atlantic",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/atlantic/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Floor 1 at Newport Rentals Apartments."
+  },
+  {
+    "id": 171,
+    "name": "Pacific at Newport",
+    "lat": 40.727141,
+    "lng": -74.032536,
+    "area": "Newport",
+    "address": "25 River Dr S, Jersey City, NJ 07310",
+    "price": "3605-4833",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3605-3675"
+      },
+      {
+        "type": "2B",
+        "price": "4833"
+      }
+    ],
+    "mapLabel": "Pacific",
+    "website": "https://www.newportrentals.com/jersey-city-apartment-buildings/pacific/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Newport Rentals Apartments."
+  },
+  {
+    "id": 172,
+    "name": "Newport Rentals Apartments",
+    "lat": 40.726499,
+    "lng": -74.03415,
+    "area": "Newport",
+    "address": "121 Town Square Pl, Jersey City, NJ 07310",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "Newport Rentals",
+    "website": "https://www.newportrentals.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(877) 408-2349"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 173,
+    "name": "Lincoln House at Hamilton Park",
+    "lat": 40.729145,
+    "lng": -74.04229,
+    "area": "Newport",
+    "address": "204 10th St, Jersey City, NJ 07302",
+    "price": "3118-4513",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3118-3463"
+      },
+      {
+        "type": "2B",
+        "price": "4513"
+      }
+    ],
+    "mapLabel": "Lincoln House",
+    "website": "https://www.newportrentals.com/",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 174,
+    "name": "Roosevelt House at Hamilton Park",
+    "lat": 40.72897,
+    "lng": -74.040877,
+    "area": "Newport",
+    "address": "180 10th St #511, Jersey City, NJ 07302",
+    "price": "2879-5650",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2879"
+      },
+      {
+        "type": "1B",
+        "price": "3177-3443"
+      },
+      {
+        "type": "2B",
+        "price": "4428"
+      },
+      {
+        "type": "3B",
+        "price": "5650"
+      }
+    ],
+    "mapLabel": "Roosevelt House",
+    "website": "https://www.newportrentals.com/",
+    "availability": "",
+    "op": "1 month rent OP",
+    "emails": [],
+    "phones": [
+      "(844) 679-3028"
     ],
     "flags": [],
     "notes": "Dogs allowed."
@@ -1154,8 +1870,10 @@
     "address": "160 Front St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Magnolia",
     "website": "https://magnolia-dumbo.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1174,8 +1892,10 @@
     "address": "120 Nassau St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Amberly",
     "website": "https://theamberlybk.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "info@theamberlybk.com"
@@ -1195,8 +1915,10 @@
     "address": "22 Chapel St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "22 Chapel",
     "website": "https://22chapel.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1214,8 +1936,10 @@
     "address": "257 Gold St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "BK Gold",
     "website": "https://bklyngold.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "INFO@BKLYNGOLD.COM"
@@ -1235,8 +1959,10 @@
     "address": "309 Gold St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "BKLYN AIR",
     "website": "https://bklynair.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "info@bklynair.com"
@@ -1256,8 +1982,10 @@
     "address": "86 Fleet Pl #18F, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "The Eagle",
     "website": "https://eagle86fleet.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [],
     "phones": [
@@ -1275,8 +2003,10 @@
     "address": "196 Willoughby St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Willoughby",
     "website": "https://willoughbybk.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1294,8 +2024,10 @@
     "address": "540 Fulton St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Paxton",
     "website": "https://thepaxtonbk.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1313,8 +2045,10 @@
     "address": "957 Atlantic Ave, Brooklyn, NY 11238",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Alanza",
     "website": "https://alanza.nyc/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1332,8 +2066,10 @@
     "address": "662 Pacific St, Brooklyn, NY 11217",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Plank Road",
     "website": "https://plankroadbk.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "info@plankroadbk.com"
@@ -1353,8 +2089,10 @@
     "address": "280 Ashland Pl, Brooklyn, NY 11217",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Caesura",
     "website": "https://caesurabk.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1372,8 +2110,10 @@
     "address": "333 Schermerhorn St, Brooklyn, NY 11217",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Hub",
     "website": "https://hubbk.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "HUBlife@HUBBK.com"
@@ -1393,8 +2133,10 @@
     "address": "310 Livingston St, Brooklyn, NY 11217",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Guild",
     "website": "https://theguildbk.com/",
+    "availability": "",
     "op": "",
     "emails": [
       "INFO@THEGUILDBK.COM"
@@ -1414,8 +2156,10 @@
     "address": "225 Schermerhorn St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Addison",
     "website": "https://addisonbklyn.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1433,8 +2177,10 @@
     "address": "45 Hoyt St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Hoyt & Horn",
     "website": "https://hoytandhorn.com/",
+    "availability": "",
     "op": "",
     "emails": [],
     "phones": [
@@ -1452,8 +2198,10 @@
     "address": "214 Duffield St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "Avalon Willoughby Square",
     "website": "https://www.avaloncommunities.com/",
+    "availability": "",
     "op": "0 OP",
     "emails": [
       "Ivy.Lane11@bozzuto.com"
@@ -1473,8 +2221,10 @@
     "address": "67 Prince St, Brooklyn, NY 11201",
     "price": "Ask",
     "type": [],
+    "inventory": [],
     "mapLabel": "DWTN BK",
     "website": "https://dwtnbk.com/",
+    "availability": "",
     "op": "1 OP",
     "emails": [
       "leasing@dwtnbk.com"

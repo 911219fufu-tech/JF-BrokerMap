@@ -79,8 +79,8 @@ function App() {
 
   const portfolioBuildings = useMemo(() => {
     return [...filteredBuildings].sort((leftBuilding, rightBuilding) => {
-      const leftHasPriorityOp = leftBuilding.op?.trim().toUpperCase() === '1 OP';
-      const rightHasPriorityOp = rightBuilding.op?.trim().toUpperCase() === '1 OP';
+      const leftHasPriorityOp = /^1\b/i.test(leftBuilding.op?.trim() ?? '');
+      const rightHasPriorityOp = /^1\b/i.test(rightBuilding.op?.trim() ?? '');
 
       if (leftHasPriorityOp === rightHasPriorityOp) {
         return 0;
@@ -119,7 +119,7 @@ function App() {
 
   const favoriteCount = favoriteIds.length;
   const areaOptions = useMemo(() => {
-    const areaOrder = ['LIC', 'Queens', 'DTBK', 'JSQ', 'Harrison', 'Union City', 'West NY'];
+    const areaOrder = ['LIC', 'Queens', 'DTBK', 'JSQ', 'Newport', 'Harrison', 'Union City', 'West NY'];
     const existingAreas = new Set(buildings.map((building) => building.area));
     return ['ALL', ...areaOrder.filter((area) => existingAreas.has(area))];
   }, []);
