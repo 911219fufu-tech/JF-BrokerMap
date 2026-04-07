@@ -150,6 +150,7 @@
   area: LIC
   address: 23-15 44th Rd, Queens, NY 11101
   website: https://lumenlic.com/
+  availability: https://www.lumenlic.com/availability?oll_funnelleasing=onlinelisting&oll_utm_source=gmb&oll_utm_medium=organic&funnelleasing=onlinelisting&utm_source=gmb&utm_medium=organic
   op: 0 OP
   emails: lumen@mns.com
   phones: (212) 470-0846
@@ -224,6 +225,7 @@
   area: LIC
   address: 1-15 57th Ave, Long Island City, NY 11101
   website: https://www.gothampoint.com/
+  availability: https://gothampoint.com/availability/
   op:
   emails: Leasing@GothamPoint.com
   phones: (332) 378-1962
@@ -768,6 +770,7 @@
   area: DTBK
   address: 309 Gold St, Brooklyn, NY 11201
   website: https://bklynair.com/
+  availability: https://bklynair.com/availability.php
   op: 0 OP
   emails: info@bklynair.com
   phones: (718) 254-1247
@@ -777,6 +780,7 @@
   area: DTBK
   address: 86 Fleet Pl #18F, Brooklyn, NY 11201
   website: https://eagle86fleet.com/
+  availability: https://eagle86fleet.com/availabilities.php
   op: 0 OP
   emails:
   phones: (718) 596-8181
@@ -786,6 +790,7 @@
   area: DTBK
   address: 196 Willoughby St, Brooklyn, NY 11201
   website: https://willoughbybk.com/
+  availability: https://www.willoughbybk.com/floor-plans/
   op:
   emails:
   phones: (888) 629-8625
@@ -795,6 +800,7 @@
   area: DTBK
   address: 540 Fulton St, Brooklyn, NY 11201
   website: https://thepaxtonbk.com/
+  availability: https://www.thepaxtonbk.com/floorplans
   op:
   emails:
   phones: (646) 680-9332
@@ -804,6 +810,7 @@
   area: DTBK
   address: 957 Atlantic Ave, Brooklyn, NY 11238
   website: https://alanza.nyc/
+  availability: https://alanza.nyc/availabilities.html
   op:
   emails:
   phones: (718) 304-5301
@@ -822,15 +829,17 @@
   area: DTBK
   address: 280 Ashland Pl, Brooklyn, NY 11217
   website: https://caesurabk.com/
+  availability: https://caesurabk.com/availabilities/
   op:
   emails:
   phones: (646) 978-5504
-  notes: Dogs allowed. Has a 2tour.site link.
+  notes: Dogs allowed. Has a 2tour.site link. Please call for availability.
 
 - name: Hub
   area: DTBK
   address: 333 Schermerhorn St, Brooklyn, NY 11217
   website: https://hubbk.com/
+  availability: https://hubbk.com/availability/
   op:
   emails: HUBlife@HUBBK.com
   phones: (718) 395-4072
@@ -840,6 +849,7 @@
   area: DTBK
   address: 310 Livingston St, Brooklyn, NY 11217
   website: https://theguildbk.com/
+  availability: https://theguildbk.com/availability/
   op:
   emails: INFO@THEGUILDBK.COM
   phones: (718) 400-0310
@@ -849,6 +859,7 @@
   area: DTBK
   address: 225 Schermerhorn St, Brooklyn, NY 11201
   website: https://addisonbklyn.com/
+  availability: https://www.dermotcompany.com/building/the-addison#availability
   op:
   emails:
   phones: (929) 547-6629
@@ -858,6 +869,7 @@
   area: DTBK
   address: 45 Hoyt St, Brooklyn, NY 11201
   website: https://hoytandhorn.com/
+  availability: https://hoytandhorn.com/availabilities/
   op:
   emails:
   phones: (347) 305-7691
@@ -867,10 +879,31 @@
   area: DTBK
   address: 214 Duffield St, Brooklyn, NY 11201
   website: https://www.avaloncommunities.com/
+  availability: https://www.avaloncommunities.com/new-york/brooklyn-apartments/avalon-willoughby-square/#community-unit-listings
   op: 0 OP
   emails: Ivy.Lane11@bozzuto.com
   phones: (718) 514-7892
   notes: Dogs allowed. Floor 1 at Jay St - MetroTech.
+
+- name: AVA Fort Greene
+  area: DTBK
+  address: 343 Gold Street, Brooklyn, NY 11201
+  website: https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/
+  availability: https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/
+  op:
+  emails:
+  phones: (347) 417-8646
+  notes:
+
+- name: AVA DoBro
+  area: DTBK
+  address: 100 Willoughby Street, Brooklyn, NY 11201
+  website: https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/
+  availability: https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/
+  op:
+  emails:
+  phones: (718) 215-0412
+  notes:
 
 - name: DWTN BK
   area: DTBK

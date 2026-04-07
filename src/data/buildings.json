@@ -415,7 +415,7 @@
     "flags": [
       "Terrace options"
     ],
-    "notes": "Dogs allowed. Uses net rent. 1 month free on select studio, 1B, and 2B units. 0.75 month free on select 2B units."
+    "notes": "Dogs allowed."
   },
   {
     "id": 5,
@@ -539,12 +539,29 @@
     "lng": -73.944143,
     "area": "LIC",
     "address": "23-15 44th Rd, Queens, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3967-8090",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3967-4550"
+      },
+      {
+        "type": "1B",
+        "price": "4666-6940"
+      },
+      {
+        "type": "2B",
+        "price": "6383-8090"
+      }
+    ],
     "mapLabel": "Lumen",
     "website": "https://lumenlic.com/",
-    "availability": "",
+    "availability": "https://www.lumenlic.com/availability?oll_funnelleasing=onlinelisting&oll_utm_source=gmb&oll_utm_medium=organic&funnelleasing=onlinelisting&utm_source=gmb&utm_medium=organic",
     "op": "0 OP",
     "emails": [
       "lumen@mns.com"
@@ -553,7 +570,7 @@
       "(212) 470-0846"
     ],
     "flags": [],
-    "notes": "Open until 6 PM."
+    "notes": "Uses net effective pricing where available."
   },
   {
     "id": 9,
@@ -739,12 +756,34 @@
     "lng": -73.961454,
     "area": "LIC",
     "address": "1-15 57th Ave, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3402-7854",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3402-3972"
+      },
+      {
+        "type": "1B",
+        "price": "3937-4883"
+      },
+      {
+        "type": "2B",
+        "price": "6684-7854"
+      },
+      {
+        "type": "3B",
+        "price": "7279"
+      }
+    ],
     "mapLabel": "Gotham Point",
     "website": "https://www.gothampoint.com/",
-    "availability": "",
+    "availability": "https://gothampoint.com/availability/",
     "op": "",
     "emails": [
       "Leasing@GothamPoint.com"
@@ -2383,12 +2422,29 @@
     "lng": -73.98295,
     "area": "DTBK",
     "address": "309 Gold St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3350-6450",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3350-3525"
+      },
+      {
+        "type": "1B",
+        "price": "4050-4950"
+      },
+      {
+        "type": "2B",
+        "price": "5195-6450"
+      }
+    ],
     "mapLabel": "BKLYN AIR",
     "website": "https://bklynair.com/",
-    "availability": "",
+    "availability": "https://bklynair.com/availability.php",
     "op": "0 OP",
     "emails": [
       "info@bklynair.com"
@@ -2396,7 +2452,15 @@
     "phones": [
       "(718) 254-1247"
     ],
-    "flags": [],
+    "flags": [
+      "Doorman",
+      "Elevator",
+      "Gym",
+      "Pool",
+      "Bike Storage",
+      "In-Building Washer",
+      "Pet Friendly"
+    ],
     "notes": ""
   },
   {
@@ -2406,12 +2470,29 @@
     "lng": -73.982053,
     "area": "DTBK",
     "address": "86 Fleet Pl #18F, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3400-5887",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3400-3675"
+      },
+      {
+        "type": "1B",
+        "price": "4215"
+      },
+      {
+        "type": "2B",
+        "price": "5887"
+      }
+    ],
     "mapLabel": "The Eagle",
     "website": "https://eagle86fleet.com/",
-    "availability": "",
+    "availability": "https://eagle86fleet.com/availabilities.php",
     "op": "0 OP",
     "emails": [],
     "phones": [
@@ -2427,19 +2508,36 @@
     "lng": -73.97995,
     "area": "DTBK",
     "address": "196 Willoughby St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3753-7411",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3753-3918"
+      },
+      {
+        "type": "1B",
+        "price": "4142-5542"
+      },
+      {
+        "type": "2B",
+        "price": "7411-7738"
+      }
+    ],
     "mapLabel": "Willoughby",
     "website": "https://willoughbybk.com/",
-    "availability": "",
+    "availability": "https://www.willoughbybk.com/floor-plans/",
     "op": "",
     "emails": [],
     "phones": [
       "(888) 629-8625"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Located in Long Island University Brooklyn. Has a schedule.tours link."
+    "notes": "Dogs allowed. Located in Long Island University Brooklyn. Has a schedule.tours link. Pricing appears to reflect base rent plus a $95 monthly amenity fee, not 1 month free."
   },
   {
     "id": 86,
@@ -2448,12 +2546,34 @@
     "lng": -73.981424,
     "area": "DTBK",
     "address": "540 Fulton St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3525-8760",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3525-3850"
+      },
+      {
+        "type": "1B",
+        "price": "4475-5100"
+      },
+      {
+        "type": "2B",
+        "price": "6257"
+      },
+      {
+        "type": "3B",
+        "price": "8760"
+      }
+    ],
     "mapLabel": "Paxton",
     "website": "https://thepaxtonbk.com/",
-    "availability": "",
+    "availability": "https://www.thepaxtonbk.com/floorplans",
     "op": "",
     "emails": [],
     "phones": [
@@ -2469,18 +2589,27 @@
     "lng": -73.960606,
     "area": "DTBK",
     "address": "957 Atlantic Ave, Brooklyn, NY 11238",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3629-4225",
+    "type": [
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3629-4225"
+      }
+    ],
     "mapLabel": "Alanza",
     "website": "https://alanza.nyc/",
-    "availability": "",
+    "availability": "https://alanza.nyc/availabilities.html",
     "op": "",
     "emails": [],
     "phones": [
       "(718) 304-5301"
     ],
-    "flags": [],
+    "flags": [
+      "Terrace options"
+    ],
     "notes": ""
   },
   {
@@ -2518,14 +2647,14 @@
     "inventory": [],
     "mapLabel": "Caesura",
     "website": "https://caesurabk.com/",
-    "availability": "",
+    "availability": "https://caesurabk.com/availabilities/",
     "op": "",
     "emails": [],
     "phones": [
       "(646) 978-5504"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Has a 2tour.site link."
+    "notes": "Dogs allowed. Has a 2tour.site link. Please call for availability."
   },
   {
     "id": 103,
@@ -2534,12 +2663,24 @@
     "lng": -73.981136,
     "area": "DTBK",
     "address": "333 Schermerhorn St, Brooklyn, NY 11217",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3600-4950",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3600-3685"
+      },
+      {
+        "type": "1B",
+        "price": "4023-4950"
+      }
+    ],
     "mapLabel": "Hub",
     "website": "https://hubbk.com/",
-    "availability": "",
+    "availability": "https://hubbk.com/availability/",
     "op": "",
     "emails": [
       "HUBlife@HUBBK.com"
@@ -2548,7 +2689,7 @@
       "(718) 395-4072"
     ],
     "flags": [],
-    "notes": "Has a schedule.tours link."
+    "notes": "Has a schedule.tours link. Uses special pricing and rent credit promotions on select units."
   },
   {
     "id": 104,
@@ -2557,12 +2698,24 @@
     "lng": -73.98243,
     "area": "DTBK",
     "address": "310 Livingston St, Brooklyn, NY 11217",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4300-6300",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4300-4375"
+      },
+      {
+        "type": "2B",
+        "price": "6300"
+      }
+    ],
     "mapLabel": "Guild",
     "website": "https://theguildbk.com/",
-    "availability": "",
+    "availability": "https://theguildbk.com/availability/",
     "op": "",
     "emails": [
       "INFO@THEGUILDBK.COM"
@@ -2580,12 +2733,29 @@
     "lng": -73.985118,
     "area": "DTBK",
     "address": "225 Schermerhorn St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3085-5942",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3085-3440"
+      },
+      {
+        "type": "1B",
+        "price": "3695-4907"
+      },
+      {
+        "type": "2B",
+        "price": "4695-5942"
+      }
+    ],
     "mapLabel": "Addison",
     "website": "https://addisonbklyn.com/",
-    "availability": "",
+    "availability": "https://www.dermotcompany.com/building/the-addison#availability",
     "op": "",
     "emails": [],
     "phones": [
@@ -2601,12 +2771,29 @@
     "lng": -73.985704,
     "area": "DTBK",
     "address": "45 Hoyt St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3747-7219",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3747-3896"
+      },
+      {
+        "type": "1B",
+        "price": "4142-4481"
+      },
+      {
+        "type": "2B",
+        "price": "7219"
+      }
+    ],
     "mapLabel": "Hoyt & Horn",
     "website": "https://hoytandhorn.com/",
-    "availability": "",
+    "availability": "https://hoytandhorn.com/availabilities/",
     "op": "",
     "emails": [],
     "phones": [
@@ -2622,12 +2809,24 @@
     "lng": -73.984472,
     "area": "DTBK",
     "address": "214 Duffield St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4218-6425",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4218-5280"
+      },
+      {
+        "type": "2B",
+        "price": "6425"
+      }
+    ],
     "mapLabel": "Avalon Willoughby Square",
     "website": "https://www.avaloncommunities.com/",
-    "availability": "",
+    "availability": "https://www.avaloncommunities.com/new-york/brooklyn-apartments/avalon-willoughby-square/#community-unit-listings",
     "op": "0 OP",
     "emails": [
       "Ivy.Lane11@bozzuto.com"
@@ -2637,6 +2836,87 @@
     ],
     "flags": [],
     "notes": "Dogs allowed. Floor 1 at Jay St - MetroTech."
+  },
+  {
+    "id": 180,
+    "name": "AVA Fort Greene",
+    "lat": 40.694096,
+    "lng": -73.982767,
+    "area": "DTBK",
+    "address": "343 Gold Street, Brooklyn, NY 11201",
+    "price": "4139-9099",
+    "type": [
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4139-4905"
+      },
+      {
+        "type": "2B",
+        "price": "6677-7270"
+      },
+      {
+        "type": "3B",
+        "price": "9099"
+      }
+    ],
+    "mapLabel": "AVA Fort Greene",
+    "website": "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/",
+    "availability": "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(347) 417-8646"
+    ],
+    "flags": [],
+    "notes": "Special pricing on select units."
+  },
+  {
+    "id": 181,
+    "name": "AVA DoBro",
+    "lat": 40.691905,
+    "lng": -73.984822,
+    "area": "DTBK",
+    "address": "100 Willoughby Street, Brooklyn, NY 11201",
+    "price": "3135-8969",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3135-4195"
+      },
+      {
+        "type": "1B",
+        "price": "4067-5358"
+      },
+      {
+        "type": "2B",
+        "price": "5360-6520"
+      },
+      {
+        "type": "3B",
+        "price": "8969"
+      }
+    ],
+    "mapLabel": "AVA DoBro",
+    "website": "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/",
+    "availability": "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(718) 215-0412"
+    ],
+    "flags": [],
+    "notes": "Special pricing on select units."
   },
   {
     "id": 123,
