@@ -298,6 +298,7 @@ async function main() {
       address: row.address || existingRecord?.address || '',
       price: existingRecord?.price ?? 'Ask',
       type: existingRecord?.type ?? [],
+      inventory: existingRecord?.inventory ?? [],
       mapLabel: deriveMapLabel(row.name, existingRecord),
       website: row.website || existingRecord?.website || '',
       availability: row.availability || existingRecord?.availability || '',

@@ -1,4 +1,4 @@
-import { formatPrice } from '../lib/buildings';
+import { formatPrice, getBuildingPriceRange, getBuildingTypes } from '../lib/buildings';
 import NotesEditor from './NotesEditor';
 
 function StarIcon({ active }) {
@@ -68,6 +68,9 @@ function DetailPanel({
   onToggleFavorite,
   onNoteChange,
 }) {
+  const displayTypes = building ? getBuildingTypes(building) : [];
+  const displayPrice = building ? formatPrice(getBuildingPriceRange(building)) : 'Price on request';
+
   return (
     <>
       <div
@@ -111,7 +114,7 @@ function DetailPanel({
             </div>
             <div className="rounded-[24px] border border-[var(--line)] bg-white/80 p-4">
               <p className="text-xs uppercase tracking-[0.2em] text-[var(--text-muted)]">Price</p>
-              <p className="mt-2 text-lg font-semibold">{formatPrice(building.price)}</p>
+              <p className="mt-2 text-lg font-semibold">{displayPrice}</p>
             </div>
           </div>
 
@@ -121,8 +124,8 @@ function DetailPanel({
                 {building.op}
               </span>
             ) : null}
-            {building.type.length > 0 ? (
-              building.type.map((unitType) => (
+            {displayTypes.length > 0 ? (
+              displayTypes.map((unitType) => (
                 <span
                   key={unitType}
                   className="rounded-full border border-[var(--line)] bg-[var(--bg-soft)] px-3 py-1 text-xs font-medium text-[var(--text-muted)]"

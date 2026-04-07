@@ -282,6 +282,20 @@
       "1B",
       "2B"
     ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3480-3570"
+      },
+      {
+        "type": "1B",
+        "price": "4028-4615"
+      },
+      {
+        "type": "2B",
+        "price": "6272-7600"
+      }
+    ],
     "mapLabel": "5Pointz",
     "website": "https://5pointzlic.com/",
     "availability": "https://www.5pointzlic.com/availability",

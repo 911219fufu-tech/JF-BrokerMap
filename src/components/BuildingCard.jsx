@@ -1,4 +1,4 @@
-import { formatPrice } from '../lib/buildings';
+import { formatPrice, getBuildingPriceRange, getBuildingTypes } from '../lib/buildings';
 
 function StarIcon({ active }) {
   return (
@@ -23,6 +23,9 @@ function BuildingCard({
   onOpenWebsite,
   className = '',
 }) {
+  const displayTypes = getBuildingTypes(building);
+  const displayPrice = formatPrice(getBuildingPriceRange(building));
+
   return (
     <article
       className={`flex h-[184px] flex-col overflow-hidden rounded-[28px] border p-4 transition ${
@@ -34,7 +37,7 @@ function BuildingCard({
       <div className="flex items-start justify-between gap-3">
         <button type="button" className="min-w-0 flex-1 text-left" onClick={onSelect}>
           <div className="flex min-w-0 items-center gap-2">
-            <h3 className="min-w-0 flex-1 truncate text-[1.65rem] font-semibold tracking-tight leading-none">
+            <h3 className="min-w-0 flex-1 truncate pb-0.5 text-[1.65rem] font-semibold tracking-tight leading-[1.08]">
               {building.name}
             </h3>
             <span className="shrink-0 rounded-full bg-[var(--bg-soft)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -42,7 +45,7 @@ function BuildingCard({
             </span>
           </div>
           <div className="mt-2 flex flex-wrap items-center gap-2">
-            <p className="text-sm text-[var(--text-muted)]">{formatPrice(building.price)}</p>
+            <p className="text-sm text-[var(--text-muted)]">{displayPrice}</p>
             {building.op ? (
               <span className="rounded-full bg-[rgba(35,66,50,0.08)] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-pine">
                 {building.op}
@@ -66,8 +69,8 @@ function BuildingCard({
       </div>
 
       <div className="mt-3 flex flex-wrap gap-2">
-        {building.type.length > 0 ? (
-          building.type.map((type) => (
+        {displayTypes.length > 0 ? (
+          displayTypes.map((type) => (
             <span
               key={type}
               className="rounded-full border border-[var(--line)] bg-[var(--bg-soft)] px-3 py-1 text-[11px] font-medium text-[var(--text-muted)]"

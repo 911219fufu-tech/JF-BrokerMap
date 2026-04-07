@@ -8,7 +8,7 @@ import DetailPanel from './components/DetailPanel';
 import {
   PRICE_OPTIONS,
   TYPE_OPTIONS,
-  getPriceBucket,
+  matchesBuildingFilters,
 } from './lib/buildings';
 import {
   loadFavorites,
@@ -66,15 +66,13 @@ function App() {
         const matchesArea =
           selectedAreas.length === 0 || selectedAreas.includes(building.area);
 
-        const matchesPrice =
-          selectedPrices.length === 0 ||
-          selectedPrices.includes(getPriceBucket(building.price));
+        const matchesInventoryFilters = matchesBuildingFilters(
+          building,
+          selectedPrices,
+          selectedTypes,
+        );
 
-        const matchesType =
-          selectedTypes.length === 0 ||
-          selectedTypes.some((type) => building.type.includes(type));
-
-        return matchesSearch && matchesArea && matchesPrice && matchesType;
+        return matchesSearch && matchesArea && matchesInventoryFilters;
       }),
     [searchValue, selectedAreas, selectedPrices, selectedTypes],
   );
