@@ -83,7 +83,7 @@
     "flags": [
       "No 2B"
     ],
-    "notes": "Dogs allowed. No 2B. Open until 6 PM."
+    "notes": "Dogs allowed. No 2B."
   },
   {
     "id": 12,
@@ -143,7 +143,7 @@
     ],
     "phones": [],
     "flags": [],
-    "notes": "Dogs allowed. Open until 6 PM."
+    "notes": "Dogs allowed."
   },
   {
     "id": 54,
@@ -164,7 +164,7 @@
       "(718) 440-3333"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Open until 6 PM."
+    "notes": "Dogs allowed."
   },
   {
     "id": 55,
@@ -225,7 +225,7 @@
       "(833) 460-9611"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Open until 6 PM."
+    "notes": "Dogs allowed."
   },
   {
     "id": 5,
@@ -246,7 +246,7 @@
       "(929) 588-4126"
     ],
     "flags": [],
-    "notes": "Closes at 5 PM. Opens 9 AM Tuesday. Also has a 2tour.site listing."
+    "notes": "Also has a 2tour.site listing."
   },
   {
     "id": 57,
@@ -267,7 +267,7 @@
       "(718) 606-6677"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Open until 7 PM."
+    "notes": "Dogs allowed."
   },
   {
     "id": 58,
@@ -366,7 +366,7 @@
       "(718) 606-9440"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 30,
@@ -385,7 +385,7 @@
       "(718) 606-9440"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 31,
@@ -404,7 +404,7 @@
       "(718) 606-1879"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 19,
@@ -425,7 +425,7 @@
       "(212) 353-5850"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 18,
@@ -446,7 +446,7 @@
       "(212) 353-5850"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 20,
@@ -565,7 +565,7 @@
       "(844) 682-3201"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 129,
@@ -587,7 +587,7 @@
       "844 238-9263"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 130,
@@ -649,7 +649,7 @@
       "(833) 567-5390"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 133,
@@ -744,7 +744,7 @@
       "(856) 393-6036"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 10 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 138,
@@ -820,7 +820,7 @@
       "(551) 309-3007"
     ],
     "flags": [],
-    "notes": "Opens 8 AM Tuesday. Has a calendly.com booking link."
+    "notes": "Has a calendly.com booking link."
   },
   {
     "id": 142,
@@ -858,7 +858,7 @@
       "(551) 209-2121"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 144,
@@ -877,7 +877,7 @@
       "(201) 907-7509"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 145,
@@ -899,6 +899,139 @@
     "notes": "Dogs allowed."
   },
   {
+    "id": 146,
+    "name": "3 Acres",
+    "lat": 40.715704,
+    "lng": -74.089035,
+    "area": "JSQ",
+    "address": "400 Claremont Ave, Jersey City, NJ 07304",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "3 Acres",
+    "website": "https://3acresjc.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 975-3000"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 147,
+    "name": "The Agnes",
+    "lat": 40.718459,
+    "lng": -74.09248,
+    "area": "JSQ",
+    "address": "132 Yale Ave, Jersey City, NJ 07304",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Agnes",
+    "website": "https://theagnes001.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 656-1200"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Ironstate listing noted."
+  },
+  {
+    "id": 148,
+    "name": "Cobalt Lofts",
+    "lat": 40.735702,
+    "lng": -74.152405,
+    "area": "Harrison",
+    "address": "1200 S 5th St, Harrison, NJ 07029",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Cobalt",
+    "website": "https://cobaltlofts.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(862) 626-2288"
+    ],
+    "flags": [],
+    "notes": "Has a schedule.tours link."
+  },
+  {
+    "id": 149,
+    "name": "The Wyldes",
+    "lat": 40.736503,
+    "lng": -74.152384,
+    "area": "Harrison",
+    "address": "1100 S 5th St, Harrison, NJ 07029",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Wyldes",
+    "website": "https://thewyldes.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(862) 626-2201"
+    ],
+    "flags": [],
+    "notes": "Has a schedule.tours link."
+  },
+  {
+    "id": 150,
+    "name": "Steel Works",
+    "lat": 40.735577,
+    "lng": -74.15446,
+    "area": "Harrison",
+    "address": "1200 Frank E Rodgers Blvd S, Harrison, NJ 07029",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Steel Works",
+    "website": "https://steelworksapts.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(973) 319-8231"
+    ],
+    "flags": [],
+    "notes": "Has a schedule.tours link."
+  },
+  {
+    "id": 151,
+    "name": "Harrison Urby Apartments",
+    "lat": 40.74097,
+    "lng": -74.159088,
+    "area": "Harrison",
+    "address": "200 Angelo Cifelli Dr, Harrison, NJ 07029",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Urby Harrison",
+    "website": "https://urby.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(856) 329-8934"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Near PATH."
+  },
+  {
+    "id": 152,
+    "name": "The Eddy, Harrison",
+    "lat": 40.74196,
+    "lng": -74.16213,
+    "area": "Harrison",
+    "address": "555 S 1st St, Harrison, NJ 07029",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "The Eddy",
+    "website": "https://ironstate.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(855) 623-7351"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Ironstate listing noted."
+  },
+  {
     "id": 68,
     "name": "Magnolia Dumbo",
     "lat": 40.702181,
@@ -916,7 +1049,7 @@
       "(833) 599-0257"
     ],
     "flags": [],
-    "notes": "Closes at 6 PM. Opens 9 AM Tuesday. Has a schedule.tours link."
+    "notes": "Has a schedule.tours link."
   },
   {
     "id": 69,
@@ -1017,7 +1150,7 @@
       "(718) 596-8181"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Open until 7 PM."
+    "notes": "Dogs allowed."
   },
   {
     "id": 85,
@@ -1036,7 +1169,7 @@
       "(888) 629-8625"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 9 AM Tuesday. Located in Long Island University Brooklyn. Has a schedule.tours link."
+    "notes": "Dogs allowed. Located in Long Island University Brooklyn. Has a schedule.tours link."
   },
   {
     "id": 86,
@@ -1114,7 +1247,7 @@
       "(646) 978-5504"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 10 AM Tuesday. Has a 2tour.site link."
+    "notes": "Dogs allowed. Has a 2tour.site link."
   },
   {
     "id": 103,
@@ -1135,7 +1268,7 @@
       "(718) 395-4072"
     ],
     "flags": [],
-    "notes": "Closes at 6 PM. Opens 9 AM Tuesday. Has a schedule.tours link."
+    "notes": "Has a schedule.tours link."
   },
   {
     "id": 104,
@@ -1175,7 +1308,7 @@
       "(929) 547-6629"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 9 AM Tuesday. Located in Hoyt - Schermerhorn Sts."
+    "notes": "Dogs allowed. Located in Hoyt - Schermerhorn Sts."
   },
   {
     "id": 121,
@@ -1194,7 +1327,7 @@
       "(347) 305-7691"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday. Has a 2tour.site link."
+    "notes": "Dogs allowed. Has a 2tour.site link."
   },
   {
     "id": 122,
@@ -1215,7 +1348,7 @@
       "(718) 514-7892"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Open until 8:30 PM. Floor 1 at Jay St - MetroTech."
+    "notes": "Dogs allowed. Floor 1 at Jay St - MetroTech."
   },
   {
     "id": 123,
@@ -1236,6 +1369,6 @@
       "(718) 223-4236"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+    "notes": "Dogs allowed."
   }
 ]

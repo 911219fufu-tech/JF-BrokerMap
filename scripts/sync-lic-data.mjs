@@ -40,6 +40,13 @@ const NAME_ALIASES = {
   'the journal': 'journal',
   'mrk': 'mrk',
   '85 van reypen street apartments': '85 van reypen',
+  '3 acres': '3 acres',
+  'the agnes': 'agnes',
+  'cobalt lofts': 'cobalt lofts',
+  'the wyldes': 'wyldes',
+  'steel works': 'steel works',
+  'harrison urby apartments': 'urby harrison',
+  'the eddy harrison': 'eddy harrison',
 };
 
 const MAP_LABEL_ALIASES = {
@@ -92,6 +99,13 @@ const MAP_LABEL_ALIASES = {
   'the journal': 'The Journal',
   'mrk': 'MRK',
   '85 van reypen street apartments': '85 Van Reypen',
+  '3 acres': '3 Acres',
+  'the agnes': 'Agnes',
+  'cobalt lofts': 'Cobalt',
+  'the wyldes': 'Wyldes',
+  'steel works': 'Steel Works',
+  'harrison urby apartments': 'Urby Harrison',
+  'the eddy harrison': 'The Eddy',
 };
 
 function normalizeName(value) {

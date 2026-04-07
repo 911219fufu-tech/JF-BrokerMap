@@ -32,7 +32,7 @@
   op: No OP
   emails: Lea@heatherwood.com
   phones: (833) 816-8682
-  notes: Dogs allowed. No 2B. Open until 6 PM.
+  notes: Dogs allowed. No 2B.
 
 - name: Jackson Park LIC
   area: LIC
@@ -41,7 +41,7 @@
   op: 0 OP
   emails: leasing@jacksonparklic.com
   phones: (718) 522-5766
-  notes: Closes at 5 PM. Opens 9 AM Tuesday.
+  notes:
 
 - name: Heritage 27 on 27th
   area: LIC
@@ -50,7 +50,7 @@
   op:
   emails:
   phones: (929) 281-3344, +1 (833) 858-5266
-  notes: Open until 6 PM.
+  notes:
 
 - name: 1 QPS
   area: LIC
@@ -59,7 +59,7 @@
   op:
   emails: shuser@stonehengenyc.com
   phones:
-  notes: Dogs allowed. Open until 6 PM.
+  notes: Dogs allowed.
 
 - name: Linc LIC Apartments by Rockrose
   area: LIC
@@ -68,7 +68,7 @@
   op: 1 OP
   emails: CourtSquare.Leasing@rockrose.com
   phones: (718) 440-3333
-  notes: Dogs allowed. Open until 6 PM.
+  notes: Dogs allowed.
 
 - name: Eagle Lofts by Rockrose
   area: LIC
@@ -86,7 +86,7 @@
   op: 0 OP
   emails: INFO@RentTheForge.com
   phones: (718) 786-8889
-  notes: Open until 6 PM.
+  notes:
 
 - name: Watermark LIC
   area: LIC
@@ -95,7 +95,7 @@
   op:
   emails:
   phones: (833) 460-9611
-  notes: Dogs allowed. Open until 6 PM.
+  notes: Dogs allowed.
 
 - name: 8 Court Square
   area: LIC
@@ -104,7 +104,7 @@
   op:
   emails: info@8court.com
   phones: (929) 588-4126
-  notes: Closes at 5 PM. Opens 9 AM Tuesday. Also has a 2tour.site listing.
+  notes: Also has a 2tour.site listing.
 
 - name: Hayden LIC Apartments by Rockrose
   area: LIC
@@ -113,7 +113,7 @@
   op: 0 OP
   emails: CourtSquare.Leasing@rockrose.com
   phones: (718) 606-6677
-  notes: Dogs allowed. Open until 7 PM.
+  notes: Dogs allowed.
 
 - name: 5PointzLIC
   area: LIC
@@ -131,7 +131,7 @@
   op: 0 OP
   emails: lumen@mns.com
   phones: (212) 470-0846
-  notes: Open until 6 PM.
+  notes:
 
 - name: Cove
   area: LIC
@@ -158,7 +158,7 @@
   op:
   emails:
   phones: (718) 606-9440
-  notes: Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: 4610 Center Blvd
   area: LIC
@@ -167,7 +167,7 @@
   op:
   emails:
   phones: (718) 606-9440
-  notes: Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: 4705 Center Boulevard Apartments by Rockrose
   area: LIC
@@ -176,7 +176,7 @@
   op:
   emails:
   phones: (718) 606-1879
-  notes: Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: 5203 Center Blvd
   area: LIC
@@ -185,7 +185,7 @@
   op:
   emails: MaltDriveLeasing@tfc.com
   phones: (212) 353-5850
-  notes: Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: 5241 Center Blvd
   area: LIC
@@ -194,7 +194,7 @@
   op:
   emails: emil.popicg@tfc.com
   phones: (212) 353-5850
-  notes: Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: Gotham Point
   area: LIC
@@ -203,7 +203,7 @@
   op:
   emails: Leasing@GothamPoint.com
   phones: (332) 378-1962
-  notes: Closes at 6:30 PM. Opens 10:30 AM Tuesday.
+  notes:
 
 - name: Sunnyside Garden Apartments
   area: Queens
@@ -248,7 +248,7 @@
   op:
   emails: RAinfo@realtyoperations.com
   phones: (844) 682-3201
-  notes: Dogs allowed. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: Alexander
   area: Queens
@@ -257,7 +257,7 @@
   op: 0 OP
   emails: alexanderny@researchapartments.com
   phones: (718) 215-0710, 844 238-9263
-  notes: Dogs allowed. Opens 9 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: The Drake
   area: Queens
@@ -266,7 +266,7 @@
   op:
   emails: listings@vrenyc.com
   phones: (646) 747-7848
-  notes: Opens 9 AM Tuesday.
+  notes:
 
 - name: Vista65
   area: Queens
@@ -284,7 +284,7 @@
   op: 1 OP
   emails: liveparker@beamliving.com, shirley.chen@beamliving.com
   phones: (833) 567-5390
-  notes: Dogs allowed. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: Roosevelt Parc Apartments
   area: Queens
@@ -329,7 +329,7 @@
   op:
   emails:
   phones: (856) 393-6036
-  notes: Dogs allowed. Opens 10 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: Overlook Flats Jersey City
   area: JSQ
@@ -347,7 +347,7 @@
   op:
   emails:
   phones: (551) 209-4008
-  notes: Opens 9 AM Tuesday.
+  notes:
 
 - name: 28 Cottage
   area: JSQ
@@ -365,7 +365,7 @@
   op:
   emails:
   phones: (551) 309-3007
-  notes: Opens 8 AM Tuesday. Has a calendly.com booking link.
+  notes: Has a calendly.com booking link.
 
 - name: 26 Van Reipen
   area: JSQ
@@ -383,7 +383,7 @@
   op:
   emails:
   phones: (551) 209-2121
-  notes: Dogs allowed. Opens 9 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: MRK
   area: JSQ
@@ -392,7 +392,7 @@
   op:
   emails:
   phones: (201) 907-7509
-  notes: Dogs allowed. Opens 9 AM Tuesday.
+  notes: Dogs allowed.
 
 - name: 85 Van Reypen Street Apartments
   area: JSQ
@@ -403,6 +403,69 @@
   phones: (888) 890-3940
   notes: Dogs allowed.
 
+- name: 3 Acres
+  area: JSQ
+  address: 400 Claremont Ave, Jersey City, NJ 07304
+  website: https://3acresjc.com/
+  op:
+  emails:
+  phones: (201) 975-3000
+  notes: Dogs allowed.
+
+- name: The Agnes
+  area: JSQ
+  address: 132 Yale Ave, Jersey City, NJ 07304
+  website: https://theagnes001.com/
+  op:
+  emails:
+  phones: (201) 656-1200
+  notes: Dogs allowed. Ironstate listing noted.
+
+- name: Cobalt Lofts
+  area: Harrison
+  address: 1200 S 5th St, Harrison, NJ 07029
+  website: https://cobaltlofts.com/
+  op:
+  emails:
+  phones: (862) 626-2288
+  notes: Has a schedule.tours link.
+
+- name: The Wyldes
+  area: Harrison
+  address: 1100 S 5th St, Harrison, NJ 07029
+  website: https://thewyldes.com/
+  op:
+  emails:
+  phones: (862) 626-2201
+  notes: Has a schedule.tours link.
+
+- name: Steel Works
+  area: Harrison
+  address: 1200 Frank E Rodgers Blvd S, Harrison, NJ 07029
+  website: https://steelworksapts.com/
+  op:
+  emails:
+  phones: (973) 319-8231
+  notes: Has a schedule.tours link.
+
+- name: Harrison Urby Apartments
+  area: Harrison
+  address: 200 Angelo Cifelli Dr, Harrison, NJ 07029
+  website: https://urby.com/
+  op:
+  emails:
+  phones: (856) 329-8934
+  notes: Dogs allowed. Near PATH.
+
+- name: The Eddy, Harrison
+  area: Harrison
+  address: 555 S 1st St, Harrison, NJ 07029
+  website: https://ironstate.com/
+  op:
+  emails:
+  phones: (855) 623-7351
+  notes: Dogs allowed. Ironstate listing noted.
+
 - name: Magnolia Dumbo
   area: DTBK
   address: 160 Front St, Brooklyn, NY 11201
@@ -410,7 +473,7 @@
   op:
   emails:
   phones: (833) 362-0821, (833) 599-0257
-  notes: Closes at 6 PM. Opens 9 AM Tuesday. Has a schedule.tours link.
+  notes: Has a schedule.tours link.
 
 - name: The Amberly Apartments
   area: DTBK
@@ -419,7 +482,7 @@
   op:
   emails: info@theamberlybk.com
   phones: (718) 246-1200
-  notes: Closes at 6 PM. Opens 9 AM Tuesday.
+  notes:
 
 - name: 22 Chapel
   area: DTBK
@@ -437,7 +500,7 @@
   op:
   emails: INFO@BKLYNGOLD.COM
   phones: (718) 522-3500
-  notes: Closes at 6 PM. Opens 10 AM Tuesday.
+  notes:
 
 - name: BKLYN AIR
   area: DTBK
@@ -455,7 +518,7 @@
   op: 0 OP
   emails:
   phones: (718) 596-8181
-  notes: Dogs allowed. Open until 7 PM.
+  notes: Dogs allowed.
 
 - name: Willoughby
   area: DTBK
@@ -464,7 +527,7 @@
   op:
   emails:
   phones: (888) 629-8625
-  notes: Dogs allowed. Closes at 6 PM. Opens 9 AM Tuesday. Located in Long Island University Brooklyn. Has a schedule.tours link.
+  notes: Dogs allowed. Located in Long Island University Brooklyn. Has a schedule.tours link.
 
 - name: The Paxton
   area: DTBK
@@ -491,7 +554,7 @@
   op: 0 OP
   emails: info@plankroadbk.com
   phones: (718) 650-2662
-  notes: Closes at 6 PM. Opens 10 AM Tuesday.
+  notes:
 
 - name: Caesura
   area: DTBK
@@ -500,7 +563,7 @@
   op:
   emails:
   phones: (646) 978-5504
-  notes: Dogs allowed. Opens 10 AM Tuesday. Has a 2tour.site link.
+  notes: Dogs allowed. Has a 2tour.site link.
 
 - name: Hub
   area: DTBK
@@ -509,7 +572,7 @@
   op:
   emails: HUBlife@HUBBK.com
   phones: (718) 395-4072
-  notes: Closes at 6 PM. Opens 9 AM Tuesday. Has a schedule.tours link.
+  notes: Has a schedule.tours link.
 
 - name: The Guild Apartments
   area: DTBK
@@ -527,7 +590,7 @@
   op:
   emails:
   phones: (929) 547-6629
-  notes: Dogs allowed. Closes at 6 PM. Opens 9 AM Tuesday. Located in Hoyt - Schermerhorn Sts.
+  notes: Dogs allowed. Located in Hoyt - Schermerhorn Sts.
 
 - name: Hoyt & Horn
   area: DTBK
@@ -536,7 +599,7 @@
   op:
   emails:
   phones: (347) 305-7691
-  notes: Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday. Has a 2tour.site link.
+  notes: Dogs allowed. Has a 2tour.site link.
 
 - name: Avalon Willoughby Square
   area: DTBK
@@ -545,7 +608,7 @@
   op: 0 OP
   emails: Ivy.Lane11@bozzuto.com
   phones: (718) 514-7892
-  notes: Dogs allowed. Open until 8:30 PM. Floor 1 at Jay St - MetroTech.
+  notes: Dogs allowed. Floor 1 at Jay St - MetroTech.
 
 - name: DWTN BK
   area: DTBK
@@ -554,4 +617,4 @@
   op: 1 OP
   emails: leasing@dwtnbk.com
   phones: (718) 223-4236
-  notes: Dogs allowed. Opens 9 AM Tuesday.
+  notes: Dogs allowed.
