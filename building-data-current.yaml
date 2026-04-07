@@ -2,6 +2,7 @@
   area: LIC
   address: 30-02 39th Ave, Long Island City, NY 11101
   website: https://arclivinglic.com/
+  availability: https://arclivinglic.com/long-island-city-apartment-availability/
   op: 0 OP
   emails: leasing@arclivinglic.com, harold@arclivinglic.com
   phones: +19299306154
@@ -11,6 +12,7 @@
   area: LIC
   address: 29-59 Northern Blvd, Long Island City, NY 11101
   website: https://www.svenlic.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb
+  availability: https://www.svenlic.com/availabilities/
   op: 0 OP
   emails: svenleasing@durst.org, SvenLeasing@durst.org
   phones: +17185502494
@@ -20,6 +22,7 @@
   area: LIC
   address: 29-22 Northern Blvd, Queens, NY 11101
   website: https://altalic.com/
+  availability: https://www.dermotcompany.com/building/alta#availability
   op: 0 OP
   emails:
   phones: +17186062922
@@ -38,6 +41,7 @@
   area: LIC
   address: 28-16 Jackson Ave, Long Island City, NY 11101
   website: https://jacksonparklic.com/
+  availability: https://jacksonparklic.com/availability/
   op: 0 OP
   emails: leasing@jacksonparklic.com
   phones: (718) 522-5766
@@ -56,6 +60,7 @@
   area: LIC
   address: 42-20 24th St, Long Island City, NY 11101
   website: https://stonehengenyc.com/
+  availability: https://stonehengenyc.com/apartments
   op:
   emails: shuser@stonehengenyc.com
   phones:
@@ -85,6 +90,7 @@
   area: LIC
   address: 44-28 Purves St, Long Island City, NY 11101
   website: https://renttheforge.com/
+  availability: https://renttheforge.com/long-island-city-apartment-rentals-availability#nestio-listings
   op: 0 OP
   emails: INFO@RentTheForge.com
   phones: (718) 786-8889
@@ -94,15 +100,27 @@
   area: LIC
   address: 27-19 44th Dr, Queens, NY 11101
   website: https://watermarklic.com/
+  availability: https://watermarklic.com/floorplans/
   op:
   emails:
   phones: (833) 460-9611
+  notes: Dogs allowed.
+
+- name: AURA
+  area: LIC
+  address: 23-10 42nd Rd, Long Island City, NY 11101
+  website: https://aura-lic.com/
+  availability: https://aura-lic.com/availability/
+  op:
+  emails:
+  phones: (917) 268-4965
   notes: Dogs allowed.
 
 - name: 8 Court Square
   area: LIC
   address: 27-05 Thomson Ave, Long Island City, NY 11101
   website: https://8courtsq.com/
+  availability: https://8courtsq.com/availability/
   op:
   emails: info@8court.com
   phones: (929) 588-4126

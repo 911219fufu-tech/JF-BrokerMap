@@ -6,12 +6,24 @@
     "lng": -73.933391,
     "area": "LIC",
     "address": "30-02 39th Ave, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4195-5302",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4195-4383"
+      },
+      {
+        "type": "2B",
+        "price": "5302"
+      }
+    ],
     "mapLabel": "ARC",
     "website": "https://arclivinglic.com/",
-    "availability": "",
+    "availability": "https://arclivinglic.com/long-island-city-apartment-availability/",
     "op": "0 OP",
     "emails": [
       "leasing@arclivinglic.com",
@@ -30,12 +42,29 @@
     "lng": -73.936025,
     "area": "LIC",
     "address": "29-59 Northern Blvd, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3439-6624",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3439-3451"
+      },
+      {
+        "type": "1B",
+        "price": "4028-5038"
+      },
+      {
+        "type": "2B",
+        "price": "6574-6624"
+      }
+    ],
     "mapLabel": "SVEN",
     "website": "https://www.svenlic.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
-    "availability": "",
+    "availability": "https://www.svenlic.com/availabilities/",
     "op": "0 OP",
     "emails": [
       "svenleasing@durst.org",
@@ -54,12 +83,29 @@
     "lng": -73.936317,
     "area": "LIC",
     "address": "29-22 Northern Blvd, Queens, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3973-5657",
+    "type": [
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4182-4747"
+      },
+      {
+        "type": "2B",
+        "price": "3973"
+      },
+      {
+        "type": "3B",
+        "price": "5500-5657"
+      }
+    ],
     "mapLabel": "ALTA+",
     "website": "https://altalic.com/",
-    "availability": "",
+    "availability": "https://www.dermotcompany.com/building/alta#availability",
     "op": "0 OP",
     "emails": [],
     "phones": [
@@ -100,12 +146,19 @@
     "lng": -73.938528,
     "area": "LIC",
     "address": "28-16 Jackson Ave, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4913",
+    "type": [
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4913"
+      }
+    ],
     "mapLabel": "Jackson Park",
     "website": "https://jacksonparklic.com/",
-    "availability": "",
+    "availability": "https://jacksonparklic.com/availability/",
     "op": "0 OP",
     "emails": [
       "leasing@jacksonparklic.com"
@@ -145,12 +198,29 @@
     "lng": -73.942092,
     "area": "LIC",
     "address": "42-20 24th St, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3763-6718",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3763-4002"
+      },
+      {
+        "type": "1B",
+        "price": "4537-5436"
+      },
+      {
+        "type": "2B",
+        "price": "6718"
+      }
+    ],
     "mapLabel": "1 QPS",
     "website": "https://stonehengenyc.com/",
-    "availability": "",
+    "availability": "https://stonehengenyc.com/apartments",
     "op": "",
     "emails": [
       "shuser@stonehengenyc.com"
@@ -236,12 +306,29 @@
     "lng": -73.941092,
     "area": "LIC",
     "address": "44-28 Purves St, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4132-6038",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "4132-4314"
+      },
+      {
+        "type": "1B",
+        "price": "4697-5698"
+      },
+      {
+        "type": "2B",
+        "price": "6038"
+      }
+    ],
     "mapLabel": "The Forge",
     "website": "https://renttheforge.com/",
-    "availability": "",
+    "availability": "https://renttheforge.com/long-island-city-apartment-rentals-availability#nestio-listings",
     "op": "0 OP",
     "emails": [
       "INFO@RentTheForge.com"
@@ -259,12 +346,29 @@
     "lng": -73.941818,
     "area": "LIC",
     "address": "27-19 44th Dr, Queens, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3545-6510",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3545"
+      },
+      {
+        "type": "1B",
+        "price": "5075"
+      },
+      {
+        "type": "2B",
+        "price": "6510"
+      }
+    ],
     "mapLabel": "Watermark",
     "website": "https://watermarklic.com/",
-    "availability": "",
+    "availability": "https://watermarklic.com/floorplans/",
     "op": "",
     "emails": [],
     "phones": [
@@ -274,18 +378,75 @@
     "notes": "Dogs allowed."
   },
   {
+    "id": 179,
+    "name": "AURA",
+    "lat": 40.750329,
+    "lng": -73.942732,
+    "area": "LIC",
+    "address": "23-10 42nd Rd, Long Island City, NY 11101",
+    "price": "3511-6422",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3511-4150"
+      },
+      {
+        "type": "1B",
+        "price": "4217-5090"
+      },
+      {
+        "type": "2B",
+        "price": "6233-6422"
+      }
+    ],
+    "mapLabel": "AURA",
+    "website": "https://aura-lic.com/",
+    "availability": "https://aura-lic.com/availability/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(917) 268-4965"
+    ],
+    "flags": [
+      "Terrace options"
+    ],
+    "notes": "Dogs allowed. Uses net rent. 1 month free on select studio, 1B, and 2B units. 0.75 month free on select 2B units."
+  },
+  {
     "id": 5,
     "name": "8 Court Square",
     "lat": 40.746533,
     "lng": -73.942748,
     "area": "LIC",
     "address": "27-05 Thomson Ave, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3717-6472",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3717-3995"
+      },
+      {
+        "type": "1B",
+        "price": "4725-5145"
+      },
+      {
+        "type": "2B",
+        "price": "6441-6472"
+      }
+    ],
     "mapLabel": "8 Court",
     "website": "https://8courtsq.com/",
-    "availability": "",
+    "availability": "https://8courtsq.com/availability/",
     "op": "",
     "emails": [
       "info@8court.com"
