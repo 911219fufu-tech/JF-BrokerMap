@@ -119,7 +119,7 @@ function App() {
 
   const favoriteCount = favoriteIds.length;
   const areaOptions = useMemo(() => {
-    const areaOrder = ['LIC', 'Queens', 'DTBK', 'JSQ', 'Newport', 'Harrison', 'Union City', 'West NY'];
+    const areaOrder = ['LIC', 'Queens', 'DTBK', 'DTJC', 'JSQ', 'Newport', 'Harrison', 'Union City', 'West NY'];
     const existingAreas = new Set(buildings.map((building) => building.area));
     return ['ALL', ...areaOrder.filter((area) => existingAreas.has(area))];
   }, []);

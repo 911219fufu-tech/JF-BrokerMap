@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import BuildingCard from './BuildingCard';
 
-const CARD_HEIGHT = 184;
+const CARD_MIN_HEIGHT = 192;
 const CARD_GAP = 12;
 const VISIBLE_CARDS = 4;
-const VIEWPORT_HEIGHT = CARD_HEIGHT * VISIBLE_CARDS + CARD_GAP * (VISIBLE_CARDS - 1);
+const VIEWPORT_HEIGHT = CARD_MIN_HEIGHT * VISIBLE_CARDS + CARD_GAP * (VISIBLE_CARDS - 1);
 
 function ArrowButton({ direction, onClick, disabled }) {
   const rotateClass = direction === 'up' ? '-rotate-90' : 'rotate-90';
@@ -50,14 +50,7 @@ function BuildingList({
     pointerId: null,
   });
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  const maxScroll = useMemo(() => {
-    if (buildings.length <= VISIBLE_CARDS) {
-      return 0;
-    }
-
-    return (buildings.length - VISIBLE_CARDS) * (CARD_HEIGHT + CARD_GAP);
-  }, [buildings.length]);
+  const [maxScroll, setMaxScroll] = useState(0);
 
   useEffect(() => {
     const listNode = listRef.current;
@@ -66,11 +59,19 @@ function BuildingList({
       return;
     }
 
-    const syncScroll = () => setScrollPosition(listNode.scrollTop);
+    const syncScroll = () => {
+      setScrollPosition(listNode.scrollTop);
+      setMaxScroll(Math.max(0, listNode.scrollHeight - listNode.clientHeight));
+    };
+
     syncScroll();
     listNode.addEventListener('scroll', syncScroll, { passive: true });
+    window.addEventListener('resize', syncScroll);
 
-    return () => listNode.removeEventListener('scroll', syncScroll);
+    return () => {
+      listNode.removeEventListener('scroll', syncScroll);
+      window.removeEventListener('resize', syncScroll);
+    };
   }, [buildings.length]);
 
   useEffect(() => {
@@ -78,14 +79,16 @@ function BuildingList({
       return;
     }
 
-    const selectedIndex = buildings.findIndex((building) => building.id === selectedBuildingId);
+    const selectedCard = listRef.current.querySelector(
+      `[data-building-id="${selectedBuildingId}"]`,
+    );
 
-    if (selectedIndex < 0) {
+    if (!selectedCard) {
       return;
     }
 
-    listRef.current.scrollTo({
-      top: selectedIndex * (CARD_HEIGHT + CARD_GAP),
+    selectedCard.scrollIntoView({
+      block: 'nearest',
       behavior: 'smooth',
     });
   }, [buildings, selectedBuildingId]);
@@ -96,7 +99,7 @@ function BuildingList({
     }
 
     listRef.current.scrollBy({
-      top: direction * (CARD_HEIGHT + CARD_GAP),
+      top: direction * Math.max(180, listRef.current.clientHeight * 0.55),
       behavior: 'smooth',
     });
   };

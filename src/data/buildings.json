@@ -1050,6 +1050,125 @@
     "notes": "Dogs allowed. Ironstate listing noted."
   },
   {
+    "id": 176,
+    "name": "Journal Squared",
+    "lat": 40.73256,
+    "lng": -74.061285,
+    "area": "JSQ",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "price": "2550-4615",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2550-2955"
+      },
+      {
+        "type": "1B",
+        "price": "3085-3655"
+      },
+      {
+        "type": "2B",
+        "price": "4160-4615"
+      }
+    ],
+    "mapLabel": "JSQ 1",
+    "website": "https://journalsquared.com/",
+    "availability": "",
+    "op": "1 OP before June 1, 2026. 0.5 OP after June 1, 2026.",
+    "emails": [],
+    "phones": [
+      "(201) 659-7100"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Journal Square. Calendly booking link available. JSQ 1."
+  },
+  {
+    "id": 177,
+    "name": "Journal Squared 2",
+    "lat": 40.73232,
+    "lng": -74.060635,
+    "area": "JSQ",
+    "address": "605 Pavonia Ave, Jersey City, NJ 07306",
+    "price": "2865-7040",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2865-3050"
+      },
+      {
+        "type": "1B",
+        "price": "3080-3560"
+      },
+      {
+        "type": "2B",
+        "price": "4365-7040"
+      }
+    ],
+    "mapLabel": "JSQ 2",
+    "website": "https://journalsquared.com/",
+    "availability": "",
+    "op": "1 OP before June 1, 2026. 0.5 OP after June 1, 2026.",
+    "emails": [],
+    "phones": [
+      "(201) 659-7100"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Journal Square. Calendly booking link available. JSQ 2."
+  },
+  {
+    "id": 178,
+    "name": "Journal Squared 3",
+    "lat": 40.7324,
+    "lng": -74.06018,
+    "area": "JSQ",
+    "address": "595 Pavonia Ave, Jersey City, NJ 07306",
+    "price": "2855-5795",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2855-3285"
+      },
+      {
+        "type": "1B",
+        "price": "3160-3805"
+      },
+      {
+        "type": "2B",
+        "price": "4290-5085"
+      },
+      {
+        "type": "3B",
+        "price": "5530-5795"
+      }
+    ],
+    "mapLabel": "JSQ 3",
+    "website": "https://journalsquared.com/",
+    "availability": "",
+    "op": "1.5 OP + 1 Month Free with move-in by April 30, 2026. 1 OP + 1 Month Free with move-in before June 1, 2026.",
+    "emails": [],
+    "phones": [
+      "(201) 659-7100"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Located in Journal Square. Calendly booking link available. JSQ 3."
+  },
+  {
     "id": 148,
     "name": "Cobalt Lofts",
     "lat": 40.735702,
@@ -1860,6 +1979,39 @@
     ],
     "flags": [],
     "notes": "Dogs allowed."
+  },
+  {
+    "id": 175,
+    "name": "351 Marin Apartments",
+    "lat": 40.721245,
+    "lng": -74.041339,
+    "area": "DTJC",
+    "address": "351 Marin Blvd, Jersey City, NJ 07302",
+    "price": "3350-5560",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3350-3610"
+      },
+      {
+        "type": "2B",
+        "price": "5280-5560"
+      }
+    ],
+    "mapLabel": "351 Marin",
+    "website": "https://351marinjc.com/",
+    "availability": "",
+    "op": "By May 7, 2026: 1 Month OP. After May 7, 2026: 1/2 Month OP.",
+    "emails": [],
+    "phones": [
+      "(201) 588-3510"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Calendly booking link available."
   },
   {
     "id": 68,

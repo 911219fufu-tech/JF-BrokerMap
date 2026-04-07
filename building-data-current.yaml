@@ -422,6 +422,33 @@
   phones: (201) 656-1200
   notes: Dogs allowed. Ironstate listing noted.
 
+- name: Journal Squared
+  area: JSQ
+  address: 615 Pavonia Ave, Jersey City, NJ 07306
+  website: https://journalsquared.com/
+  op: 1 OP before June 1, 2026. 0.5 OP after June 1, 2026.
+  emails:
+  phones: (201) 659-7100
+  notes: Dogs allowed. Located in Journal Square. Calendly booking link available. JSQ 1.
+
+- name: Journal Squared 2
+  area: JSQ
+  address: 605 Pavonia Ave, Jersey City, NJ 07306
+  website: https://journalsquared.com/
+  op: 1 OP before June 1, 2026. 0.5 OP after June 1, 2026.
+  emails:
+  phones: (201) 659-7100
+  notes: Dogs allowed. Located in Journal Square. Calendly booking link available. JSQ 2.
+
+- name: Journal Squared 3
+  area: JSQ
+  address: 595 Pavonia Ave, Jersey City, NJ 07306
+  website: https://journalsquared.com/
+  op: 1.5 OP + 1 Month Free with move-in by April 30, 2026. 1 OP + 1 Month Free with move-in before June 1, 2026.
+  emails:
+  phones: (201) 659-7100
+  notes: Dogs allowed. Located in Journal Square. Calendly booking link available. JSQ 3.
+
 - name: Cobalt Lofts
   area: Harrison
   address: 1200 S 5th St, Harrison, NJ 07029
@@ -664,6 +691,15 @@
   emails:
   phones: (844) 679-3028
   notes: Dogs allowed.
+
+- name: 351 Marin Apartments
+  area: DTJC
+  address: 351 Marin Blvd, Jersey City, NJ 07302
+  website: https://351marinjc.com/
+  op: By May 7, 2026: 1 Month OP. After May 7, 2026: 1/2 Month OP.
+  emails:
+  phones: (201) 588-3510
+  notes: Dogs allowed. Calendly booking link available.
 
 - name: Magnolia Dumbo
   area: DTBK

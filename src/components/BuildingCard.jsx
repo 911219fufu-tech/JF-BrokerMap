@@ -28,7 +28,8 @@ function BuildingCard({
 
   return (
     <article
-      className={`flex h-[184px] flex-col overflow-hidden rounded-[28px] border p-4 transition ${
+      data-building-id={building.id}
+      className={`flex min-h-[192px] flex-col rounded-[28px] border p-4 transition ${
         isSelected
           ? 'border-pine bg-[rgba(220,227,210,0.72)] shadow-sm'
           : 'border-[var(--line)] bg-white/80 hover:-translate-y-0.5 hover:border-[var(--line-strong)] hover:bg-white'
@@ -47,7 +48,7 @@ function BuildingCard({
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <p className="text-sm text-[var(--text-muted)]">{displayPrice}</p>
             {building.op ? (
-              <span className="rounded-full bg-[rgba(35,66,50,0.08)] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-pine">
+              <span className="max-w-full rounded-[20px] bg-[rgba(35,66,50,0.08)] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-pine">
                 {building.op}
               </span>
             ) : null}

@@ -42,6 +42,9 @@ const NAME_ALIASES = {
   '85 van reypen street apartments': '85 van reypen',
   '3 acres': '3 acres',
   'the agnes': 'agnes',
+  'journal squared': 'journal squared',
+  'journal squared 2': 'journal squared 2',
+  'journal squared 3': 'journal squared 3',
   'cobalt lofts': 'cobalt lofts',
   'the wyldes': 'wyldes',
   'steel works': 'steel works',
@@ -69,6 +72,7 @@ const NAME_ALIASES = {
   'newport rentals apartments': 'newport rentals',
   'lincoln house at hamilton park': 'lincoln house',
   'roosevelt house at hamilton park': 'roosevelt house',
+  '351 marin apartments': '351 marin',
 };
 
 const MAP_LABEL_ALIASES = {
@@ -123,6 +127,9 @@ const MAP_LABEL_ALIASES = {
   '85 van reypen street apartments': '85 Van Reypen',
   '3 acres': '3 Acres',
   'the agnes': 'Agnes',
+  'journal squared': 'JSQ 1',
+  'journal squared 2': 'JSQ 2',
+  'journal squared 3': 'JSQ 3',
   'cobalt lofts': 'Cobalt',
   'the wyldes': 'Wyldes',
   'steel works': 'Steel Works',
@@ -150,6 +157,7 @@ const MAP_LABEL_ALIASES = {
   'newport rentals apartments': 'Newport Rentals',
   'lincoln house at hamilton park': 'Lincoln House',
   'roosevelt house at hamilton park': 'Roosevelt House',
+  '351 marin apartments': '351 Marin',
 };
 
 function normalizeName(value) {
