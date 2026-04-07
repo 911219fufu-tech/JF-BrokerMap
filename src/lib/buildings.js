@@ -1,5 +1,72 @@
 export const TYPE_OPTIONS = ['Studio', '1B', '2B', '3B'];
 export const PRICE_OPTIONS = ['Under $3k', '$3k-$4k', '$4k+'];
+export const NEWPORT_RENTALS_FEE_GUIDE = {
+  required: [
+    {
+      label: 'Application Fee',
+      value: '$100 one-time',
+      note: 'Per applicant / guarantor',
+    },
+    {
+      label: "Renter's Insurance",
+      value: 'Variable per month',
+      note: 'Residents must maintain an active policy or may be charged a $20 non-compliance monthly fee',
+    },
+    {
+      label: 'Window Guard Fee',
+      value: '$20 per window one-time',
+      note: 'Required by law if a child 10 or younger resides in the apartment',
+    },
+    {
+      label: "First Month's Rent",
+      value: "One month's rent",
+      note: 'Due at lease signing',
+    },
+    {
+      label: 'Security Deposit',
+      value: 'Variable one-time',
+    },
+  ],
+  other: [
+    {
+      label: 'Pet Screening',
+      value: '$25 one-time',
+      note: 'Per pet',
+    },
+    {
+      label: 'Pet Fee',
+      value: '$50 per month',
+      note: 'Per pet',
+    },
+    {
+      label: 'Late Fee',
+      value: '5% per occurrence',
+    },
+    {
+      label: 'Parking',
+      value: 'Variable / 3rd party',
+    },
+  ],
+  utilities: [
+    {
+      label: 'Electric',
+      value: 'Metered per month',
+    },
+    {
+      label: 'Water',
+      value: 'Metered per month',
+    },
+    {
+      label: 'Sewer',
+      value: 'Metered per month',
+    },
+    {
+      label: 'Trash',
+      value: '$12.50 per month',
+    },
+  ],
+  notes: 'All final fees and charges will be disclosed with the lease agreement.',
+};
 
 export function getMinPrice(priceRange) {
   const [minimum] = String(priceRange).split('-');
@@ -92,4 +159,18 @@ export function matchesBuildingFilters(building, selectedPrices, selectedTypes) 
     selectedPrices.length === 0 || selectedPrices.includes(getPriceBucket(building?.price));
 
   return matchesType && matchesPrice;
+}
+
+export function getBuildingFeeGuide(building) {
+  if (building?.feeGuide) {
+    return building.feeGuide;
+  }
+
+  const website = building?.website?.toLowerCase() ?? '';
+
+  if (website.includes('newportrentals.com')) {
+    return NEWPORT_RENTALS_FEE_GUIDE;
+  }
+
+  return null;
 }

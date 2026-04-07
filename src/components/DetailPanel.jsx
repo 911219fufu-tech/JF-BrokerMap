@@ -1,4 +1,9 @@
-import { formatPrice, getBuildingPriceRange, getBuildingTypes } from '../lib/buildings';
+import {
+  formatPrice,
+  getBuildingFeeGuide,
+  getBuildingPriceRange,
+  getBuildingTypes,
+} from '../lib/buildings';
 import NotesEditor from './NotesEditor';
 
 function StarIcon({ active }) {
@@ -58,6 +63,55 @@ function ContactSection({ building }) {
   );
 }
 
+function FeeGuideGroup({ title, items }) {
+  if (!items?.length) {
+    return null;
+  }
+
+  return (
+    <div className="mt-4">
+      <p className="text-xs uppercase tracking-[0.2em] text-[var(--text-muted)]">{title}</p>
+      <div className="mt-3 space-y-2">
+        {items.map((item) => (
+          <div
+            key={item.label}
+            className="rounded-2xl border border-[var(--line)] bg-white/78 px-3 py-3"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm font-medium text-[var(--text-main)]">{item.label}</p>
+              <p className="text-right text-sm text-pine">{item.value}</p>
+            </div>
+            {item.note ? (
+              <p className="mt-1 text-xs leading-5 text-[var(--text-muted)]">{item.note}</p>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FeeGuideSection({ building }) {
+  const feeGuide = getBuildingFeeGuide(building);
+
+  if (!feeGuide) {
+    return null;
+  }
+
+  return (
+    <div className="mt-6 rounded-[28px] border border-[var(--line)] bg-white/82 p-4">
+      <p className="text-xs uppercase tracking-[0.22em] text-[var(--text-muted)]">Fees & Utilities</p>
+      {feeGuide.notes ? (
+        <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">{feeGuide.notes}</p>
+      ) : null}
+
+      <FeeGuideGroup title="Required" items={feeGuide.required} />
+      <FeeGuideGroup title="Other" items={feeGuide.other} />
+      <FeeGuideGroup title="Utilities" items={feeGuide.utilities} />
+    </div>
+  );
+}
+
 function DetailPanel({
   building,
   isFavorite,
@@ -88,7 +142,7 @@ function DetailPanel({
         }`}
       >
         {building ? (
-          <div className="flex max-h-[calc(82vh-2.5rem)] flex-col overflow-y-auto pr-1 soft-scrollbar lg:max-h-full lg:h-full lg:overflow-visible lg:pr-0">
+          <div className="soft-scrollbar flex h-full max-h-[calc(82vh-2.5rem)] min-h-0 flex-col overflow-y-auto pr-1 lg:max-h-full">
             <div className="mx-auto mb-4 h-1.5 w-14 rounded-full bg-[rgba(35,66,50,0.18)] lg:hidden" />
           <div className="flex items-start justify-between gap-3">
             <div>
@@ -197,6 +251,7 @@ function DetailPanel({
           </div>
 
           <ContactSection building={building} />
+          <FeeGuideSection building={building} />
 
           <div className="mt-6 flex-1">
             <NotesEditor
