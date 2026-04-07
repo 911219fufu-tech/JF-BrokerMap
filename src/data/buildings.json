@@ -470,6 +470,435 @@
     "notes": "Closes at 6:30 PM. Opens 10:30 AM Tuesday."
   },
   {
+    "id": 124,
+    "name": "Sunnyside Garden Apartments",
+    "lat": 40.748955,
+    "lng": -73.91274,
+    "area": "Queens",
+    "address": "51-01 39th Ave, Sunnyside, NY 11104",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Sunnyside",
+    "website": "https://sunnysidegardenapts.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(718) 478-2020"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 125,
+    "name": "Fifty11 Apartment",
+    "lat": 40.74307,
+    "lng": -73.91409,
+    "area": "Queens",
+    "address": "43-46 51st St, Queens, NY 11377",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Fifty11",
+    "website": "https://fifty11.com/",
+    "op": "",
+    "emails": [],
+    "phones": [],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 126,
+    "name": "Woodside Central",
+    "lat": 40.73976,
+    "lng": -73.895714,
+    "area": "Queens",
+    "address": "46-09 69th St, Woodside, NY 11377",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Woodside",
+    "website": "https://woodside-central.com/",
+    "op": "0 OP",
+    "emails": [
+      "Inna.Kukharuk@corcoran.com"
+    ],
+    "phones": [],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 127,
+    "name": "Sola Woodside",
+    "lat": 40.739851,
+    "lng": -73.891118,
+    "area": "Queens",
+    "address": "72-01 Queens Blvd, Woodside, NY 11377",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Sola",
+    "website": "https://solawoodside.com/",
+    "op": "",
+    "emails": [
+      "mc@mns.com"
+    ],
+    "phones": [
+      "(212) 683-9292",
+      "3476781963"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. WhatsApp: 3476781963."
+  },
+  {
+    "id": 128,
+    "name": "Kings and Queens Apartments",
+    "lat": 40.729163,
+    "lng": -73.858379,
+    "area": "Queens",
+    "address": "97-77 Queens Blvd, Rego Park, NY 11374",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "K&Q",
+    "website": "https://kingsqueensapts.com/",
+    "op": "",
+    "emails": [
+      "RAinfo@realtyoperations.com"
+    ],
+    "phones": [
+      "(844) 682-3201"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 129,
+    "name": "Alexander",
+    "lat": 40.732278,
+    "lng": -73.863392,
+    "area": "Queens",
+    "address": "61-55 Junction Blvd, Rego Park, NY 11374",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Alexander",
+    "website": "https://alexanderregopark.com/",
+    "op": "0 OP",
+    "emails": [
+      "alexanderny@researchapartments.com"
+    ],
+    "phones": [
+      "(718) 215-0710",
+      "844 238-9263"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+  },
+  {
+    "id": 130,
+    "name": "The Drake",
+    "lat": 40.73292,
+    "lng": -73.857685,
+    "area": "Queens",
+    "address": "62-60 99th St, Rego Park, NY 11374",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Drake",
+    "website": "https://rentthedrake.com/",
+    "op": "",
+    "emails": [
+      "listings@vrenyc.com"
+    ],
+    "phones": [
+      "(646) 747-7848"
+    ],
+    "flags": [],
+    "notes": "Opens 9 AM Tuesday."
+  },
+  {
+    "id": 131,
+    "name": "Vista65",
+    "lat": 40.72808,
+    "lng": -73.858264,
+    "area": "Queens",
+    "address": "97-12 65th Rd Lobby, Rego Park, NY 11374",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Vista65",
+    "website": "https://vista65.com/",
+    "op": "1 month net OP",
+    "emails": [
+      "vista65@nestseekers.com"
+    ],
+    "phones": [],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 132,
+    "name": "Parker Towers",
+    "lat": 40.723917,
+    "lng": -73.850059,
+    "area": "Queens",
+    "address": "104-20 Queens Blvd, Forest Hills, NY 11375",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Parker",
+    "website": "https://parkertowers.com/",
+    "op": "1 OP",
+    "emails": [
+      "liveparker@beamliving.com",
+      "shirley.chen@beamliving.com"
+    ],
+    "phones": [
+      "(833) 567-5390"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 133,
+    "name": "Roosevelt Parc Apartments",
+    "lat": 40.74736,
+    "lng": -73.89433,
+    "area": "Queens",
+    "address": "37-46 72nd St, Flushing, NY 11372",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Roosevelt Parc Apartments",
+    "website": "",
+    "op": "",
+    "emails": [
+      "leasing@rooseveltparc.com"
+    ],
+    "phones": [],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 134,
+    "name": "The Elm East",
+    "lat": 40.73721,
+    "lng": -73.877129,
+    "area": "Queens",
+    "address": "86-55 Broadway, Elmhurst, NY 11373",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "The Elm East",
+    "website": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "7187794395"
+    ],
+    "flags": [],
+    "notes": "Message: 7187794395."
+  },
+  {
+    "id": 135,
+    "name": "LeFrak City Apartments",
+    "lat": 40.734933,
+    "lng": -73.86459,
+    "area": "Queens",
+    "address": "LeFrak City Apartments, 59-17 Junction Blvd, Elmhurst, NY 11373",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "LeFrak City Apartments",
+    "website": "",
+    "op": "",
+    "emails": [
+      "RAinfo@realtyoperations.com"
+    ],
+    "phones": [],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 136,
+    "name": "505 Summit",
+    "lat": 40.731289,
+    "lng": -74.060691,
+    "area": "JSQ",
+    "address": "505 Summit Ave, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "505 Summit",
+    "website": "https://505summit.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 581-0505"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 137,
+    "name": "Journal Square Urby Apartments",
+    "lat": 40.732075,
+    "lng": -74.059556,
+    "area": "JSQ",
+    "address": "532 Summit Ave, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Urby JSQ",
+    "website": "https://urby.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(856) 393-6036"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 138,
+    "name": "Overlook Flats Jersey City",
+    "lat": 40.733295,
+    "lng": -74.056264,
+    "area": "JSQ",
+    "address": "32 Oakland Ave, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Overlook",
+    "website": "https://overlookflats.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 367-1866"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 139,
+    "name": "632 Newark",
+    "lat": 40.73358,
+    "lng": -74.05809,
+    "area": "JSQ",
+    "address": "632 Newark Ave, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "632 Newark",
+    "website": "https://cmpnd.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(551) 209-4008"
+    ],
+    "flags": [],
+    "notes": "Opens 9 AM Tuesday."
+  },
+  {
+    "id": 140,
+    "name": "28 Cottage",
+    "lat": 40.734437,
+    "lng": -74.060597,
+    "area": "JSQ",
+    "address": "28 Cottage St, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "28 Cottage",
+    "website": "https://cmpnd.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 701-8182"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Has a calendly.com booking link."
+  },
+  {
+    "id": 141,
+    "name": "9 Homestead",
+    "lat": 40.733181,
+    "lng": -74.061013,
+    "area": "JSQ",
+    "address": "9 Homestead Pl, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "9 Homestead",
+    "website": "https://cmpnd.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(551) 309-3007"
+    ],
+    "flags": [],
+    "notes": "Opens 8 AM Tuesday. Has a calendly.com booking link."
+  },
+  {
+    "id": 142,
+    "name": "26 Van Reipen",
+    "lat": 40.733686,
+    "lng": -74.060701,
+    "area": "JSQ",
+    "address": "26 Van Reipen Ave, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "26 Van Reipen",
+    "website": "https://26vanreipen.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 255-4247"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 143,
+    "name": "The Journal",
+    "lat": 40.731322,
+    "lng": -74.063755,
+    "area": "JSQ",
+    "address": "36 Journal Square Plaza, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "The Journal",
+    "website": "https://journaljc.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(551) 209-2121"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+  },
+  {
+    "id": 144,
+    "name": "MRK",
+    "lat": 40.728985,
+    "lng": -74.063519,
+    "area": "JSQ",
+    "address": "97 Newkirk St, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "MRK",
+    "website": "https://mrkjsq.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 907-7509"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 9 AM Tuesday."
+  },
+  {
+    "id": 145,
+    "name": "85 Van Reypen Street Apartments",
+    "lat": 40.730297,
+    "lng": -74.06753,
+    "area": "JSQ",
+    "address": "85 Van Reypen St, Jersey City, NJ 07306",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "85 Van Reypen",
+    "website": "https://goldberg-realty.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(888) 890-3940"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
     "id": 68,
     "name": "Magnolia Dumbo",
     "lat": 40.702181,
