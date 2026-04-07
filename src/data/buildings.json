@@ -1,115 +1,313 @@
 [
   {
-    "id": 1,
-    "name": "ARC",
-    "lat": 40.7448,
-    "lng": -73.9478,
+    "id": 50,
+    "name": "ARC Luxury Long Island City Apartments",
+    "lat": 40.752788,
+    "lng": -73.933391,
     "area": "LIC",
+    "address": "30-02 39th Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
+    "mapLabel": "ARC",
+    "website": "https://arclivinglic.com/",
     "op": "0 OP",
-    "emails": ["leasing@arclivinglic.com", "harold@arclivinglic.com"],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "leasing@arclivinglic.com",
+      "harold@arclivinglic.com"
+    ],
+    "phones": [
+      "+19299306154"
+    ],
+    "flags": [],
+    "notes": ""
   },
   {
-    "id": 2,
-    "name": "Tower 28",
-    "lat": 40.7484,
-    "lng": -73.9414,
+    "id": 51,
+    "name": "Sven Luxury Apartment Rentals LIC",
+    "lat": 40.750137,
+    "lng": -73.936025,
     "area": "LIC",
-    "price": "Ask",
-    "type": ["Studio", "1B"],
-    "website": "",
-    "op": "No OP",
-    "emails": ["Lea@heatherwood.com"],
-    "phones": [],
-    "flags": ["No 2B"]
-  },
-  {
-    "id": 3,
-    "name": "27 on 27th",
-    "lat": 40.7469,
-    "lng": -73.9389,
-    "area": "LIC",
+    "address": "29-59 Northern Blvd, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
+    "mapLabel": "SVEN",
+    "website": "https://www.svenlic.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "op": "0 OP",
+    "emails": [
+      "svenleasing@durst.org",
+      "SvenLeasing@durst.org"
+    ],
+    "phones": [
+      "+17185502494"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 13,
+    "name": "ALTA+",
+    "lat": 40.749277,
+    "lng": -73.936317,
+    "area": "LIC",
+    "address": "29-22 Northern Blvd, Queens, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "ALTA+",
+    "website": "https://altalic.com/",
+    "op": "0 OP",
+    "emails": [],
+    "phones": [
+      "+17186062922"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 52,
+    "name": "Heritage Tower 28",
+    "lat": 40.74955,
+    "lng": -73.9396,
+    "area": "LIC",
+    "address": "42-12 28th St, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Tower 28",
+    "website": "https://heatherwood.com/",
+    "op": "No OP",
+    "emails": [
+      "Lea@heatherwood.com"
+    ],
+    "phones": [
+      "(833) 816-8682"
+    ],
+    "flags": [
+      "No 2B"
+    ],
+    "notes": "Dogs allowed. No 2B. Open until 6 PM."
+  },
+  {
+    "id": 12,
+    "name": "Jackson Park LIC",
+    "lat": 40.748343,
+    "lng": -73.938528,
+    "area": "LIC",
+    "address": "28-16 Jackson Ave, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Jackson Park",
+    "website": "https://jacksonparklic.com/",
+    "op": "0 OP",
+    "emails": [
+      "leasing@jacksonparklic.com"
+    ],
+    "phones": [
+      "(718) 522-5766"
+    ],
+    "flags": [],
+    "notes": "Closes at 5 PM. Opens 9 AM Tuesday."
+  },
+  {
+    "id": 53,
+    "name": "Heritage 27 on 27th",
+    "lat": 40.749483,
+    "lng": -73.940288,
+    "area": "LIC",
+    "address": "27-03 42nd Rd, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "27 on 27th",
+    "website": "https://heatherwood.com/",
     "op": "",
     "emails": [],
-    "phones": ["+1 (833) 858-5266"],
-    "flags": []
+    "phones": [
+      "(929) 281-3344",
+      "+1 (833) 858-5266"
+    ],
+    "flags": [],
+    "notes": "Open until 6 PM."
   },
   {
-    "id": 4,
-    "name": "5Pointz",
-    "lat": 40.7478,
-    "lng": -73.9444,
+    "id": 15,
+    "name": "1 QPS",
+    "lat": 40.750437,
+    "lng": -73.942092,
     "area": "LIC",
+    "address": "42-20 24th St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
-    "op": "OP on Net Figure",
-    "emails": [],
+    "mapLabel": "1 QPS",
+    "website": "https://stonehengenyc.com/",
+    "op": "",
+    "emails": [
+      "shuser@stonehengenyc.com"
+    ],
     "phones": [],
-    "flags": []
+    "flags": [],
+    "notes": "Dogs allowed. Open until 6 PM."
+  },
+  {
+    "id": 54,
+    "name": "Linc LIC Apartments by Rockrose",
+    "lat": 40.748698,
+    "lng": -73.942719,
+    "area": "LIC",
+    "address": "43-10 Crescent St, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Linc LIC",
+    "website": "https://rockrose.com/",
+    "op": "1 OP",
+    "emails": [
+      "CourtSquare.Leasing@rockrose.com"
+    ],
+    "phones": [
+      "(718) 440-3333"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Open until 6 PM."
+  },
+  {
+    "id": 55,
+    "name": "Eagle Lofts by Rockrose",
+    "lat": 40.747252,
+    "lng": -73.939411,
+    "area": "LIC",
+    "address": "43-22 Queens St, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Eagle Lofts",
+    "website": "https://rockrose.com/",
+    "op": "1 OP",
+    "emails": [
+      "CourtSquare.Leasing@rockrose.com"
+    ],
+    "phones": [
+      "(718) 606-6677"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 11,
+    "name": "The Forge",
+    "lat": 40.746536,
+    "lng": -73.941092,
+    "area": "LIC",
+    "address": "44-28 Purves St, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "The Forge",
+    "website": "https://renttheforge.com/",
+    "op": "0 OP",
+    "emails": [
+      "INFO@RentTheForge.com"
+    ],
+    "phones": [
+      "(718) 786-8889"
+    ],
+    "flags": [],
+    "notes": "Open until 6 PM."
+  },
+  {
+    "id": 56,
+    "name": "Watermark LIC",
+    "lat": 40.746769,
+    "lng": -73.941818,
+    "area": "LIC",
+    "address": "27-19 44th Dr, Queens, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Watermark",
+    "website": "https://watermarklic.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(833) 460-9611"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Open until 6 PM."
   },
   {
     "id": 5,
     "name": "8 Court Square",
-    "lat": 40.7472,
-    "lng": -73.9449,
+    "lat": 40.746533,
+    "lng": -73.942748,
     "area": "LIC",
+    "address": "27-05 Thomson Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
+    "mapLabel": "8 Court",
+    "website": "https://8courtsq.com/",
     "op": "",
-    "emails": ["info@8court.com"],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "info@8court.com"
+    ],
+    "phones": [
+      "(929) 588-4126"
+    ],
+    "flags": [],
+    "notes": "Closes at 5 PM. Opens 9 AM Tuesday. Also has a 2tour.site listing."
   },
   {
-    "id": 6,
-    "name": "Hayden LIC",
-    "lat": 40.7437,
-    "lng": -73.9516,
+    "id": 57,
+    "name": "Hayden LIC Apartments by Rockrose",
+    "lat": 40.747708,
+    "lng": -73.942463,
     "area": "LIC",
+    "address": "43-25 Hunter St, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
+    "mapLabel": "Hayden LIC",
+    "website": "https://rockrose.com/",
     "op": "0 OP",
-    "emails": ["CourtSquare.Leasing@rockrose.com"],
-    "phones": ["+1 (718) 606-6677"],
-    "flags": []
+    "emails": [
+      "CourtSquare.Leasing@rockrose.com"
+    ],
+    "phones": [
+      "(718) 606-6677"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Open until 7 PM."
   },
   {
-    "id": 7,
-    "name": "Eagle Lofts",
-    "lat": 40.747,
-    "lng": -73.9498,
+    "id": 58,
+    "name": "5PointzLIC",
+    "lat": 40.745125,
+    "lng": -73.945761,
     "area": "LIC",
+    "address": "22-44 Jackson Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
-    "op": "1 OP",
-    "emails": ["CourtSquare.Leasing@rockrose.com"],
-    "phones": ["+1 (718) 606-6677"],
-    "flags": []
+    "mapLabel": "5Pointz",
+    "website": "https://5pointzlic.com/",
+    "op": "OP on Net Figure",
+    "emails": [],
+    "phones": [
+      "(646) 783-7286"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
   },
   {
-    "id": 8,
-    "name": "Linc LIC",
-    "lat": 40.7442,
-    "lng": -73.9531,
+    "id": 17,
+    "name": "Lumen",
+    "lat": 40.748447,
+    "lng": -73.944143,
     "area": "LIC",
+    "address": "23-15 44th Rd, Queens, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
-    "op": "1 OP",
-    "emails": ["CourtSquare.Leasing@rockrose.com"],
-    "phones": ["+1 (718) 606-6677"],
-    "flags": []
+    "mapLabel": "Lumen",
+    "website": "https://lumenlic.com/",
+    "op": "0 OP",
+    "emails": [
+      "lumen@mns.com"
+    ],
+    "phones": [
+      "(212) 470-0846"
+    ],
+    "flags": [],
+    "notes": "Open until 6 PM."
   },
   {
     "id": 9,
@@ -117,278 +315,498 @@
     "lat": 40.7449,
     "lng": -73.9587,
     "area": "LIC",
+    "address": "",
     "price": "Ask",
     "type": [],
+    "mapLabel": "Cove",
     "website": "",
     "op": "1 OP",
-    "emails": ["CourtSquare.Leasing@rockrose.com"],
-    "phones": ["+1 (718) 606-6677"],
-    "flags": []
-  },
-  {
-    "id": 10,
-    "name": "Watermark",
-    "lat": 40.7431,
-    "lng": -73.9565,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
-    "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 11,
-    "name": "The Forge",
-    "lat": 40.744,
-    "lng": -73.9398,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
-    "op": "0 OP",
-    "emails": ["INFO@RentTheForge.com"],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 12,
-    "name": "Jackson Park LIC",
-    "lat": 40.7461,
-    "lng": -73.9416,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
-    "op": "0 OP",
-    "emails": ["leasing@jacksonparklic.com"],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 13,
-    "name": "ALTA+",
-    "lat": 40.7489,
-    "lng": -73.9391,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
-    "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 14,
-    "name": "SVEN",
-    "lat": 40.7481,
-    "lng": -73.9382,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
-    "op": "0 OP",
-    "emails": ["svenleasing@durst.org", "SvenLeasing@durst.org"],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 15,
-    "name": "1 QPS",
-    "lat": 40.7501,
-    "lng": -73.9422,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
-    "op": "",
-    "emails": ["shuser@stonehengenyc.com"],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "CourtSquare.Leasing@rockrose.com"
+    ],
+    "phones": [
+      "+1 (718) 606-6677"
+    ],
+    "flags": [],
+    "notes": ""
   },
   {
     "id": 16,
     "name": "Packard Square",
-    "lat": 40.7426,
-    "lng": -73.9503,
+    "lat": 40.751463,
+    "lng": -73.940062,
     "area": "LIC",
+    "address": "41-34 Crescent St, Astoria, NY 11101",
     "price": "Ask",
     "type": [],
+    "mapLabel": "Packard Square",
     "website": "",
     "op": "",
-    "emails": ["info@packardsquare.com"],
+    "emails": [
+      "info@packardsquare.com"
+    ],
     "phones": [],
-    "flags": []
+    "flags": [],
+    "notes": ""
   },
   {
-    "id": 17,
-    "name": "Lumen",
-    "lat": 40.7474,
-    "lng": -73.9427,
+    "id": 29,
+    "name": "4615 Center Blvd",
+    "lat": 40.747227,
+    "lng": -73.956073,
     "area": "LIC",
+    "address": "46-15 Center Blvd, Long Island City, NY 11109",
     "price": "Ask",
     "type": [],
-    "website": "",
-    "op": "0 OP",
-    "emails": ["lumen@mns.com"],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 18,
-    "name": "5241 Center Blvd",
-    "lat": 40.7504,
-    "lng": -73.9581,
-    "area": "LIC",
-    "price": "Ask",
-    "type": [],
-    "website": "",
+    "mapLabel": "4615 CB",
+    "website": "https://www.maltdrive.com/",
     "op": "",
-    "emails": ["emil.popicg@tfc.com"],
-    "phones": [],
-    "flags": []
+    "emails": [],
+    "phones": [
+      "(718) 606-9440"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 30,
+    "name": "4610 Center Blvd",
+    "lat": 40.74744,
+    "lng": -73.956866,
+    "area": "LIC",
+    "address": "46-10 Center Blvd, Long Island City, NY 11109",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "4610 CB",
+    "website": "https://www.maltdrive.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(718) 606-9440"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 31,
+    "name": "4705 Center Boulevard Apartments by Rockrose",
+    "lat": 40.745825,
+    "lng": -73.956415,
+    "area": "LIC",
+    "address": "47-05 Center Blvd, Long Island City, NY 11109",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "4705 CB",
+    "website": "https://rockrose.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(718) 606-1879"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
   },
   {
     "id": 19,
     "name": "5203 Center Blvd",
-    "lat": 40.7511,
-    "lng": -73.9589,
+    "lat": 40.74195,
+    "lng": -73.959712,
     "area": "LIC",
+    "address": "52-03 Center Blvd, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
+    "mapLabel": "5203 CB",
+    "website": "https://www.maltdrive.com/",
     "op": "",
-    "emails": ["MaltDriveLeasing@tfc.com"],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "MaltDriveLeasing@tfc.com"
+    ],
+    "phones": [
+      "(212) 353-5850"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 18,
+    "name": "5241 Center Blvd",
+    "lat": 40.741259,
+    "lng": -73.960564,
+    "area": "LIC",
+    "address": "52-41 Center Blvd, Long Island City, NY 11101",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "5241 CB",
+    "website": "https://www.maltdrive.com/",
+    "op": "",
+    "emails": [
+      "emil.popicg@tfc.com"
+    ],
+    "phones": [
+      "(212) 353-5850"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday."
   },
   {
     "id": 20,
     "name": "Gotham Point",
-    "lat": 40.7442,
-    "lng": -73.9598,
+    "lat": 40.739278,
+    "lng": -73.961454,
     "area": "LIC",
+    "address": "1-15 57th Ave, Long Island City, NY 11101",
     "price": "Ask",
     "type": [],
-    "website": "",
+    "mapLabel": "Gotham Point",
+    "website": "https://www.gothampoint.com/",
     "op": "",
-    "emails": ["Leasing@GothamPoint.com"],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "Leasing@GothamPoint.com"
+    ],
+    "phones": [
+      "(332) 378-1962"
+    ],
+    "flags": [],
+    "notes": "Closes at 6:30 PM. Opens 10:30 AM Tuesday."
   },
   {
-    "id": 21,
-    "name": "Forest View Residences",
-    "lat": 40.7287,
-    "lng": -73.8341,
-    "area": "Queens",
-    "price": "2550-3550",
-    "type": ["Studio", "1B", "2B"],
-    "website": "https://example.com/forest-view-residences",
-    "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 22,
-    "name": "Queens Harbor",
-    "lat": 40.7443,
-    "lng": -73.7697,
-    "area": "Queens",
-    "price": "3100-4200",
-    "type": ["1B", "2B"],
-    "website": "https://example.com/queens-harbor",
-    "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
-  },
-  {
-    "id": 23,
-    "name": "Nevins House",
-    "lat": 40.6883,
-    "lng": -73.9818,
+    "id": 68,
+    "name": "Magnolia Dumbo",
+    "lat": 40.702181,
+    "lng": -73.98612,
     "area": "DTBK",
-    "price": "3400-5100",
-    "type": ["Studio", "1B", "2B"],
-    "website": "https://example.com/nevins-house",
+    "address": "160 Front St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Magnolia",
+    "website": "https://magnolia-dumbo.com/",
     "op": "",
     "emails": [],
-    "phones": [],
-    "flags": []
+    "phones": [
+      "(833) 362-0821",
+      "(833) 599-0257"
+    ],
+    "flags": [],
+    "notes": "Closes at 6 PM. Opens 9 AM Tuesday. Has a schedule.tours link."
   },
   {
-    "id": 24,
-    "name": "Bridgeline Tower",
-    "lat": 40.6952,
-    "lng": -73.9874,
+    "id": 69,
+    "name": "The Amberly Apartments",
+    "lat": 40.6981,
+    "lng": -73.98656,
     "area": "DTBK",
-    "price": "3800-5600",
-    "type": ["1B", "2B"],
-    "website": "https://example.com/bridgeline-tower",
+    "address": "120 Nassau St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Amberly",
+    "website": "https://theamberlybk.com/",
     "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "info@theamberlybk.com"
+    ],
+    "phones": [
+      "(718) 246-1200"
+    ],
+    "flags": [],
+    "notes": "Closes at 6 PM. Opens 9 AM Tuesday."
   },
   {
-    "id": 25,
-    "name": "Journal Point",
-    "lat": 40.7322,
-    "lng": -74.0637,
-    "area": "JSQ",
-    "price": "2750-3600",
-    "type": ["Studio", "1B"],
-    "website": "https://example.com/journal-point",
+    "id": 70,
+    "name": "22 Chapel",
+    "lat": 40.697071,
+    "lng": -73.985785,
+    "area": "DTBK",
+    "address": "22 Chapel St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "22 Chapel",
+    "website": "https://22chapel.com/",
     "op": "",
     "emails": [],
-    "phones": [],
-    "flags": []
+    "phones": [
+      "(718) 550-0022"
+    ],
+    "flags": [],
+    "notes": ""
   },
   {
-    "id": 26,
-    "name": "Hudson Lofts",
-    "lat": 40.7282,
-    "lng": -74.0375,
-    "area": "JSQ",
-    "price": "2950-4300",
-    "type": ["Studio", "1B", "2B"],
-    "website": "https://example.com/hudson-lofts",
+    "id": 71,
+    "name": "Brooklyn Gold",
+    "lat": 40.696776,
+    "lng": -73.98298,
+    "area": "DTBK",
+    "address": "257 Gold St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "BK Gold",
+    "website": "https://bklyngold.com/",
     "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
+    "emails": [
+      "INFO@BKLYNGOLD.COM"
+    ],
+    "phones": [
+      "(718) 522-3500"
+    ],
+    "flags": [],
+    "notes": "Closes at 6 PM. Opens 10 AM Tuesday."
   },
   {
-    "id": 27,
-    "name": "Port Imperial Green",
-    "lat": 40.7882,
-    "lng": -74.0144,
-    "area": "West NY",
-    "price": "3000-4500",
-    "type": ["Studio", "1B", "2B"],
-    "website": "https://example.com/port-imperial-green",
-    "op": "",
-    "emails": [],
-    "phones": [],
-    "flags": []
+    "id": 72,
+    "name": "BKLYN AIR",
+    "lat": 40.695045,
+    "lng": -73.98295,
+    "area": "DTBK",
+    "address": "309 Gold St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "BKLYN AIR",
+    "website": "https://bklynair.com/",
+    "op": "0 OP",
+    "emails": [
+      "info@bklynair.com"
+    ],
+    "phones": [
+      "(718) 254-1247"
+    ],
+    "flags": [],
+    "notes": ""
   },
   {
-    "id": 28,
-    "name": "Cliffside Collection",
-    "lat": 40.7872,
-    "lng": -74.0102,
-    "area": "West NY",
-    "price": "3600-5200",
-    "type": ["1B", "2B"],
-    "website": "https://example.com/cliffside-collection",
+    "id": 84,
+    "name": "The Eagle",
+    "lat": 40.693264,
+    "lng": -73.982053,
+    "area": "DTBK",
+    "address": "86 Fleet Pl #18F, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "The Eagle",
+    "website": "https://eagle86fleet.com/",
+    "op": "0 OP",
+    "emails": [],
+    "phones": [
+      "(718) 596-8181"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Open until 7 PM."
+  },
+  {
+    "id": 85,
+    "name": "Willoughby",
+    "lat": 40.69148,
+    "lng": -73.97995,
+    "area": "DTBK",
+    "address": "196 Willoughby St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Willoughby",
+    "website": "https://willoughbybk.com/",
     "op": "",
     "emails": [],
-    "phones": [],
-    "flags": []
+    "phones": [
+      "(888) 629-8625"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 9 AM Tuesday. Located in Long Island University Brooklyn. Has a schedule.tours link."
+  },
+  {
+    "id": 86,
+    "name": "The Paxton",
+    "lat": 40.688875,
+    "lng": -73.981424,
+    "area": "DTBK",
+    "address": "540 Fulton St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Paxton",
+    "website": "https://thepaxtonbk.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(646) 680-9332"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 100,
+    "name": "The Alanza Apartments",
+    "lat": 40.680554,
+    "lng": -73.960606,
+    "area": "DTBK",
+    "address": "957 Atlantic Ave, Brooklyn, NY 11238",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Alanza",
+    "website": "https://alanza.nyc/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(718) 304-5301"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 101,
+    "name": "Plank Road",
+    "lat": 40.6821,
+    "lng": -73.97366,
+    "area": "DTBK",
+    "address": "662 Pacific St, Brooklyn, NY 11217",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Plank Road",
+    "website": "https://plankroadbk.com/",
+    "op": "0 OP",
+    "emails": [
+      "info@plankroadbk.com"
+    ],
+    "phones": [
+      "(718) 650-2662"
+    ],
+    "flags": [],
+    "notes": "Closes at 6 PM. Opens 10 AM Tuesday."
+  },
+  {
+    "id": 102,
+    "name": "Caesura",
+    "lat": 40.687042,
+    "lng": -73.978474,
+    "area": "DTBK",
+    "address": "280 Ashland Pl, Brooklyn, NY 11217",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Caesura",
+    "website": "https://caesurabk.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(646) 978-5504"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 10 AM Tuesday. Has a 2tour.site link."
+  },
+  {
+    "id": 103,
+    "name": "Hub",
+    "lat": 40.687232,
+    "lng": -73.981136,
+    "area": "DTBK",
+    "address": "333 Schermerhorn St, Brooklyn, NY 11217",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Hub",
+    "website": "https://hubbk.com/",
+    "op": "",
+    "emails": [
+      "HUBlife@HUBBK.com"
+    ],
+    "phones": [
+      "(718) 395-4072"
+    ],
+    "flags": [],
+    "notes": "Closes at 6 PM. Opens 9 AM Tuesday. Has a schedule.tours link."
+  },
+  {
+    "id": 104,
+    "name": "The Guild Apartments",
+    "lat": 40.688208,
+    "lng": -73.98243,
+    "area": "DTBK",
+    "address": "310 Livingston St, Brooklyn, NY 11217",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Guild",
+    "website": "https://theguildbk.com/",
+    "op": "",
+    "emails": [
+      "INFO@THEGUILDBK.COM"
+    ],
+    "phones": [
+      "(718) 400-0310"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 120,
+    "name": "The Addison",
+    "lat": 40.688759,
+    "lng": -73.985118,
+    "area": "DTBK",
+    "address": "225 Schermerhorn St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Addison",
+    "website": "https://addisonbklyn.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(929) 547-6629"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 9 AM Tuesday. Located in Hoyt - Schermerhorn Sts."
+  },
+  {
+    "id": 121,
+    "name": "Hoyt & Horn",
+    "lat": 40.68925,
+    "lng": -73.985704,
+    "area": "DTBK",
+    "address": "45 Hoyt St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Hoyt & Horn",
+    "website": "https://hoytandhorn.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(347) 305-7691"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Closes at 6 PM. Opens 10 AM Tuesday. Has a 2tour.site link."
+  },
+  {
+    "id": 122,
+    "name": "Avalon Willoughby Square",
+    "lat": 40.691922,
+    "lng": -73.984472,
+    "area": "DTBK",
+    "address": "214 Duffield St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Avalon Willoughby Square",
+    "website": "https://www.avaloncommunities.com/",
+    "op": "0 OP",
+    "emails": [
+      "Ivy.Lane11@bozzuto.com"
+    ],
+    "phones": [
+      "(718) 514-7892"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Open until 8:30 PM. Floor 1 at Jay St - MetroTech."
+  },
+  {
+    "id": 123,
+    "name": "DWTN BK",
+    "lat": 40.695426,
+    "lng": -73.981971,
+    "area": "DTBK",
+    "address": "67 Prince St, Brooklyn, NY 11201",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "DWTN BK",
+    "website": "https://dwtnbk.com/",
+    "op": "1 OP",
+    "emails": [
+      "leasing@dwtnbk.com"
+    ],
+    "phones": [
+      "(718) 223-4236"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Opens 9 AM Tuesday."
   }
 ]

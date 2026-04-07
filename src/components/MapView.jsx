@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import Map, { Marker, NavigationControl, ScaleControl } from 'react-map-gl';
 import BuildingMarker from './Marker';
@@ -8,6 +8,11 @@ const DEFAULT_VIEW = {
   latitude: 40.736,
   zoom: 10.4,
 };
+const LABEL_ZOOM_THRESHOLD = 12.2;
+
+function hasCoordinates(building) {
+  return Number.isFinite(building?.lat) && Number.isFinite(building?.lng);
+}
 
 function MissingTokenState() {
   return (
@@ -33,29 +38,43 @@ function MapView({
 }) {
   const token = import.meta.env.VITE_MAPBOX_TOKEN;
   const mapRef = useRef(null);
+  const [showLabels, setShowLabels] = useState(DEFAULT_VIEW.zoom >= LABEL_ZOOM_THRESHOLD);
+  const mappableBuildings = useMemo(
+    () => buildings.filter(hasCoordinates),
+    [buildings],
+  );
+  const selectedMappableBuilding = useMemo(
+    () => (hasCoordinates(selectedBuilding) ? selectedBuilding : null),
+    [selectedBuilding],
+  );
 
   useEffect(() => {
-    if (!token || !mapRef.current || buildings.length === 0) {
+    if (!token || !mapRef.current || mappableBuildings.length === 0) {
       return;
     }
 
     const map = mapRef.current.getMap();
-    const rightPadding =
-      typeof window !== 'undefined' && window.innerWidth >= 1024 ? 420 : 40;
+    const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+    const focusPadding = isDesktop
+      ? { top: 80, right: 420, bottom: 80, left: 80 }
+      : { top: 56, right: 24, bottom: 300, left: 24 };
+    const boundsPadding = isDesktop
+      ? 110
+      : { top: 56, right: 28, bottom: 56, left: 28 };
 
-    if (selectedBuilding) {
+    if (selectedMappableBuilding) {
       map.flyTo({
-        center: [selectedBuilding.lng, selectedBuilding.lat],
+        center: [selectedMappableBuilding.lng, selectedMappableBuilding.lat],
         zoom: 13.4,
         duration: 900,
-        padding: { top: 80, right: rightPadding, bottom: 80, left: 80 },
+        padding: focusPadding,
       });
       return;
     }
 
-    if (buildings.length === 1) {
+    if (mappableBuildings.length === 1) {
       map.flyTo({
-        center: [buildings[0].lng, buildings[0].lat],
+        center: [mappableBuildings[0].lng, mappableBuildings[0].lat],
         zoom: 13,
         duration: 900,
       });
@@ -63,14 +82,14 @@ function MapView({
     }
 
     const bounds = new mapboxgl.LngLatBounds();
-    buildings.forEach((building) => bounds.extend([building.lng, building.lat]));
+    mappableBuildings.forEach((building) => bounds.extend([building.lng, building.lat]));
 
     map.fitBounds(bounds, {
-      padding: 110,
+      padding: boundsPadding,
       duration: 900,
       maxZoom: 13,
     });
-  }, [buildings, focusNonce, selectedBuilding, token]);
+  }, [focusNonce, mappableBuildings, selectedMappableBuilding, token]);
 
   if (!token) {
     return <MissingTokenState />;
@@ -83,12 +102,18 @@ function MapView({
       mapboxAccessToken={token}
       mapStyle="mapbox://styles/mapbox/light-v11"
       attributionControl={false}
+      onZoom={(event) => {
+        const nextShowLabels = event.viewState.zoom >= LABEL_ZOOM_THRESHOLD;
+        setShowLabels((currentValue) =>
+          currentValue === nextShowLabels ? currentValue : nextShowLabels,
+        );
+      }}
       style={{ width: '100%', height: '100%' }}
     >
       <NavigationControl position="bottom-right" showCompass={false} />
       <ScaleControl position="bottom-left" />
 
-      {buildings.map((building) => (
+      {mappableBuildings.map((building) => (
         <Marker
           key={building.id}
           longitude={building.lng}
@@ -99,6 +124,7 @@ function MapView({
             building={building}
             isSelected={selectedBuilding?.id === building.id}
             isFavorite={favoriteIds.includes(building.id)}
+            showLabel={showLabels}
             onClick={() => onSelectBuilding(building.id)}
           />
         </Marker>

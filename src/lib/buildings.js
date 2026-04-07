@@ -1,4 +1,3 @@
-export const AREA_OPTIONS = ['LIC', 'Queens', 'DTBK', 'JSQ', 'West NY'];
 export const TYPE_OPTIONS = ['Studio', '1B', '2B'];
 export const PRICE_OPTIONS = ['Under $3k', '$3k-$4k', '$4k+'];
 

@@ -1,4 +1,38 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
 import BuildingCard from './BuildingCard';
+
+const CARD_HEIGHT = 184;
+const CARD_GAP = 12;
+const VISIBLE_CARDS = 4;
+const VIEWPORT_HEIGHT = CARD_HEIGHT * VISIBLE_CARDS + CARD_GAP * (VISIBLE_CARDS - 1);
+
+function ArrowButton({ direction, onClick, disabled }) {
+  const rotateClass = direction === 'up' ? '-rotate-90' : 'rotate-90';
+
+  return (
+    <button
+      type="button"
+      className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${
+        disabled
+          ? 'cursor-not-allowed border-[var(--line)] bg-[var(--bg-soft)] text-[var(--text-muted)]'
+          : 'border-[var(--line)] bg-white/80 text-[var(--text-main)] hover:border-[var(--line-strong)] hover:bg-white'
+      }`}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={`Scroll ${direction}`}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className={`h-4 w-4 ${rotateClass}`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      >
+        <path d="m9 5 7 7-7 7" />
+      </svg>
+    </button>
+  );
+}
 
 function BuildingList({
   buildings,
@@ -8,19 +42,163 @@ function BuildingList({
   onToggleFavorite,
   onOpenWebsite,
 }) {
+  const listRef = useRef(null);
+  const dragStateRef = useRef({
+    isDragging: false,
+    startY: 0,
+    startScrollTop: 0,
+    pointerId: null,
+  });
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const maxScroll = useMemo(() => {
+    if (buildings.length <= VISIBLE_CARDS) {
+      return 0;
+    }
+
+    return (buildings.length - VISIBLE_CARDS) * (CARD_HEIGHT + CARD_GAP);
+  }, [buildings.length]);
+
+  useEffect(() => {
+    const listNode = listRef.current;
+
+    if (!listNode) {
+      return;
+    }
+
+    const syncScroll = () => setScrollPosition(listNode.scrollTop);
+    syncScroll();
+    listNode.addEventListener('scroll', syncScroll, { passive: true });
+
+    return () => listNode.removeEventListener('scroll', syncScroll);
+  }, [buildings.length]);
+
+  useEffect(() => {
+    if (!listRef.current || !selectedBuildingId) {
+      return;
+    }
+
+    const selectedIndex = buildings.findIndex((building) => building.id === selectedBuildingId);
+
+    if (selectedIndex < 0) {
+      return;
+    }
+
+    listRef.current.scrollTo({
+      top: selectedIndex * (CARD_HEIGHT + CARD_GAP),
+      behavior: 'smooth',
+    });
+  }, [buildings, selectedBuildingId]);
+
+  const scrollByStep = (direction) => {
+    if (!listRef.current) {
+      return;
+    }
+
+    listRef.current.scrollBy({
+      top: direction * (CARD_HEIGHT + CARD_GAP),
+      behavior: 'smooth',
+    });
+  };
+
+  const handlePointerDown = (event) => {
+    if (event.pointerType === 'mouse') {
+      const interactiveTarget = event.target.closest('button, a, input, textarea');
+
+      if (interactiveTarget) {
+        return;
+      }
+    }
+
+    const listNode = listRef.current;
+
+    if (!listNode) {
+      return;
+    }
+
+    dragStateRef.current = {
+      isDragging: true,
+      startY: event.clientY,
+      startScrollTop: listNode.scrollTop,
+      pointerId: event.pointerId,
+    };
+
+    listNode.setPointerCapture(event.pointerId);
+    listNode.style.cursor = 'grabbing';
+    listNode.style.userSelect = 'none';
+  };
+
+  const handlePointerMove = (event) => {
+    const listNode = listRef.current;
+    const dragState = dragStateRef.current;
+
+    if (!listNode || !dragState.isDragging) {
+      return;
+    }
+
+    const nextScrollTop = dragState.startScrollTop - (event.clientY - dragState.startY);
+    listNode.scrollTop = nextScrollTop;
+  };
+
+  const endDrag = () => {
+    const listNode = listRef.current;
+
+    dragStateRef.current = {
+      isDragging: false,
+      startY: 0,
+      startScrollTop: 0,
+      pointerId: null,
+    };
+
+    if (!listNode) {
+      return;
+    }
+
+    listNode.style.cursor = '';
+    listNode.style.userSelect = '';
+  };
+
+  const canScrollUp = scrollPosition > 4;
+  const canScrollDown = scrollPosition < maxScroll - 4;
+
   return (
-    <section className="glass-panel flex min-h-[520px] flex-col rounded-[32px] p-4 sm:p-5">
+    <section className="glass-panel flex min-h-0 flex-col rounded-[32px] p-4 sm:p-5 xl:min-h-[520px]">
       <div className="flex items-center justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-[var(--text-muted)]">Portfolio View</p>
           <h2 className="mt-1 text-xl font-semibold tracking-tight">Buildings</h2>
         </div>
-        <div className="rounded-full border border-[var(--line)] bg-white/75 px-3 py-2 text-sm text-[var(--text-muted)]">
-          {buildings.length} shown
+        <div className="flex items-center gap-2">
+          <div className="rounded-full border border-[var(--line)] bg-white/75 px-3 py-2 text-sm text-[var(--text-muted)]">
+            {buildings.length} shown
+          </div>
+          <ArrowButton direction="up" onClick={() => scrollByStep(-1)} disabled={!canScrollUp} />
+          <ArrowButton direction="down" onClick={() => scrollByStep(1)} disabled={!canScrollDown} />
         </div>
       </div>
 
-      <div className="soft-scrollbar mt-4 flex-1 space-y-3 overflow-y-auto pr-1">
+      <div
+        ref={listRef}
+        className="soft-scrollbar mt-4 space-y-3 overflow-y-auto pr-1 [scrollbar-gutter:stable] [scroll-snap-type:y_proximity] [scroll-behavior:smooth] touch-pan-y"
+        style={{ height: VIEWPORT_HEIGHT }}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
+        onPointerLeave={endDrag}
+        onKeyDown={(event) => {
+          if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            scrollByStep(-1);
+          }
+
+          if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            scrollByStep(1);
+          }
+        }}
+        tabIndex={0}
+      >
         {buildings.length > 0 ? (
           buildings.map((building) => (
             <BuildingCard
@@ -31,6 +209,7 @@ function BuildingList({
               onSelect={() => onSelectBuilding(building.id)}
               onToggleFavorite={() => onToggleFavorite(building.id)}
               onOpenWebsite={() => onOpenWebsite(building.website)}
+              className="snap-start"
             />
           ))
         ) : (

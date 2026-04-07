@@ -21,20 +21,23 @@ function BuildingCard({
   onSelect,
   onToggleFavorite,
   onOpenWebsite,
+  className = '',
 }) {
   return (
     <article
-      className={`rounded-[28px] border p-4 transition ${
+      className={`flex h-[184px] flex-col overflow-hidden rounded-[28px] border p-4 transition ${
         isSelected
           ? 'border-pine bg-[rgba(220,227,210,0.72)] shadow-sm'
           : 'border-[var(--line)] bg-white/80 hover:-translate-y-0.5 hover:border-[var(--line-strong)] hover:bg-white'
-      }`}
+      } ${className}`}
     >
       <div className="flex items-start justify-between gap-3">
-        <button type="button" className="flex-1 text-left" onClick={onSelect}>
-          <div className="flex items-center gap-2">
-            <h3 className="text-lg font-semibold tracking-tight">{building.name}</h3>
-            <span className="rounded-full bg-[var(--bg-soft)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+        <button type="button" className="min-w-0 flex-1 text-left" onClick={onSelect}>
+          <div className="flex min-w-0 items-center gap-2">
+            <h3 className="min-w-0 flex-1 truncate text-[1.65rem] font-semibold tracking-tight leading-none">
+              {building.name}
+            </h3>
+            <span className="shrink-0 rounded-full bg-[var(--bg-soft)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {building.area}
             </span>
           </div>
@@ -50,7 +53,7 @@ function BuildingCard({
 
         <button
           type="button"
-          className={`rounded-full border p-2 transition ${
+          className={`shrink-0 rounded-full border p-2 transition ${
             isFavorite
               ? 'border-pine bg-pine text-white'
               : 'border-[var(--line)] bg-white text-[var(--text-muted)] hover:border-[var(--line-strong)] hover:text-pine'
@@ -62,42 +65,42 @@ function BuildingCard({
         </button>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-3 flex flex-wrap gap-2">
         {building.type.length > 0 ? (
           building.type.map((type) => (
             <span
               key={type}
-              className="rounded-full border border-[var(--line)] bg-[var(--bg-soft)] px-3 py-1 text-xs font-medium text-[var(--text-muted)]"
+              className="rounded-full border border-[var(--line)] bg-[var(--bg-soft)] px-3 py-1 text-[11px] font-medium text-[var(--text-muted)]"
             >
               {type}
             </span>
           ))
         ) : (
-          <span className="rounded-full border border-dashed border-[var(--line)] bg-[var(--bg-soft)] px-3 py-1 text-xs font-medium text-[var(--text-muted)]">
+          <span className="rounded-full border border-dashed border-[var(--line)] bg-[var(--bg-soft)] px-3 py-1 text-[11px] font-medium text-[var(--text-muted)]">
             Type info pending
           </span>
         )}
         {building.flags?.map((flag) => (
           <span
             key={flag}
-            className="rounded-full border border-[rgba(35,66,50,0.08)] bg-[rgba(220,227,210,0.72)] px-3 py-1 text-xs font-medium text-pine"
+            className="rounded-full border border-[rgba(35,66,50,0.08)] bg-[rgba(220,227,210,0.72)] px-3 py-1 text-[11px] font-medium text-pine"
           >
             {flag}
           </span>
         ))}
       </div>
 
-      <div className="mt-4 flex items-center justify-between gap-3">
+      <div className="mt-auto flex items-center justify-between gap-3 pt-3">
         <button
           type="button"
-          className="rounded-full bg-pine px-4 py-2 text-sm font-medium text-white transition hover:bg-moss"
+          className="min-h-11 rounded-full bg-pine px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-moss"
           onClick={onSelect}
         >
-          View Details
+          Details
         </button>
         <button
           type="button"
-          className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+          className={`min-h-11 shrink-0 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] transition ${
             building.website
               ? 'border-[var(--line)] bg-white text-[var(--text-main)] hover:border-[var(--line-strong)]'
               : 'cursor-not-allowed border-[var(--line)] bg-[var(--bg-soft)] text-[var(--text-muted)]'
@@ -105,7 +108,7 @@ function BuildingCard({
           onClick={onOpenWebsite}
           disabled={!building.website}
         >
-          {building.website ? 'Official Site' : 'No Website Yet'}
+          {building.website ? 'Official Site' : 'No Website'}
         </button>
       </div>
     </article>

@@ -1,0 +1,259 @@
+import { readFile, writeFile } from 'node:fs/promises';
+
+const CURRENT_DATA_PATH = new URL('../building-data-current.yaml', import.meta.url);
+const APP_DATA_PATH = new URL('../src/data/buildings.json', import.meta.url);
+const ENV_PATH = new URL('../.env', import.meta.url);
+
+const NAME_ALIASES = {
+  'arc luxury long island city apartments': 'arc',
+  'sven luxury apartment rentals lic': 'sven',
+  'heritage tower 28': 'tower 28',
+  'heritage 27 on 27th': '27 on 27th',
+  'linc lic apartments by rockrose': 'linc lic',
+  'eagle lofts by rockrose': 'eagle lofts',
+  'hayden lic apartments by rockrose': 'hayden lic',
+  '5pointzlic': '5pointz',
+  'watermark lic': 'watermark',
+  'the amberly apartments': 'amberly',
+  'brooklyn gold': 'bklyn gold',
+  'the eagle': 'eagle',
+  'the paxton': 'paxton',
+  'the alanza apartments': 'alanza',
+  'the guild apartments': 'guild',
+  'the addison': 'addison',
+};
+
+const MAP_LABEL_ALIASES = {
+  'arc luxury long island city apartments': 'ARC',
+  'sven luxury apartment rentals lic': 'SVEN',
+  'heritage tower 28': 'Tower 28',
+  'heritage 27 on 27th': '27 on 27th',
+  'jackson park lic': 'Jackson Park',
+  'linc lic apartments by rockrose': 'Linc LIC',
+  'eagle lofts by rockrose': 'Eagle Lofts',
+  'hayden lic apartments by rockrose': 'Hayden LIC',
+  '5pointzlic': '5Pointz',
+  'watermark lic': 'Watermark',
+  '8 court square': '8 Court',
+  '4705 center boulevard apartments by rockrose': '4705 CB',
+  '4615 center blvd': '4615 CB',
+  '4610 center blvd': '4610 CB',
+  '5203 center blvd': '5203 CB',
+  '5241 center blvd': '5241 CB',
+  'magnolia dumbo': 'Magnolia',
+  'the amberly apartments': 'Amberly',
+  'the eagle': 'The Eagle',
+  'willoughby': 'Willoughby',
+  'the paxton': 'Paxton',
+  'the alanza apartments': 'Alanza',
+  'the addison': 'Addison',
+  'hoyt horn': 'Hoyt & Horn',
+  'plank road': 'Plank Road',
+  'caesura': 'Caesura',
+  'hub': 'Hub',
+  'the guild apartments': 'Guild',
+  'brooklyn gold': 'BK Gold',
+  'bklyn air': 'BKLYN AIR',
+};
+
+function normalizeName(value) {
+  return String(value)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function parseYamlBlocks(content) {
+  const rows = [];
+  let currentRow = null;
+
+  for (const rawLine of content.split('\n')) {
+    const line = rawLine.replace(/\r/g, '');
+
+    if (line.startsWith('- name:')) {
+      if (currentRow) {
+        rows.push(currentRow);
+      }
+
+      currentRow = { name: line.slice(7).trim() };
+      continue;
+    }
+
+    if (!currentRow || !line.startsWith('  ')) {
+      continue;
+    }
+
+    const separatorIndex = line.indexOf(':');
+
+    if (separatorIndex === -1) {
+      continue;
+    }
+
+    const key = line.slice(2, separatorIndex).trim();
+    const value = line.slice(separatorIndex + 1).trim();
+    currentRow[key] = value;
+  }
+
+  if (currentRow) {
+    rows.push(currentRow);
+  }
+
+  return rows;
+}
+
+function splitList(value) {
+  if (!value) {
+    return [];
+  }
+
+  return value
+    .split(',')
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function getMatchKey(name) {
+  const normalized = normalizeName(name);
+  return NAME_ALIASES[normalized] ?? normalized;
+}
+
+function deriveMapLabel(name, existingRecord) {
+  const normalized = normalizeName(name);
+
+  if (MAP_LABEL_ALIASES[normalized]) {
+    return MAP_LABEL_ALIASES[normalized];
+  }
+
+  if (existingRecord?.mapLabel) {
+    return existingRecord.mapLabel;
+  }
+
+  return name;
+}
+
+function dedupeRows(rows) {
+  const rowMap = new Map();
+
+  for (const row of rows) {
+    rowMap.set(normalizeName(row.name), row);
+  }
+
+  return [...rowMap.values()];
+}
+
+function parseEnvToken(content) {
+  const match = content.match(/^VITE_MAPBOX_TOKEN=(.+)$/m);
+  return match?.[1]?.trim() ?? '';
+}
+
+function deriveFlags(record, existingRecord) {
+  const flags = new Set(existingRecord?.flags ?? []);
+
+  if (record.notes?.toLowerCase().includes('no 2b')) {
+    flags.add('No 2B');
+  }
+
+  return [...flags];
+}
+
+async function geocodeAddress(address, token) {
+  const url = new URL(
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json`,
+  );
+  url.searchParams.set('access_token', token);
+  url.searchParams.set('limit', '1');
+  url.searchParams.set('country', 'us');
+  url.searchParams.set('types', 'address');
+  url.searchParams.set('autocomplete', 'false');
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Geocoding failed for ${address}: ${response.status}`);
+  }
+
+  const payload = await response.json();
+  const feature = payload.features?.[0];
+
+  if (!feature?.center) {
+    return null;
+  }
+
+  return {
+    lng: feature.center[0],
+    lat: feature.center[1],
+  };
+}
+
+async function main() {
+  const [yamlContent, jsonContent, envContent] = await Promise.all([
+    readFile(CURRENT_DATA_PATH, 'utf8'),
+    readFile(APP_DATA_PATH, 'utf8'),
+    readFile(ENV_PATH, 'utf8'),
+  ]);
+
+  const token = parseEnvToken(envContent);
+
+  if (!token) {
+    throw new Error('Missing VITE_MAPBOX_TOKEN in .env');
+  }
+
+  const currentRows = dedupeRows(parseYamlBlocks(yamlContent));
+  const appData = JSON.parse(jsonContent);
+  const currentRowKeys = new Set(currentRows.map((row) => getMatchKey(row.name)));
+  const existingByName = new Map();
+
+  for (const record of appData) {
+    existingByName.set(getMatchKey(record.name), record);
+  }
+
+  let nextId = Math.max(...appData.map((record) => record.id), 0) + 1;
+  const geocodeCache = new Map();
+
+  const nextRecords = [];
+
+  for (const row of currentRows) {
+    const matchKey = getMatchKey(row.name);
+    const existingRecord = existingByName.get(matchKey);
+
+    let coordinates = null;
+
+    if (row.address) {
+      coordinates = geocodeCache.get(row.address);
+
+      if (!coordinates) {
+        coordinates = await geocodeAddress(row.address, token);
+        geocodeCache.set(row.address, coordinates);
+      }
+    }
+
+    nextRecords.push({
+      id: existingRecord?.id ?? nextId++,
+      name: row.name,
+      lat: coordinates?.lat ?? existingRecord?.lat ?? null,
+      lng: coordinates?.lng ?? existingRecord?.lng ?? null,
+      area: row.area || existingRecord?.area || '',
+      address: row.address || existingRecord?.address || '',
+      price: existingRecord?.price ?? 'Ask',
+      type: existingRecord?.type ?? [],
+      mapLabel: deriveMapLabel(row.name, existingRecord),
+      website: row.website || existingRecord?.website || '',
+      op: row.op || existingRecord?.op || '',
+      emails: row.emails ? splitList(row.emails) : (existingRecord?.emails ?? []),
+      phones: row.phones ? splitList(row.phones) : (existingRecord?.phones ?? []),
+      flags: deriveFlags(row, existingRecord),
+      notes: row.notes || existingRecord?.notes || '',
+    });
+  }
+
+  const preservedRecords = appData.filter((record) => !currentRowKeys.has(getMatchKey(record.name)));
+  const nextData = [...nextRecords, ...preservedRecords];
+  await writeFile(APP_DATA_PATH, `${JSON.stringify(nextData, null, 2)}\n`, 'utf8');
+
+  console.log(`Synced ${nextRecords.length} real records to src/data/buildings.json`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

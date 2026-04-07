@@ -2,15 +2,16 @@ function FilterGroup({ label, options, selectedOptions, onToggle }) {
   return (
     <div className="space-y-3">
       <p className="text-xs uppercase tracking-[0.22em] text-[var(--text-muted)]">{label}</p>
-      <div className="flex flex-wrap gap-2">
+      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 xl:mx-0 xl:flex-wrap xl:overflow-visible xl:px-0">
         {options.map((option) => {
-          const active = selectedOptions.includes(option);
+          const active =
+            option === 'ALL' ? selectedOptions.length === 0 : selectedOptions.includes(option);
 
           return (
             <button
               key={option}
               type="button"
-              className={`rounded-full border px-3 py-2 text-sm font-medium transition ${
+              className={`min-h-11 shrink-0 rounded-full border px-3 py-2 text-sm font-medium transition ${
                 active
                   ? 'border-pine bg-pine text-white shadow-sm'
                   : 'border-[var(--line)] bg-white/70 text-[var(--text-muted)] hover:border-[var(--line-strong)] hover:bg-white'
@@ -63,7 +64,7 @@ function FilterBar({
 
       <button
         type="button"
-        className="h-fit rounded-full border border-[var(--line)] bg-white/70 px-4 py-2.5 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
+        className="min-h-11 h-fit rounded-full border border-[var(--line)] bg-white/70 px-4 py-2.5 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white xl:justify-self-end"
         onClick={onClear}
       >
         Reset

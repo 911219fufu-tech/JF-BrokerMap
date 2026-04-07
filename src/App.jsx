@@ -6,7 +6,6 @@ import FilterBar from './components/FilterBar';
 import BuildingList from './components/BuildingList';
 import DetailPanel from './components/DetailPanel';
 import {
-  AREA_OPTIONS,
   PRICE_OPTIONS,
   TYPE_OPTIONS,
   getPriceBucket,
@@ -108,6 +107,11 @@ function App() {
   );
 
   const favoriteCount = favoriteIds.length;
+  const areaOptions = useMemo(() => {
+    const areaOrder = ['LIC', 'Queens', 'DTBK', 'JSQ', 'West NY'];
+    const existingAreas = new Set(buildings.map((building) => building.area));
+    return ['ALL', ...areaOrder.filter((area) => existingAreas.has(area))];
+  }, []);
 
   const toggleSelection = (buildingId) => {
     setSelectedBuildingId(buildingId);
@@ -127,6 +131,11 @@ function App() {
   };
 
   const updateArea = (value) => {
+    if (value === 'ALL') {
+      setSelectedAreas([]);
+      return;
+    }
+
     setSelectedAreas((currentValues) =>
       currentValues.includes(value)
         ? currentValues.filter((item) => item !== value)
@@ -212,7 +221,7 @@ function App() {
           </div>
 
           <FilterBar
-            areaOptions={AREA_OPTIONS}
+            areaOptions={areaOptions}
             priceOptions={PRICE_OPTIONS}
             typeOptions={TYPE_OPTIONS}
             selectedAreas={selectedAreas}
@@ -225,37 +234,41 @@ function App() {
           />
         </section>
 
-        <section className="grid min-h-[calc(100vh-12.5rem)] gap-4 xl:grid-cols-[minmax(340px,34%)_minmax(0,66%)]">
-          <BuildingList
-            buildings={filteredBuildings}
-            selectedBuildingId={selectedBuildingId}
-            favoriteIds={favoriteIds}
-            onSelectBuilding={toggleSelection}
-            onToggleFavorite={toggleFavorite}
-            onOpenWebsite={openWebsite}
-          />
-
-          <div className="relative min-h-[520px] overflow-hidden rounded-[32px] border border-[var(--line)] shadow-panel">
-            <Suspense fallback={<MapLoadingState />}>
-              <MapView
-                buildings={filteredBuildings}
-                selectedBuilding={selectedBuilding}
-                favoriteIds={favoriteIds}
-                focusNonce={focusNonce}
-                onSelectBuilding={toggleSelection}
-              />
-            </Suspense>
-
-            <DetailPanel
-              building={selectedBuilding}
-              isFavorite={selectedBuilding ? favoriteIds.includes(selectedBuilding.id) : false}
-              noteValue={selectedBuilding ? notesById[selectedBuilding.id] ?? '' : ''}
-              onClose={() => setSelectedBuildingId(null)}
-              onOpenWebsite={openWebsite}
-              onCopyLink={copyWebsiteLink}
+        <section className="flex flex-col gap-4 xl:grid xl:min-h-[calc(100vh-12.5rem)] xl:grid-cols-[minmax(340px,34%)_minmax(0,66%)]">
+          <div className="order-2 xl:order-1">
+            <BuildingList
+              buildings={filteredBuildings}
+              selectedBuildingId={selectedBuildingId}
+              favoriteIds={favoriteIds}
+              onSelectBuilding={toggleSelection}
               onToggleFavorite={toggleFavorite}
-              onNoteChange={updateNote}
+              onOpenWebsite={openWebsite}
             />
+          </div>
+
+          <div className="order-1 xl:order-2">
+            <div className="relative h-[54vh] min-h-[360px] overflow-hidden rounded-[32px] border border-[var(--line)] shadow-panel xl:min-h-[520px] xl:h-full">
+              <Suspense fallback={<MapLoadingState />}>
+                <MapView
+                  buildings={filteredBuildings}
+                  selectedBuilding={selectedBuilding}
+                  favoriteIds={favoriteIds}
+                  focusNonce={focusNonce}
+                  onSelectBuilding={toggleSelection}
+                />
+              </Suspense>
+
+              <DetailPanel
+                building={selectedBuilding}
+                isFavorite={selectedBuilding ? favoriteIds.includes(selectedBuilding.id) : false}
+                noteValue={selectedBuilding ? notesById[selectedBuilding.id] ?? '' : ''}
+                onClose={() => setSelectedBuildingId(null)}
+                onOpenWebsite={openWebsite}
+                onCopyLink={copyWebsiteLink}
+                onToggleFavorite={toggleFavorite}
+                onNoteChange={updateNote}
+              />
+            </div>
           </div>
         </section>
       </main>

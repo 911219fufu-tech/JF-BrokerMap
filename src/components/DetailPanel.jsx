@@ -69,24 +69,35 @@ function DetailPanel({
   onNoteChange,
 }) {
   return (
-    <aside
-      className={`absolute inset-y-0 right-0 z-10 w-full max-w-[380px] border-l border-[var(--line)] bg-[rgba(250,248,242,0.96)] p-5 shadow-[0_24px_60px_rgba(29,36,31,0.14)] backdrop-blur-xl transition-transform duration-300 ${
-        building ? 'translate-x-0' : 'translate-x-full'
-      }`}
-    >
-      {building ? (
-        <div className="flex h-full flex-col">
+    <>
+      <div
+        className={`fixed inset-0 z-40 bg-[rgba(29,36,31,0.18)] backdrop-blur-[2px] transition-opacity duration-300 lg:hidden ${
+          building ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+        onClick={onClose}
+      />
+
+      <aside
+        className={`fixed inset-x-0 bottom-0 z-50 max-h-[82vh] rounded-t-[28px] border-x border-t border-[var(--line)] bg-[rgba(250,248,242,0.97)] p-5 shadow-[0_-24px_60px_rgba(29,36,31,0.14)] backdrop-blur-xl transition-transform duration-300 lg:absolute lg:inset-y-0 lg:right-0 lg:left-auto lg:max-h-none lg:w-full lg:max-w-[380px] lg:rounded-none lg:rounded-l-[30px] lg:border-x-0 lg:border-y-0 lg:border-l lg:shadow-[0_24px_60px_rgba(29,36,31,0.14)] ${
+          building
+            ? 'translate-y-0 lg:translate-x-0'
+            : 'translate-y-full lg:translate-y-0 lg:translate-x-full'
+        }`}
+      >
+        {building ? (
+          <div className="flex max-h-[calc(82vh-2.5rem)] flex-col overflow-y-auto pr-1 soft-scrollbar lg:max-h-full lg:h-full lg:overflow-visible lg:pr-0">
+            <div className="mx-auto mb-4 h-1.5 w-14 rounded-full bg-[rgba(35,66,50,0.18)] lg:hidden" />
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs uppercase tracking-[0.24em] text-[var(--text-muted)]">Building Detail</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--text-main)]">
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--text-main)] lg:text-3xl">
                 {building.name}
               </h2>
             </div>
 
             <button
               type="button"
-              className="rounded-full border border-[var(--line)] bg-white/80 px-3 py-2 text-sm text-[var(--text-muted)] transition hover:border-[var(--line-strong)] hover:bg-white"
+              className="min-h-11 rounded-full border border-[var(--line)] bg-white/80 px-3 py-2 text-sm text-[var(--text-muted)] transition hover:border-[var(--line-strong)] hover:bg-white"
               onClick={onClose}
             >
               Close
@@ -137,7 +148,7 @@ function DetailPanel({
           <div className="mt-6 grid gap-3">
             <button
               type="button"
-              className={`rounded-full px-4 py-3 text-sm font-semibold transition ${
+              className={`min-h-11 rounded-full px-4 py-3 text-sm font-semibold transition ${
                 building.website
                   ? 'bg-pine text-white hover:bg-moss'
                   : 'cursor-not-allowed bg-[var(--bg-soft)] text-[var(--text-muted)]'
@@ -149,7 +160,7 @@ function DetailPanel({
             </button>
             <button
               type="button"
-              className={`rounded-full border px-4 py-3 text-sm font-semibold transition ${
+              className={`min-h-11 rounded-full border px-4 py-3 text-sm font-semibold transition ${
                 building.website
                   ? 'border-[var(--line)] bg-white text-[var(--text-main)] hover:border-[var(--line-strong)]'
                   : 'cursor-not-allowed border-[var(--line)] bg-[var(--bg-soft)] text-[var(--text-muted)]'
@@ -161,7 +172,7 @@ function DetailPanel({
             </button>
             <button
               type="button"
-              className={`flex items-center justify-center gap-2 rounded-full border px-4 py-3 text-sm font-semibold transition ${
+              className={`min-h-11 flex items-center justify-center gap-2 rounded-full border px-4 py-3 text-sm font-semibold transition ${
                 isFavorite
                   ? 'border-pine bg-pine text-white'
                   : 'border-[var(--line)] bg-white text-[var(--text-main)] hover:border-[var(--line-strong)]'
@@ -181,19 +192,20 @@ function DetailPanel({
               onChange={(nextValue) => onNoteChange(building.id, nextValue)}
             />
           </div>
-        </div>
-      ) : (
-        <div className="flex h-full items-center justify-center">
-          <div className="max-w-xs text-center">
-            <p className="font-serif text-4xl leading-none text-pine">Map Notes</p>
-            <p className="mt-4 text-sm leading-6 text-[var(--text-muted)]">
-              Select a building marker or card to open details, copy the site link, and save your
-              leasing notes.
-            </p>
           </div>
-        </div>
-      )}
-    </aside>
+        ) : (
+          <div className="hidden h-full items-center justify-center lg:flex">
+            <div className="max-w-xs text-center">
+              <p className="font-serif text-4xl leading-none text-pine">Map Notes</p>
+              <p className="mt-4 text-sm leading-6 text-[var(--text-muted)]">
+                Select a building marker or card to open details, copy the site link, and save your
+                leasing notes.
+              </p>
+            </div>
+          </div>
+        )}
+      </aside>
+    </>
   );
 }
 
