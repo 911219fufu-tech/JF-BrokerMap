@@ -79,6 +79,19 @@ function App() {
     [searchValue, selectedAreas, selectedPrices, selectedTypes],
   );
 
+  const portfolioBuildings = useMemo(() => {
+    return [...filteredBuildings].sort((leftBuilding, rightBuilding) => {
+      const leftHasPriorityOp = leftBuilding.op?.trim().toUpperCase() === '1 OP';
+      const rightHasPriorityOp = rightBuilding.op?.trim().toUpperCase() === '1 OP';
+
+      if (leftHasPriorityOp === rightHasPriorityOp) {
+        return 0;
+      }
+
+      return leftHasPriorityOp ? -1 : 1;
+    });
+  }, [filteredBuildings]);
+
   useEffect(() => {
     if (!selectedBuildingId) {
       return;
@@ -237,7 +250,7 @@ function App() {
         <section className="flex flex-col gap-4 xl:grid xl:min-h-[calc(100vh-12.5rem)] xl:grid-cols-[minmax(340px,34%)_minmax(0,66%)]">
           <div className="order-2 xl:order-1">
             <BuildingList
-              buildings={filteredBuildings}
+              buildings={portfolioBuildings}
               selectedBuildingId={selectedBuildingId}
               favoriteIds={favoriteIds}
               onSelectBuilding={toggleSelection}

@@ -158,6 +158,15 @@ function DetailPanel({
             >
               {building.website ? 'Open Official Website' : 'Official Website Pending'}
             </button>
+            {building.availability ? (
+              <button
+                type="button"
+                className="min-h-11 rounded-full border border-[var(--line)] bg-[rgba(220,227,210,0.42)] px-4 py-3 text-sm font-semibold text-pine transition hover:border-[var(--line-strong)] hover:bg-[rgba(220,227,210,0.72)]"
+                onClick={() => onOpenWebsite(building.availability)}
+              >
+                View Availability
+              </button>
+            ) : null}
             <button
               type="button"
               className={`min-h-11 rounded-full border px-4 py-3 text-sm font-semibold transition ${

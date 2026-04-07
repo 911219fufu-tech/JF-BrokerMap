@@ -73,7 +73,7 @@
     "type": [],
     "mapLabel": "Tower 28",
     "website": "https://heatherwood.com/",
-    "op": "No OP",
+    "op": "0 OP",
     "emails": [
       "Lea@heatherwood.com"
     ],
@@ -276,17 +276,24 @@
     "lng": -73.945761,
     "area": "LIC",
     "address": "22-44 Jackson Ave, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
+    "price": "3480-7600",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
     "mapLabel": "5Pointz",
     "website": "https://5pointzlic.com/",
+    "availability": "https://www.5pointzlic.com/availability",
     "op": "OP on Net Figure",
     "emails": [],
     "phones": [
       "(646) 783-7286"
     ],
-    "flags": [],
-    "notes": "Dogs allowed."
+    "flags": [
+      "Terrace options"
+    ],
+    "notes": "Dogs allowed. Availability page: https://www.5pointzlic.com/availability"
   },
   {
     "id": 17,

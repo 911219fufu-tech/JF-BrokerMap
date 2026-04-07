@@ -29,7 +29,7 @@
   area: LIC
   address: 42-12 28th St, Long Island City, NY 11101
   website: https://heatherwood.com/
-  op: No OP
+  op: 0 OP
   emails: Lea@heatherwood.com
   phones: (833) 816-8682
   notes: Dogs allowed. No 2B.
@@ -119,6 +119,7 @@
   area: LIC
   address: 22-44 Jackson Ave, Long Island City, NY 11101
   website: https://5pointzlic.com/
+  availability: https://www.5pointzlic.com/availability
   op: OP on Net Figure
   emails:
   phones: (646) 783-7286

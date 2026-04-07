@@ -300,6 +300,7 @@ async function main() {
       type: existingRecord?.type ?? [],
       mapLabel: deriveMapLabel(row.name, existingRecord),
       website: row.website || existingRecord?.website || '',
+      availability: row.availability || existingRecord?.availability || '',
       op: row.op || existingRecord?.op || '',
       emails: row.emails ? splitList(row.emails) : (existingRecord?.emails ?? []),
       phones: row.phones ? splitList(row.phones) : (existingRecord?.phones ?? []),
