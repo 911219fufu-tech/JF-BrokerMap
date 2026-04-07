@@ -1032,6 +1032,99 @@
     "notes": "Dogs allowed. Ironstate listing noted."
   },
   {
+    "id": 153,
+    "name": "Bella Vista Apartments",
+    "lat": 40.766963,
+    "lng": -74.034135,
+    "area": "Union City",
+    "address": "522 22nd St, Union City, NJ 07087",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Bella Vista",
+    "website": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(888) 806-3039"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 154,
+    "name": "Flora building",
+    "lat": 40.77242,
+    "lng": -74.029741,
+    "area": "Union City",
+    "address": "515 32nd St, Union City, NJ 07087",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Flora",
+    "website": "https://cpddev.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 378-3351"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 155,
+    "name": "The Marq-Roxy",
+    "lat": 40.770089,
+    "lng": -74.024597,
+    "area": "Union City",
+    "address": "119 Peter St, Union City, NJ 07087",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Marq-Roxy",
+    "website": "https://themarqnj.com/",
+    "op": "",
+    "emails": [],
+    "phones": [],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 156,
+    "name": "ONE23 Apartments",
+    "lat": 40.77661,
+    "lng": -74.020181,
+    "area": "Union City",
+    "address": "123 44th St, Union City, NJ 07087",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "ONE23",
+    "website": "https://one23living.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 577-2163"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 157,
+    "name": "Horizon Heights",
+    "lat": 40.780099,
+    "lng": -74.015852,
+    "area": "Union City",
+    "address": "4906 Broadway, Union City, NJ 07087",
+    "price": "Ask",
+    "type": [],
+    "mapLabel": "Horizon",
+    "website": "https://liveathorizonheights.com/",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 865-3291"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
     "id": 68,
     "name": "Magnolia Dumbo",
     "lat": 40.702181,

@@ -47,6 +47,11 @@ const NAME_ALIASES = {
   'steel works': 'steel works',
   'harrison urby apartments': 'urby harrison',
   'the eddy harrison': 'eddy harrison',
+  'bella vista apartments': 'bella vista',
+  'flora building': 'flora',
+  'the marq roxy': 'marq roxy',
+  'one23 apartments': 'one23',
+  'horizon heights': 'horizon heights',
 };
 
 const MAP_LABEL_ALIASES = {
@@ -106,6 +111,11 @@ const MAP_LABEL_ALIASES = {
   'steel works': 'Steel Works',
   'harrison urby apartments': 'Urby Harrison',
   'the eddy harrison': 'The Eddy',
+  'bella vista apartments': 'Bella Vista',
+  'flora building': 'Flora',
+  'the marq roxy': 'Marq-Roxy',
+  'one23 apartments': 'ONE23',
+  'horizon heights': 'Horizon',
 };
 
 function normalizeName(value) {
