@@ -166,12 +166,24 @@
     "lng": -73.942719,
     "area": "LIC",
     "address": "43-10 Crescent St, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4206-4716",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "4206"
+      },
+      {
+        "type": "1B",
+        "price": "4716"
+      }
+    ],
     "mapLabel": "Linc LIC",
     "website": "https://rockrose.com/",
-    "availability": "",
+    "availability": "https://rockrose.com/availabilities/",
     "op": "1 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -189,12 +201,24 @@
     "lng": -73.939411,
     "area": "LIC",
     "address": "43-22 Queens St, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3602-4753",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3602-3919"
+      },
+      {
+        "type": "1B",
+        "price": "4217-4753"
+      }
+    ],
     "mapLabel": "Eagle Lofts",
     "website": "https://rockrose.com/",
-    "availability": "",
+    "availability": "https://rockrose.com/availabilities/",
     "op": "1 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -279,12 +303,24 @@
     "lng": -73.942463,
     "area": "LIC",
     "address": "43-25 Hunter St, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3744-4845",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3744"
+      },
+      {
+        "type": "1B",
+        "price": "4845"
+      }
+    ],
     "mapLabel": "Hayden LIC",
     "website": "https://rockrose.com/",
-    "availability": "",
+    "availability": "https://rockrose.com/availabilities/",
     "op": "0 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -360,17 +396,29 @@
   },
   {
     "id": 9,
-    "name": "Cove",
+    "name": "The Cove",
     "lat": 40.7449,
     "lng": -73.9587,
     "area": "LIC",
     "address": "",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
-    "mapLabel": "Cove",
-    "website": "",
-    "availability": "",
+    "price": "3829-4394",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3829"
+      },
+      {
+        "type": "1B",
+        "price": "4394"
+      }
+    ],
+    "mapLabel": "The Cove",
+    "website": "https://rockrose.com/building/the-cove/",
+    "availability": "https://rockrose.com/availabilities/",
     "op": "1 OP",
     "emails": [
       "CourtSquare.Leasing@rockrose.com"
@@ -451,12 +499,24 @@
     "lng": -73.956415,
     "area": "LIC",
     "address": "47-05 Center Blvd, Long Island City, NY 11109",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4220-6925",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "4220-4625"
+      },
+      {
+        "type": "2B",
+        "price": "6925"
+      }
+    ],
     "mapLabel": "4705 CB",
     "website": "https://rockrose.com/",
-    "availability": "",
+    "availability": "https://rockrose.com/availabilities/",
     "op": "",
     "emails": [],
     "phones": [
@@ -696,12 +756,24 @@
     "lng": -73.858264,
     "area": "Queens",
     "address": "97-12 65th Rd Lobby, Rego Park, NY 11374",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3150-4200",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3150-3225"
+      },
+      {
+        "type": "1B",
+        "price": "3300-4200"
+      }
+    ],
     "mapLabel": "Vista65",
     "website": "https://vista65.com/",
-    "availability": "",
+    "availability": "https://vista65.com/availability",
     "op": "1 month net OP",
     "emails": [
       "vista65@nestseekers.com"
@@ -717,12 +789,34 @@
     "lng": -73.850059,
     "area": "Queens",
     "address": "104-20 Queens Blvd, Forest Hills, NY 11375",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2650-5560",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2650-3043"
+      },
+      {
+        "type": "1B",
+        "price": "3671-3904"
+      },
+      {
+        "type": "2B",
+        "price": "4032-4900"
+      },
+      {
+        "type": "3B",
+        "price": "4948-5560"
+      }
+    ],
     "mapLabel": "Parker",
     "website": "https://parkertowers.com/",
-    "availability": "",
+    "availability": "https://www.parkertowers.com/nyc-apartments-for-rent",
     "op": "1 OP",
     "emails": [
       "liveparker@beamliving.com",
@@ -731,7 +825,9 @@
     "phones": [
       "(833) 567-5390"
     ],
-    "flags": [],
+    "flags": [
+      "Terrace options"
+    ],
     "notes": "Dogs allowed."
   },
   {
@@ -1400,7 +1496,7 @@
     ],
     "mapLabel": "Bisby",
     "website": "https://bisby.com/",
-    "availability": "",
+    "availability": "https://www.bisby.com/availability/",
     "op": "",
     "emails": [],
     "phones": [
@@ -2020,12 +2116,29 @@
     "lng": -73.98612,
     "area": "DTBK",
     "address": "160 Front St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "4199-8231",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "4199"
+      },
+      {
+        "type": "1B",
+        "price": "5366"
+      },
+      {
+        "type": "2B",
+        "price": "8231"
+      }
+    ],
     "mapLabel": "Magnolia",
     "website": "https://magnolia-dumbo.com/",
-    "availability": "",
+    "availability": "https://www.magnolia-dumbo.com/floor-plans/",
     "op": "",
     "emails": [],
     "phones": [
@@ -2371,12 +2484,29 @@
     "lng": -73.981971,
     "area": "DTBK",
     "address": "67 Prince St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3530-6930",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3530-4200"
+      },
+      {
+        "type": "1B",
+        "price": "4580-5089"
+      },
+      {
+        "type": "2B",
+        "price": "6400-6930"
+      }
+    ],
     "mapLabel": "DWTN BK",
     "website": "https://dwtnbk.com/",
-    "availability": "",
+    "availability": "https://dwtnbk.com/availability/",
     "op": "1 OP",
     "emails": [
       "leasing@dwtnbk.com"

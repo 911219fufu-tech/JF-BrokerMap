@@ -68,6 +68,85 @@ export const NEWPORT_RENTALS_FEE_GUIDE = {
   notes: 'All final fees and charges will be disclosed with the lease agreement.',
 };
 
+export const MAGNOLIA_DUMBO_FEE_GUIDE = {
+  required: [
+    {
+      label: 'Application Fee',
+      value: '$20 one-time',
+    },
+    {
+      label: 'Security Deposit',
+      value: '100% one-time',
+      note: 'Standard refundable deposit',
+    },
+    {
+      label: 'Pet Registration',
+      value: 'Varies annually',
+      note: 'Third-party fee',
+    },
+    {
+      label: 'Amenity Fee',
+      value: '$100 per month',
+    },
+    {
+      label: "Renter's Liability Insurance",
+      value: 'Varies per month',
+      note: 'Renter provided',
+    },
+  ],
+  other: [
+    {
+      label: 'Parking',
+      value: 'Varies per month',
+      note: 'Third party',
+    },
+    {
+      label: 'Pet Rent',
+      value: '$50 per month',
+    },
+    {
+      label: 'Bicycle Storage',
+      value: '$25 per month',
+    },
+    {
+      label: 'Property Insurance Program',
+      value: '$15 per month',
+      note: 'Optional renters liability program',
+    },
+    {
+      label: 'Cable TV',
+      value: '3rd party monthly',
+    },
+    {
+      label: 'Internet',
+      value: '3rd party monthly',
+      note: 'Optional',
+    },
+  ],
+  utilities: [
+    {
+      label: 'Electric',
+      value: '3rd party monthly',
+    },
+    {
+      label: 'Gas',
+      value: 'Included',
+    },
+    {
+      label: 'Water',
+      value: 'Included',
+    },
+    {
+      label: 'Sewer',
+      value: 'Included',
+    },
+    {
+      label: 'Trash',
+      value: 'Included',
+    },
+  ],
+};
+
 export function getMinPrice(priceRange) {
   const [minimum] = String(priceRange).split('-');
   const value = Number(minimum);
@@ -170,6 +249,10 @@ export function getBuildingFeeGuide(building) {
 
   if (website.includes('newportrentals.com')) {
     return NEWPORT_RENTALS_FEE_GUIDE;
+  }
+
+  if (website.includes('magnolia-dumbo.com')) {
+    return MAGNOLIA_DUMBO_FEE_GUIDE;
   }
 
   return null;

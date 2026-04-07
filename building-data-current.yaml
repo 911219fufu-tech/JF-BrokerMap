@@ -65,6 +65,7 @@
   area: LIC
   address: 43-10 Crescent St, Long Island City, NY 11101
   website: https://rockrose.com/
+  availability: https://rockrose.com/availabilities/
   op: 1 OP
   emails: CourtSquare.Leasing@rockrose.com
   phones: (718) 440-3333
@@ -74,6 +75,7 @@
   area: LIC
   address: 43-22 Queens St, Long Island City, NY 11101
   website: https://rockrose.com/
+  availability: https://rockrose.com/availabilities/
   op: 1 OP
   emails: CourtSquare.Leasing@rockrose.com
   phones: (718) 606-6677
@@ -110,6 +112,7 @@
   area: LIC
   address: 43-25 Hunter St, Long Island City, NY 11101
   website: https://rockrose.com/
+  availability: https://rockrose.com/availabilities/
   op: 0 OP
   emails: CourtSquare.Leasing@rockrose.com
   phones: (718) 606-6677
@@ -134,10 +137,11 @@
   phones: (212) 470-0846
   notes:
 
-- name: Cove
+- name: The Cove
   area: LIC
   address:
-  website:
+  website: https://rockrose.com/building/the-cove/
+  availability: https://rockrose.com/availabilities/
   op: 1 OP
   emails: CourtSquare.Leasing@rockrose.com
   phones: +1 (718) 606-6677
@@ -174,6 +178,7 @@
   area: LIC
   address: 47-05 Center Blvd, Long Island City, NY 11109
   website: https://rockrose.com/
+  availability: https://rockrose.com/availabilities/
   op:
   emails:
   phones: (718) 606-1879
@@ -273,6 +278,7 @@
   area: Queens
   address: 97-12 65th Rd Lobby, Rego Park, NY 11374
   website: https://vista65.com/
+  availability: https://vista65.com/availability
   op: 1 month net OP
   emails: vista65@nestseekers.com
   phones:
@@ -282,6 +288,7 @@
   area: Queens
   address: 104-20 Queens Blvd, Forest Hills, NY 11375
   website: https://parkertowers.com/
+  availability: https://www.parkertowers.com/nyc-apartments-for-rent
   op: 1 OP
   emails: liveparker@beamliving.com, shirley.chen@beamliving.com
   phones: (833) 567-5390
@@ -543,6 +550,7 @@
   area: Newport
   address: 30 Park Ln N, Jersey City, NJ 07310
   website: https://bisby.com/
+  availability: https://www.bisby.com/availability/
   op:
   emails:
   phones: (844) 679-3028
@@ -705,6 +713,7 @@
   area: DTBK
   address: 160 Front St, Brooklyn, NY 11201
   website: https://magnolia-dumbo.com/
+  availability: https://www.magnolia-dumbo.com/floor-plans/
   op:
   emails:
   phones: (833) 362-0821, (833) 599-0257
@@ -849,6 +858,7 @@
   area: DTBK
   address: 67 Prince St, Brooklyn, NY 11201
   website: https://dwtnbk.com/
+  availability: https://dwtnbk.com/availability/
   op: 1 OP
   emails: leasing@dwtnbk.com
   phones: (718) 223-4236
