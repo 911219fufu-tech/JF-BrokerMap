@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { formatPrice } from '../lib/buildings';
+import logoTransparent from '../../logo-transparent-Picsart-BackgroundRemover.jpeg';
 
 function ClockIcon() {
   return (
@@ -18,7 +19,11 @@ function Navbar({ favoriteCount, recentBuildings, onSelectBuilding }) {
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4">
           <div>
-            <p className="font-serif text-3xl leading-none text-pine">JF BrokerMap</p>
+            <img
+              src={logoTransparent}
+              alt="JF BrokerMap"
+              className="h-14 w-auto object-contain sm:h-18"
+            />
             <p className="mt-1 text-xs uppercase tracking-[0.28em] text-[var(--text-muted)]">
               Personal Leasing Dashboard
             </p>
