@@ -6,8 +6,8 @@ import FilterBar from './components/FilterBar';
 import BuildingList from './components/BuildingList';
 import DetailPanel from './components/DetailPanel';
 import {
-  PRICE_OPTIONS,
   TYPE_OPTIONS,
+  getPriceBounds,
   matchesBuildingFilters,
 } from './lib/buildings';
 import {
@@ -32,9 +32,13 @@ function MapLoadingState() {
 }
 
 function App() {
+  const priceBounds = useMemo(() => getPriceBounds(buildings), []);
   const [searchValue, setSearchValue] = useState('');
   const [selectedAreas, setSelectedAreas] = useState([]);
-  const [selectedPrices, setSelectedPrices] = useState([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState(() => ({
+    min: priceBounds.min,
+    max: priceBounds.max,
+  }));
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedBuildingId, setSelectedBuildingId] = useState(null);
   const [focusNonce, setFocusNonce] = useState(0);
@@ -54,6 +58,11 @@ function App() {
     saveRecentViews(recentIds);
   }, [recentIds]);
 
+  const hasCustomPriceRange =
+    selectedPriceRange.min !== priceBounds.min || selectedPriceRange.max !== priceBounds.max;
+
+  const activePriceRange = hasCustomPriceRange ? selectedPriceRange : null;
+
   const filteredBuildings = useMemo(
     () =>
       buildings.filter((building) => {
@@ -68,13 +77,13 @@ function App() {
 
         const matchesInventoryFilters = matchesBuildingFilters(
           building,
-          selectedPrices,
+          activePriceRange,
           selectedTypes,
         );
 
         return matchesSearch && matchesArea && matchesInventoryFilters;
       }),
-    [searchValue, selectedAreas, selectedPrices, selectedTypes],
+    [searchValue, selectedAreas, activePriceRange, selectedTypes],
   );
 
   const portfolioBuildings = useMemo(() => {
@@ -119,7 +128,7 @@ function App() {
 
   const favoriteCount = favoriteIds.length;
   const areaOptions = useMemo(() => {
-    const areaOrder = ['LIC', 'Queens', 'DTBK', 'DTJC', 'JSQ', 'Newport', 'Harrison', 'Union City', 'West NY'];
+    const areaOrder = ['LIC', 'Queens', 'DTBK', 'DTJC', 'JSQ', 'Newport', 'Harrison', 'Union City', 'Forten', 'Upper Manhattan', 'West NY'];
     const existingAreas = new Set(buildings.map((building) => building.area));
     return ['ALL', ...areaOrder.filter((area) => existingAreas.has(area))];
   }, []);
@@ -154,14 +163,6 @@ function App() {
     );
   };
 
-  const updatePrice = (value) => {
-    setSelectedPrices((currentValues) =>
-      currentValues.includes(value)
-        ? currentValues.filter((item) => item !== value)
-        : [...currentValues, value],
-    );
-  };
-
   const updateType = (value) => {
     setSelectedTypes((currentValues) =>
       currentValues.includes(value)
@@ -172,7 +173,10 @@ function App() {
 
   const clearFilters = () => {
     setSelectedAreas([]);
-    setSelectedPrices([]);
+    setSelectedPriceRange({
+      min: priceBounds.min,
+      max: priceBounds.max,
+    });
     setSelectedTypes([]);
     setSearchValue('');
   };
@@ -213,7 +217,7 @@ function App() {
       />
 
       <main className="mx-auto flex max-w-[1600px] flex-col gap-4 px-4 pb-4 pt-3 sm:px-6 lg:px-8">
-        <section className="glass-panel rounded-[28px] p-4 sm:p-5">
+        <section className="glass-panel relative z-20 overflow-visible rounded-[28px] p-4 sm:p-5">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
             <SearchBar
               value={searchValue}
@@ -233,13 +237,13 @@ function App() {
 
           <FilterBar
             areaOptions={areaOptions}
-            priceOptions={PRICE_OPTIONS}
+            priceBounds={priceBounds}
             typeOptions={TYPE_OPTIONS}
             selectedAreas={selectedAreas}
-            selectedPrices={selectedPrices}
+            selectedPriceRange={selectedPriceRange}
             selectedTypes={selectedTypes}
             onAreaToggle={updateArea}
-            onPriceToggle={updatePrice}
+            onPriceChange={setSelectedPriceRange}
             onTypeToggle={updateType}
             onClear={clearFilters}
           />

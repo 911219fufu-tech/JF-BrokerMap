@@ -121,12 +121,29 @@
     "lng": -73.9396,
     "area": "LIC",
     "address": "42-12 28th St, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3366-6326",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3366-3725"
+      },
+      {
+        "type": "1B",
+        "price": "4512"
+      },
+      {
+        "type": "2B",
+        "price": "6326"
+      }
+    ],
     "mapLabel": "Tower 28",
-    "website": "https://heatherwood.com/",
-    "availability": "",
+    "website": "https://heatherwood.com/our-properties/heritage-tower-28/floorplan",
+    "availability": "https://heatherwood.com/our-properties/heritage-tower-28/floorplan",
     "op": "0 OP",
     "emails": [
       "Lea@heatherwood.com"
@@ -134,10 +151,8 @@
     "phones": [
       "(833) 816-8682"
     ],
-    "flags": [
-      "No 2B"
-    ],
-    "notes": "Dogs allowed. No 2B."
+    "flags": [],
+    "notes": "Dogs allowed."
   },
   {
     "id": 12,
@@ -176,20 +191,39 @@
     "lng": -73.940288,
     "area": "LIC",
     "address": "27-03 42nd Rd, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3436-5798",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3436"
+      },
+      {
+        "type": "1B",
+        "price": "3800-4379"
+      },
+      {
+        "type": "2B",
+        "price": "5798"
+      }
+    ],
     "mapLabel": "27 on 27th",
-    "website": "https://heatherwood.com/",
-    "availability": "",
+    "website": "https://heatherwood.com/our-properties/heritage-27-on-27th",
+    "availability": "https://heatherwood.com/our-properties/heritage-27-on-27th",
     "op": "",
     "emails": [],
     "phones": [
       "(929) 281-3344",
       "+1 (833) 858-5266"
     ],
-    "flags": [],
-    "notes": "Open until 6 PM."
+    "flags": [
+      "Terrace options"
+    ],
+    "notes": "Rent special on select units."
   },
   {
     "id": 15,
@@ -614,12 +648,29 @@
     "lng": -73.940062,
     "area": "LIC",
     "address": "41-34 Crescent St, Astoria, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2796-4500",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2796"
+      },
+      {
+        "type": "1B",
+        "price": "3322"
+      },
+      {
+        "type": "2B",
+        "price": "4500"
+      }
+    ],
     "mapLabel": "Packard Square",
-    "website": "",
-    "availability": "",
+    "website": "https://www.hlres.com/buildings/nyc/packard-square-41-34-crescent-street/3526/rentals#availability",
+    "availability": "https://www.hlres.com/buildings/nyc/packard-square-41-34-crescent-street/3526/rentals#availability",
     "op": "",
     "emails": [
       "info@packardsquare.com"
@@ -639,7 +690,7 @@
     "type": [],
     "inventory": [],
     "mapLabel": "4615 CB",
-    "website": "https://www.maltdrive.com/",
+    "website": "https://tfc.com/apartments/4615-center-blvd",
     "availability": "",
     "op": "",
     "emails": [],
@@ -656,11 +707,28 @@
     "lng": -73.956866,
     "area": "LIC",
     "address": "46-10 Center Blvd, Long Island City, NY 11109",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3360-6408",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3360-3490"
+      },
+      {
+        "type": "1B",
+        "price": "3850-4135"
+      },
+      {
+        "type": "2B",
+        "price": "5560-6408"
+      }
+    ],
     "mapLabel": "4610 CB",
-    "website": "https://www.maltdrive.com/",
+    "website": "https://tfc.com/apartments/4610-center-blvd",
     "availability": "",
     "op": "",
     "emails": [],
@@ -693,7 +761,7 @@
       }
     ],
     "mapLabel": "4705 CB",
-    "website": "https://rockrose.com/",
+    "website": "https://rockrose.com/building/4705-center-boulevard/",
     "availability": "https://rockrose.com/availabilities/",
     "op": "",
     "emails": [],
@@ -704,17 +772,62 @@
     "notes": "Dogs allowed."
   },
   {
+    "id": 184,
+    "name": "4720 Center Blvd",
+    "lat": 40.745434,
+    "lng": -73.957186,
+    "area": "LIC",
+    "address": "47-20 Center Blvd, Long Island City, NY 11109",
+    "price": "3163-5766",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3163-3295"
+      },
+      {
+        "type": "1B",
+        "price": "3846-4645"
+      },
+      {
+        "type": "2B",
+        "price": "5766"
+      }
+    ],
+    "mapLabel": "4720 CB",
+    "website": "https://tfc.com/apartments/4720-center-blvd",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(718) 606-9440"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. 1 month free on select units."
+  },
+  {
     "id": 19,
     "name": "5203 Center Blvd",
     "lat": 40.74195,
     "lng": -73.959712,
     "area": "LIC",
     "address": "52-03 Center Blvd, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "5496-6315",
+    "type": [
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "2B",
+        "price": "5496-6315"
+      }
+    ],
     "mapLabel": "5203 CB",
-    "website": "https://www.maltdrive.com/",
+    "website": "https://tfc.com/apartments/5203-center-blvd",
     "availability": "",
     "op": "",
     "emails": [
@@ -733,11 +846,23 @@
     "lng": -73.960564,
     "area": "LIC",
     "address": "52-41 Center Blvd, Long Island City, NY 11101",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3896-7467",
+    "type": [
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3896-4155"
+      },
+      {
+        "type": "2B",
+        "price": "4923-7467"
+      }
+    ],
     "mapLabel": "5241 CB",
-    "website": "https://www.maltdrive.com/",
+    "website": "https://tfc.com/apartments/5241-center-blvd",
     "availability": "",
     "op": "",
     "emails": [
@@ -747,7 +872,7 @@
       "(212) 353-5850"
     ],
     "flags": [],
-    "notes": "Dogs allowed."
+    "notes": "Dogs allowed. 1 month free on select units."
   },
   {
     "id": 20,
@@ -802,7 +927,12 @@
     "area": "Queens",
     "address": "51-01 39th Ave, Sunnyside, NY 11104",
     "price": "Ask",
-    "type": [],
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
     "inventory": [],
     "mapLabel": "Sunnyside",
     "website": "https://sunnysidegardenapts.com/",
@@ -813,7 +943,7 @@
       "(718) 478-2020"
     ],
     "flags": [],
-    "notes": ""
+    "notes": "Studio, 1 Bedroom, 2 Bedroom, and 3 Bedroom available by inquiry only."
   },
   {
     "id": 125,
@@ -841,17 +971,27 @@
     "lng": -73.895714,
     "area": "Queens",
     "address": "46-09 69th St, Woodside, NY 11377",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2950-3275",
+    "type": [
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "2950-3275"
+      }
+    ],
     "mapLabel": "Woodside",
-    "website": "https://woodside-central.com/",
-    "availability": "",
+    "website": "https://www.corcoran.com/new-developments/for-rent/maspeth/46-09-69th-street/32912754",
+    "availability": "https://www.corcoran.com/new-developments/for-rent/maspeth/46-09-69th-street/32912754",
     "op": "0 OP",
     "emails": [
       "Inna.Kukharuk@corcoran.com"
     ],
-    "phones": [],
+    "phones": [
+      "(917) 376-3572",
+      "(929) 494-8777"
+    ],
     "flags": [],
     "notes": "Dogs allowed."
   },
@@ -862,12 +1002,29 @@
     "lng": -73.891118,
     "area": "Queens",
     "address": "72-01 Queens Blvd, Woodside, NY 11377",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2636-3427",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2636-2644"
+      },
+      {
+        "type": "1B",
+        "price": "2771-3025"
+      },
+      {
+        "type": "2B",
+        "price": "3427"
+      }
+    ],
     "mapLabel": "Sola",
     "website": "https://solawoodside.com/",
-    "availability": "",
+    "availability": "https://solawoodside.com/availability",
     "op": "",
     "emails": [
       "mc@mns.com"
@@ -877,7 +1034,7 @@
       "3476781963"
     ],
     "flags": [],
-    "notes": "Dogs allowed. WhatsApp: 3476781963."
+    "notes": "Dogs allowed. WhatsApp: 3476781963. Uses net effective pricing."
   },
   {
     "id": 128,
@@ -909,12 +1066,29 @@
     "lng": -73.863392,
     "area": "Queens",
     "address": "61-55 Junction Blvd, Rego Park, NY 11374",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3075-4657",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3075"
+      },
+      {
+        "type": "1B",
+        "price": "3595-3700"
+      },
+      {
+        "type": "2B",
+        "price": "4350-4657"
+      }
+    ],
     "mapLabel": "Alexander",
     "website": "https://alexanderregopark.com/",
-    "availability": "",
+    "availability": "https://alexanderregopark.com/check-availability/",
     "op": "0 OP",
     "emails": [
       "alexanderny@researchapartments.com"
@@ -933,12 +1107,34 @@
     "lng": -73.857685,
     "area": "Queens",
     "address": "62-60 99th St, Rego Park, NY 11374",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2700-4200",
+    "type": [
+      "1B",
+      "2B",
+      "3B",
+      "4B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "2700"
+      },
+      {
+        "type": "2B",
+        "price": "3200"
+      },
+      {
+        "type": "3B",
+        "price": "3800"
+      },
+      {
+        "type": "4B",
+        "price": "4200"
+      }
+    ],
     "mapLabel": "Drake",
     "website": "https://rentthedrake.com/",
-    "availability": "",
+    "availability": "https://www.rentthedrake.com/availability/",
     "op": "",
     "emails": [
       "listings@vrenyc.com"
@@ -1037,12 +1233,19 @@
     "lng": -73.89433,
     "area": "Queens",
     "address": "37-46 72nd St, Flushing, NY 11372",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2601",
+    "type": [
+      "Studio"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2601"
+      }
+    ],
     "mapLabel": "Roosevelt Parc Apartments",
-    "website": "",
-    "availability": "",
+    "website": "https://rooseveltparc.com/",
+    "availability": "https://rooseveltparc.com/availabilities/",
     "op": "",
     "emails": [
       "leasing@rooseveltparc.com"
@@ -1058,19 +1261,26 @@
     "lng": -73.877129,
     "area": "Queens",
     "address": "86-55 Broadway, Elmhurst, NY 11373",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3200",
+    "type": [
+      "Studio"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3200"
+      }
+    ],
     "mapLabel": "The Elm East",
     "website": "",
-    "availability": "",
+    "availability": "https://streeteasy.com/building/the-elm-east",
     "op": "",
     "emails": [],
     "phones": [
       "7187794395"
     ],
     "flags": [],
-    "notes": "Message: 7187794395."
+    "notes": "Message: 7187794395. 2 months free on select units."
   },
   {
     "id": 135,
@@ -1079,12 +1289,29 @@
     "lng": -73.86459,
     "area": "Queens",
     "address": "LeFrak City Apartments, 59-17 Junction Blvd, Elmhurst, NY 11373",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "1950-3900",
+    "type": [
+      "Studio",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "1950"
+      },
+      {
+        "type": "2B",
+        "price": "3050"
+      },
+      {
+        "type": "3B",
+        "price": "3875-3900"
+      }
+    ],
     "mapLabel": "LeFrak City Apartments",
-    "website": "",
-    "availability": "",
+    "website": "https://www.lefrakcity.com/apartments-for-rent-queens-nyc/",
+    "availability": "https://www.lefrakcity.com/apartments-for-rent-queens-nyc/",
     "op": "",
     "emails": [
       "RAinfo@realtyoperations.com"
@@ -1100,19 +1327,41 @@
     "lng": -74.060691,
     "area": "JSQ",
     "address": "505 Summit Ave, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2750-5908",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2750-3158"
+      },
+      {
+        "type": "1B",
+        "price": "3028-4188"
+      },
+      {
+        "type": "2B",
+        "price": "4658-5330"
+      },
+      {
+        "type": "3B",
+        "price": "5415-5908"
+      }
+    ],
     "mapLabel": "505 Summit",
     "website": "https://505summit.com/",
-    "availability": "",
+    "availability": "https://www.505summit.com/availability",
     "op": "",
     "emails": [],
     "phones": [
       "(201) 581-0505"
     ],
     "flags": [],
-    "notes": ""
+    "notes": "Uses best net effective pricing across listed lease terms."
   },
   {
     "id": 137,
@@ -1121,19 +1370,41 @@
     "lng": -74.059556,
     "area": "JSQ",
     "address": "532 Summit Ave, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2855-5445",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2855-3065"
+      },
+      {
+        "type": "1B",
+        "price": "3005-3175"
+      },
+      {
+        "type": "2B",
+        "price": "4214-4945"
+      },
+      {
+        "type": "3B",
+        "price": "4815-5445"
+      }
+    ],
     "mapLabel": "Urby JSQ",
     "website": "https://urby.com/",
-    "availability": "",
+    "availability": "https://www.urby.com/location/journal-square/availability",
     "op": "",
     "emails": [],
     "phones": [
       "(856) 393-6036"
     ],
     "flags": [],
-    "notes": "Dogs allowed."
+    "notes": "Dogs allowed. Includes concession pricing on select units."
   },
   {
     "id": 138,
@@ -1163,19 +1434,31 @@
     "lng": -74.05809,
     "area": "JSQ",
     "address": "632 Newark Ave, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2350-4000",
+    "type": [
+      "Studio",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2350-2600"
+      },
+      {
+        "type": "2B",
+        "price": "4000"
+      }
+    ],
     "mapLabel": "632 Newark",
     "website": "https://cmpnd.com/",
-    "availability": "",
+    "availability": "https://www.cmpnd.com/residential/632-newark#apply",
     "op": "",
     "emails": [],
     "phones": [
       "(551) 209-4008"
     ],
     "flags": [],
-    "notes": "Opens 9 AM Tuesday."
+    "notes": "Dogs allowed."
   },
   {
     "id": 140,
@@ -1184,12 +1467,24 @@
     "lng": -74.060597,
     "area": "JSQ",
     "address": "28 Cottage St, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2150-3700",
+    "type": [
+      "Studio",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2150-2450"
+      },
+      {
+        "type": "3B",
+        "price": "3700"
+      }
+    ],
     "mapLabel": "28 Cottage",
     "website": "https://cmpnd.com/",
-    "availability": "",
+    "availability": "https://www.cmpnd.com/residential/28-cottage#apply",
     "op": "",
     "emails": [],
     "phones": [
@@ -1205,12 +1500,34 @@
     "lng": -74.061013,
     "area": "JSQ",
     "address": "9 Homestead Pl, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2150-4550",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2150-2200"
+      },
+      {
+        "type": "1B",
+        "price": "2750"
+      },
+      {
+        "type": "2B",
+        "price": "3250-3600"
+      },
+      {
+        "type": "3B",
+        "price": "4500-4550"
+      }
+    ],
     "mapLabel": "9 Homestead",
     "website": "https://cmpnd.com/",
-    "availability": "",
+    "availability": "https://www.cmpnd.com/residential/9-homestead#apply",
     "op": "",
     "emails": [],
     "phones": [
@@ -1226,12 +1543,24 @@
     "lng": -74.060701,
     "area": "JSQ",
     "address": "26 Van Reipen Ave, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2400-3050",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2400-2500"
+      },
+      {
+        "type": "1B",
+        "price": "2650-3050"
+      }
+    ],
     "mapLabel": "26 Van Reipen",
     "website": "https://26vanreipen.com/",
-    "availability": "",
+    "availability": "https://www.cmpnd.com/residential/26-van-reipen",
     "op": "",
     "emails": [],
     "phones": [
@@ -1247,23 +1576,45 @@
     "lng": -74.063755,
     "area": "JSQ",
     "address": "36 Journal Square Plaza, Jersey City, NJ 07306",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2934-6390",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2934-3267"
+      },
+      {
+        "type": "1B",
+        "price": "3366-4073"
+      },
+      {
+        "type": "2B",
+        "price": "5256-6008"
+      },
+      {
+        "type": "3B",
+        "price": "6390"
+      }
+    ],
     "mapLabel": "The Journal",
     "website": "https://journaljc.com/",
-    "availability": "",
+    "availability": "https://www.journaljc.com/availability",
     "op": "",
     "emails": [],
     "phones": [
       "(551) 209-2121"
     ],
     "flags": [],
-    "notes": "Dogs allowed."
+    "notes": "Dogs allowed. Up to 2 months free on select units."
   },
   {
     "id": 144,
-    "name": "MRK",
+    "name": "MRK | Luxury Apartment Rentals in Journal Square, Jersey City",
     "lat": 40.728985,
     "lng": -74.063519,
     "area": "JSQ",
@@ -1310,12 +1661,29 @@
     "lng": -74.089035,
     "area": "JSQ",
     "address": "400 Claremont Ave, Jersey City, NJ 07304",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2035-3495",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2035-2160"
+      },
+      {
+        "type": "1B",
+        "price": "2250-2650"
+      },
+      {
+        "type": "2B",
+        "price": "3495"
+      }
+    ],
     "mapLabel": "3 Acres",
     "website": "https://3acresjc.com/",
-    "availability": "",
+    "availability": "https://3acresjc.com/property-listings/",
     "op": "",
     "emails": [],
     "phones": [
@@ -1331,19 +1699,36 @@
     "lng": -74.09248,
     "area": "JSQ",
     "address": "132 Yale Ave, Jersey City, NJ 07304",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2180-3460",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2180-2415"
+      },
+      {
+        "type": "1B",
+        "price": "2560"
+      },
+      {
+        "type": "2B",
+        "price": "3350-3460"
+      }
+    ],
     "mapLabel": "Agnes",
     "website": "https://theagnes001.com/",
-    "availability": "",
+    "availability": "https://theagnes001.com/availability/the-agnes/all",
     "op": "",
     "emails": [],
     "phones": [
       "(201) 656-1200"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Ironstate listing noted."
+    "notes": "Dogs allowed. Up to 1 month free on a 12+1 lease."
   },
   {
     "id": 176,
@@ -1471,19 +1856,31 @@
     "lng": -74.152405,
     "area": "Harrison",
     "address": "1200 S 5th St, Harrison, NJ 07029",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2148-2799",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2148-2221"
+      },
+      {
+        "type": "1B",
+        "price": "2614-2799"
+      }
+    ],
     "mapLabel": "Cobalt",
     "website": "https://cobaltlofts.com/",
-    "availability": "",
+    "availability": "https://www.cobaltlofts.com/residences-of-style/",
     "op": "",
     "emails": [],
     "phones": [
       "(862) 626-2288"
     ],
     "flags": [],
-    "notes": "Has a schedule.tours link."
+    "notes": "1 month free on select studio and 1B move-ins by 4/30. Has a schedule.tours link."
   },
   {
     "id": 149,
@@ -1492,19 +1889,36 @@
     "lng": -74.152384,
     "area": "Harrison",
     "address": "1100 S 5th St, Harrison, NJ 07029",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2079-3811",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2079-2344"
+      },
+      {
+        "type": "1B",
+        "price": "2661-2817"
+      },
+      {
+        "type": "2B",
+        "price": "3811"
+      }
+    ],
     "mapLabel": "Wyldes",
     "website": "https://thewyldes.com/",
-    "availability": "",
+    "availability": "https://www.thewyldes.com/availability",
     "op": "",
     "emails": [],
     "phones": [
       "(862) 626-2201"
     ],
     "flags": [],
-    "notes": "Has a schedule.tours link."
+    "notes": "1 month free on select 1B move-ins by 4/30. Has a schedule.tours link."
   },
   {
     "id": 150,
@@ -1513,12 +1927,29 @@
     "lng": -74.15446,
     "area": "Harrison",
     "address": "1200 Frank E Rodgers Blvd S, Harrison, NJ 07029",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2153-3434",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2153-2358"
+      },
+      {
+        "type": "1B",
+        "price": "2468-2683"
+      },
+      {
+        "type": "2B",
+        "price": "3304-3434"
+      }
+    ],
     "mapLabel": "Steel Works",
     "website": "https://steelworksapts.com/",
-    "availability": "",
+    "availability": "https://www.steelworksapts.com/floor-plans/",
     "op": "",
     "emails": [],
     "phones": [
@@ -1534,19 +1965,41 @@
     "lng": -74.159088,
     "area": "Harrison",
     "address": "200 Angelo Cifelli Dr, Harrison, NJ 07029",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2068-4705",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2068-2325"
+      },
+      {
+        "type": "1B",
+        "price": "2475-2995"
+      },
+      {
+        "type": "2B",
+        "price": "3105-4425"
+      },
+      {
+        "type": "3B",
+        "price": "4515-4705"
+      }
+    ],
     "mapLabel": "Urby Harrison",
-    "website": "https://urby.com/",
-    "availability": "",
+    "website": "https://www.urby.com/location/harrison",
+    "availability": "https://www.urby.com/location/harrison",
     "op": "",
     "emails": [],
     "phones": [
       "(856) 329-8934"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Near PATH."
+    "notes": "Dogs allowed. Near PATH. Includes concession pricing on select units."
   },
   {
     "id": 152,
@@ -1555,19 +2008,36 @@
     "lng": -74.16213,
     "area": "Harrison",
     "address": "555 S 1st St, Harrison, NJ 07029",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "2145-3980",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2145"
+      },
+      {
+        "type": "1B",
+        "price": "2520-2650"
+      },
+      {
+        "type": "2B",
+        "price": "3660-3980"
+      }
+    ],
     "mapLabel": "The Eddy",
-    "website": "https://ironstate.com/",
-    "availability": "",
+    "website": "https://ironstate.com/property/the-eddy/",
+    "availability": "https://ironstate.com/property/the-eddy/",
     "op": "",
     "emails": [],
     "phones": [
       "(855) 623-7351"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Ironstate listing noted."
+    "notes": "Dogs allowed."
   },
   {
     "id": 153,
@@ -1659,7 +2129,11 @@
     "area": "Union City",
     "address": "4906 Broadway, Union City, NJ 07087",
     "price": "Ask",
-    "type": [],
+    "type": [
+      "1B",
+      "2B",
+      "3B"
+    ],
     "inventory": [],
     "mapLabel": "Horizon",
     "website": "https://liveathorizonheights.com/",
@@ -1670,7 +2144,7 @@
       "(201) 865-3291"
     ],
     "flags": [],
-    "notes": "Dogs allowed."
+    "notes": "Dogs allowed. 1B, 2B, and 3B layouts available by inquiry only."
   },
   {
     "id": 158,
@@ -2378,19 +2852,41 @@
     "lng": -73.985785,
     "area": "DTBK",
     "address": "22 Chapel St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3073-7555",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3073-3086"
+      },
+      {
+        "type": "1B",
+        "price": "3850-4023"
+      },
+      {
+        "type": "2B",
+        "price": "5139-6124"
+      },
+      {
+        "type": "3B",
+        "price": "7555"
+      }
+    ],
     "mapLabel": "22 Chapel",
     "website": "https://22chapel.com/",
-    "availability": "",
+    "availability": "https://22chapel.com/availability",
     "op": "",
     "emails": [],
     "phones": [
       "(718) 550-0022"
     ],
     "flags": [],
-    "notes": ""
+    "notes": "Net pricing shown. 1 to 2 months concessions on select units."
   },
   {
     "id": 71,
@@ -2399,12 +2895,29 @@
     "lng": -73.98298,
     "area": "DTBK",
     "address": "257 Gold St, Brooklyn, NY 11201",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3075-5450",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3075-3350"
+      },
+      {
+        "type": "1B",
+        "price": "3800-4300"
+      },
+      {
+        "type": "2B",
+        "price": "5300-5450"
+      }
+    ],
     "mapLabel": "BK Gold",
     "website": "https://bklyngold.com/",
-    "availability": "",
+    "availability": "https://www.bklyngold.com/floor-plans-availability/",
     "op": "",
     "emails": [
       "INFO@BKLYNGOLD.COM"
@@ -2412,8 +2925,16 @@
     "phones": [
       "(718) 522-3500"
     ],
-    "flags": [],
-    "notes": "Closes at 6 PM. Opens 10 AM Tuesday."
+    "flags": [
+      "Doorman",
+      "Elevator",
+      "Gym",
+      "Pool",
+      "Bike Storage",
+      "In-Building Washer",
+      "Pet Friendly"
+    ],
+    "notes": ""
   },
   {
     "id": 72,
@@ -2537,7 +3058,7 @@
       "(888) 629-8625"
     ],
     "flags": [],
-    "notes": "Dogs allowed. Located in Long Island University Brooklyn. Has a schedule.tours link. Pricing appears to reflect base rent plus a $95 monthly amenity fee, not 1 month free."
+    "notes": "Dogs allowed. Located in Long Island University Brooklyn. Has a schedule.tours link."
   },
   {
     "id": 86,
@@ -2619,9 +3140,21 @@
     "lng": -73.97366,
     "area": "DTBK",
     "address": "662 Pacific St, Brooklyn, NY 11217",
-    "price": "Ask",
-    "type": [],
-    "inventory": [],
+    "price": "3650-3875",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3650"
+      },
+      {
+        "type": "1B",
+        "price": "3875"
+      }
+    ],
     "mapLabel": "Plank Road",
     "website": "https://plankroadbk.com/",
     "availability": "",
@@ -2689,7 +3222,7 @@
       "(718) 395-4072"
     ],
     "flags": [],
-    "notes": "Has a schedule.tours link. Uses special pricing and rent credit promotions on select units."
+    "notes": "Has a schedule.tours link."
   },
   {
     "id": 104,
@@ -2917,6 +3450,73 @@
     ],
     "flags": [],
     "notes": "Special pricing on select units."
+  },
+  {
+    "id": 182,
+    "name": "Victoria Tower Residences",
+    "lat": 40.809942,
+    "lng": -73.949108,
+    "area": "Forten",
+    "address": "230 W 126th St, New York, NY 10027",
+    "price": "3033-3168",
+    "type": [
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "1B",
+        "price": "3033-3168"
+      }
+    ],
+    "mapLabel": "Victoria Tower",
+    "website": "https://victoriatowerresidences.com/",
+    "availability": "https://victoriatowerresidences.com/check-availability/",
+    "op": "",
+    "emails": [],
+    "phones": [],
+    "flags": [],
+    "notes": "Has a 2tour.site link."
+  },
+  {
+    "id": 183,
+    "name": "Sunrose Tower",
+    "lat": 40.83173,
+    "lng": -73.948221,
+    "area": "Upper Manhattan",
+    "address": "620 W 153rd St, New York, NY 10031",
+    "price": "3250-5250",
+    "type": [
+      "Studio",
+      "1B",
+      "2B",
+      "3B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "3250"
+      },
+      {
+        "type": "1B",
+        "price": "3800"
+      },
+      {
+        "type": "2B",
+        "price": "4750"
+      },
+      {
+        "type": "3B",
+        "price": "5250"
+      }
+    ],
+    "mapLabel": "Sunrose Tower",
+    "website": "https://sunrosetower.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [],
+    "flags": [],
+    "notes": "Dogs allowed. Built in 2023. Strict partition rules; flex walls are not allowed."
   },
   {
     "id": 123,

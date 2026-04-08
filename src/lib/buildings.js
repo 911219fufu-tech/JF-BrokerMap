@@ -1,5 +1,4 @@
 export const TYPE_OPTIONS = ['Studio', '1B', '2B', '3B'];
-export const PRICE_OPTIONS = ['Under $3k', '$3k-$4k', '$4k+'];
 export const NEWPORT_RENTALS_FEE_GUIDE = {
   required: [
     {
@@ -236,6 +235,12 @@ export function getMinPrice(priceRange) {
   return Number.isFinite(value) ? value : null;
 }
 
+export function getMaxPrice(priceRange) {
+  const parts = String(priceRange).split('-');
+  const value = Number(parts.at(-1));
+  return Number.isFinite(value) ? value : null;
+}
+
 export function getPriceBucket(priceRange) {
   const minimum = getMinPrice(priceRange);
 
@@ -257,6 +262,24 @@ export function getPriceBucket(priceRange) {
 export function formatPrice(priceRange) {
   const minimum = getMinPrice(priceRange);
   return minimum === null ? 'Price on request' : `$${priceRange}`;
+}
+
+function getPriceRangeValues(priceRange) {
+  const minimum = getMinPrice(priceRange);
+  const maximum = getMaxPrice(priceRange);
+
+  if (minimum === null || maximum === null) {
+    return null;
+  }
+
+  return {
+    min: minimum,
+    max: maximum,
+  };
+}
+
+function rangesOverlap(leftRange, rightRange) {
+  return leftRange.min <= rightRange.max && rightRange.min <= leftRange.max;
 }
 
 export function getBuildingInventory(building) {
@@ -300,15 +323,46 @@ export function getBuildingPriceRange(building) {
   return minimum === maximum ? String(minimum) : `${minimum}-${maximum}`;
 }
 
-export function matchesBuildingFilters(building, selectedPrices, selectedTypes) {
+export function getPriceBounds(buildings) {
+  const prices = buildings.flatMap((building) => {
+    const inventory = getBuildingInventory(building);
+
+    if (inventory.length > 0) {
+      return inventory
+        .map((item) => getPriceRangeValues(item.price))
+        .filter(Boolean)
+        .flatMap((item) => [item.min, item.max]);
+    }
+
+    const buildingRange = getPriceRangeValues(building?.price);
+    return buildingRange ? [buildingRange.min, buildingRange.max] : [];
+  });
+
+  if (prices.length === 0) {
+    return {
+      min: 0,
+      max: 10000,
+    };
+  }
+
+  return {
+    min: Math.min(...prices),
+    max: Math.max(...prices),
+  };
+}
+
+export function matchesBuildingFilters(building, selectedPriceRange, selectedTypes) {
   const inventory = getBuildingInventory(building);
+  const hasPriceFilter = Boolean(selectedPriceRange);
 
   if (inventory.length > 0) {
     return inventory.some((item) => {
       const matchesType =
         selectedTypes.length === 0 || selectedTypes.includes(item.type);
+      const itemPriceRange = getPriceRangeValues(item.price);
       const matchesPrice =
-        selectedPrices.length === 0 || selectedPrices.includes(getPriceBucket(item.price));
+        !hasPriceFilter ||
+        (itemPriceRange && rangesOverlap(itemPriceRange, selectedPriceRange));
 
       return matchesType && matchesPrice;
     });
@@ -317,8 +371,10 @@ export function matchesBuildingFilters(building, selectedPrices, selectedTypes) 
   const matchesType =
     selectedTypes.length === 0 || selectedTypes.some((type) => getBuildingTypes(building).includes(type));
 
+  const buildingPriceRange = getPriceRangeValues(building?.price);
   const matchesPrice =
-    selectedPrices.length === 0 || selectedPrices.includes(getPriceBucket(building?.price));
+    !hasPriceFilter ||
+    (buildingPriceRange && rangesOverlap(buildingPriceRange, selectedPriceRange));
 
   return matchesType && matchesPrice;
 }

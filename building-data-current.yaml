@@ -31,7 +31,8 @@
 - name: Heritage Tower 28
   area: LIC
   address: 42-12 28th St, Long Island City, NY 11101
-  website: https://heatherwood.com/
+  website: https://heatherwood.com/our-properties/heritage-tower-28/floorplan
+  availability: https://heatherwood.com/our-properties/heritage-tower-28/floorplan
   op: 0 OP
   emails: Lea@heatherwood.com
   phones: (833) 816-8682
@@ -50,7 +51,8 @@
 - name: Heritage 27 on 27th
   area: LIC
   address: 27-03 42nd Rd, Long Island City, NY 11101
-  website: https://heatherwood.com/
+  website: https://heatherwood.com/our-properties/heritage-27-on-27th
+  availability: https://heatherwood.com/our-properties/heritage-27-on-27th
   op:
   emails:
   phones: (929) 281-3344, +1 (833) 858-5266
@@ -169,7 +171,8 @@
 - name: Packard Square
   area: LIC
   address: 41-34 Crescent St, Astoria, NY 11101
-  website:
+  website: https://www.hlres.com/buildings/nyc/packard-square-41-34-crescent-street/3526/rentals#availability
+  availability: https://www.hlres.com/buildings/nyc/packard-square-41-34-crescent-street/3526/rentals#availability
   op:
   emails: info@packardsquare.com
   phones:
@@ -178,7 +181,7 @@
 - name: 4615 Center Blvd
   area: LIC
   address: 46-15 Center Blvd, Long Island City, NY 11109
-  website: https://www.maltdrive.com/
+  website: https://tfc.com/apartments/4615-center-blvd
   op:
   emails:
   phones: (718) 606-9440
@@ -187,7 +190,7 @@
 - name: 4610 Center Blvd
   area: LIC
   address: 46-10 Center Blvd, Long Island City, NY 11109
-  website: https://www.maltdrive.com/
+  website: https://tfc.com/apartments/4610-center-blvd
   op:
   emails:
   phones: (718) 606-9440
@@ -196,17 +199,26 @@
 - name: 4705 Center Boulevard Apartments by Rockrose
   area: LIC
   address: 47-05 Center Blvd, Long Island City, NY 11109
-  website: https://rockrose.com/
+  website: https://rockrose.com/building/4705-center-boulevard/
   availability: https://rockrose.com/availabilities/
   op:
   emails:
   phones: (718) 606-1879
   notes: Dogs allowed.
 
+- name: 4720 Center Blvd
+  area: LIC
+  address: 47-20 Center Blvd, Long Island City, NY 11109
+  website: https://tfc.com/apartments/4720-center-blvd
+  op:
+  emails:
+  phones: (718) 606-9440
+  notes: Dogs allowed. 1 month free on select units.
+
 - name: 5203 Center Blvd
   area: LIC
   address: 52-03 Center Blvd, Long Island City, NY 11101
-  website: https://www.maltdrive.com/
+  website: https://tfc.com/apartments/5203-center-blvd
   op:
   emails: MaltDriveLeasing@tfc.com
   phones: (212) 353-5850
@@ -215,7 +227,7 @@
 - name: 5241 Center Blvd
   area: LIC
   address: 52-41 Center Blvd, Long Island City, NY 11101
-  website: https://www.maltdrive.com/
+  website: https://tfc.com/apartments/5241-center-blvd
   op:
   emails: emil.popicg@tfc.com
   phones: (212) 353-5850
@@ -238,7 +250,7 @@
   op:
   emails:
   phones: (718) 478-2020
-  notes:
+  notes: Studio, 1 Bedroom, 2 Bedroom, and 3 Bedroom available by inquiry only.
 
 - name: Fifty11 Apartment
   area: Queens
@@ -252,7 +264,8 @@
 - name: Woodside Central
   area: Queens
   address: 46-09 69th St, Woodside, NY 11377
-  website: https://woodside-central.com/
+  website: https://www.corcoran.com/new-developments/for-rent/maspeth/46-09-69th-street/32912754
+  availability: https://www.corcoran.com/new-developments/for-rent/maspeth/46-09-69th-street/32912754
   op: 0 OP
   emails: Inna.Kukharuk@corcoran.com
   phones:
@@ -262,6 +275,7 @@
   area: Queens
   address: 72-01 Queens Blvd, Woodside, NY 11377
   website: https://solawoodside.com/
+  availability: https://solawoodside.com/availability
   op:
   emails: mc@mns.com
   phones: (212) 683-9292, 3476781963
@@ -280,6 +294,7 @@
   area: Queens
   address: 61-55 Junction Blvd, Rego Park, NY 11374
   website: https://alexanderregopark.com/
+  availability: https://alexanderregopark.com/check-availability/
   op: 0 OP
   emails: alexanderny@researchapartments.com
   phones: (718) 215-0710, 844 238-9263
@@ -289,6 +304,7 @@
   area: Queens
   address: 62-60 99th St, Rego Park, NY 11374
   website: https://rentthedrake.com/
+  availability: https://www.rentthedrake.com/availability/
   op:
   emails: listings@vrenyc.com
   phones: (646) 747-7848
@@ -317,7 +333,8 @@
 - name: Roosevelt Parc Apartments
   area: Queens
   address: 37-46 72nd St, Flushing, NY 11372
-  website:
+  website: https://rooseveltparc.com/
+  availability: https://rooseveltparc.com/availabilities/
   op:
   emails: leasing@rooseveltparc.com
   phones:
@@ -327,15 +344,17 @@
   area: Queens
   address: 86-55 Broadway, Elmhurst, NY 11373
   website:
+  availability: https://streeteasy.com/building/the-elm-east
   op:
   emails:
   phones: 7187794395
-  notes: Message: 7187794395.
+  notes: Message: 7187794395. 2 months free on select units.
 
 - name: LeFrak City Apartments
   area: Queens
   address: LeFrak City Apartments, 59-17 Junction Blvd, Elmhurst, NY 11373
-  website:
+  website: https://www.lefrakcity.com/apartments-for-rent-queens-nyc/
+  availability: https://www.lefrakcity.com/apartments-for-rent-queens-nyc/
   op:
   emails: RAinfo@realtyoperations.com
   phones:
@@ -345,15 +364,17 @@
   area: JSQ
   address: 505 Summit Ave, Jersey City, NJ 07306
   website: https://505summit.com/
+  availability: https://www.505summit.com/availability
   op:
   emails:
   phones: (201) 581-0505
-  notes:
+  notes: Uses best net effective pricing across listed lease terms.
 
 - name: Journal Square Urby Apartments
   area: JSQ
   address: 532 Summit Ave, Jersey City, NJ 07306
   website: https://urby.com/
+  availability: https://www.urby.com/location/journal-square/availability
   op:
   emails:
   phones: (856) 393-6036
@@ -372,15 +393,17 @@
   area: JSQ
   address: 632 Newark Ave, Jersey City, NJ 07306
   website: https://cmpnd.com/
+  availability: https://www.cmpnd.com/residential/632-newark#apply
   op:
   emails:
   phones: (551) 209-4008
-  notes:
+  notes: Dogs allowed.
 
 - name: 28 Cottage
   area: JSQ
   address: 28 Cottage St, Jersey City, NJ 07306
   website: https://cmpnd.com/
+  availability: https://www.cmpnd.com/residential/28-cottage#apply
   op:
   emails:
   phones: (201) 701-8182
@@ -390,6 +413,7 @@
   area: JSQ
   address: 9 Homestead Pl, Jersey City, NJ 07306
   website: https://cmpnd.com/
+  availability: https://www.cmpnd.com/residential/9-homestead#apply
   op:
   emails:
   phones: (551) 309-3007
@@ -399,6 +423,7 @@
   area: JSQ
   address: 26 Van Reipen Ave, Jersey City, NJ 07306
   website: https://26vanreipen.com/
+  availability: https://www.cmpnd.com/residential/26-van-reipen
   op:
   emails:
   phones: (201) 255-4247
@@ -408,12 +433,13 @@
   area: JSQ
   address: 36 Journal Square Plaza, Jersey City, NJ 07306
   website: https://journaljc.com/
+  availability: https://www.journaljc.com/availability
   op:
   emails:
   phones: (551) 209-2121
-  notes: Dogs allowed.
+  notes: Dogs allowed. Up to 2 months free on select units.
 
-- name: MRK
+- name: MRK | Luxury Apartment Rentals in Journal Square, Jersey City
   area: JSQ
   address: 97 Newkirk St, Jersey City, NJ 07306
   website: https://mrkjsq.com/
@@ -435,6 +461,7 @@
   area: JSQ
   address: 400 Claremont Ave, Jersey City, NJ 07304
   website: https://3acresjc.com/
+  availability: https://3acresjc.com/property-listings/
   op:
   emails:
   phones: (201) 975-3000
@@ -444,10 +471,11 @@
   area: JSQ
   address: 132 Yale Ave, Jersey City, NJ 07304
   website: https://theagnes001.com/
+  availability: https://theagnes001.com/availability/the-agnes/all
   op:
   emails:
   phones: (201) 656-1200
-  notes: Dogs allowed. Ironstate listing noted.
+  notes: Dogs allowed. Up to 1 month free (12+1).
 
 - name: Journal Squared
   area: JSQ
@@ -480,24 +508,27 @@
   area: Harrison
   address: 1200 S 5th St, Harrison, NJ 07029
   website: https://cobaltlofts.com/
+  availability: https://www.cobaltlofts.com/residences-of-style/
   op:
   emails:
   phones: (862) 626-2288
-  notes: Has a schedule.tours link.
+  notes: 1 month free on select studio and 1B move-ins by 4/30. Has a schedule.tours link.
 
 - name: The Wyldes
   area: Harrison
   address: 1100 S 5th St, Harrison, NJ 07029
   website: https://thewyldes.com/
+  availability: https://www.thewyldes.com/availability
   op:
   emails:
   phones: (862) 626-2201
-  notes: Has a schedule.tours link.
+  notes: 1 month free on select 1B move-ins by 4/30. Has a schedule.tours link.
 
 - name: Steel Works
   area: Harrison
   address: 1200 Frank E Rodgers Blvd S, Harrison, NJ 07029
   website: https://steelworksapts.com/
+  availability: https://www.steelworksapts.com/floor-plans/
   op:
   emails:
   phones: (973) 319-8231
@@ -506,16 +537,18 @@
 - name: Harrison Urby Apartments
   area: Harrison
   address: 200 Angelo Cifelli Dr, Harrison, NJ 07029
-  website: https://urby.com/
+  website: https://www.urby.com/location/harrison
+  availability: https://www.urby.com/location/harrison
   op:
   emails:
   phones: (856) 329-8934
-  notes: Dogs allowed. Near PATH.
+  notes: Dogs allowed. Near PATH. Includes concession pricing on select units.
 
 - name: The Eddy, Harrison
   area: Harrison
   address: 555 S 1st St, Harrison, NJ 07029
-  website: https://ironstate.com/
+  website: https://ironstate.com/property/the-eddy/
+  availability: https://ironstate.com/property/the-eddy/
   op:
   emails:
   phones: (855) 623-7351
@@ -564,7 +597,7 @@
   op:
   emails:
   phones: (201) 865-3291
-  notes: Dogs allowed.
+  notes: Dogs allowed. 1B, 2B, and 3B layouts available by inquiry only.
 
 - name: Bisby at Newport
   area: Newport
@@ -752,19 +785,21 @@
   area: DTBK
   address: 22 Chapel St, Brooklyn, NY 11201
   website: https://22chapel.com/
+  availability: https://22chapel.com/availability
   op:
   emails:
   phones: (718) 550-0022
-  notes:
+  notes: Net pricing shown. 1 to 2 months concessions on select units.
 
 - name: Brooklyn Gold
   area: DTBK
   address: 257 Gold St, Brooklyn, NY 11201
   website: https://bklyngold.com/
+  availability: https://www.bklyngold.com/floor-plans-availability/
   op:
   emails: INFO@BKLYNGOLD.COM
   phones: (718) 522-3500
-  notes:
+  notes: Doorman, elevator, gym, pool, bike storage, in-building washer, pet friendly.
 
 - name: BKLYN AIR
   area: DTBK
@@ -904,6 +939,25 @@
   emails:
   phones: (718) 215-0412
   notes:
+
+- name: Victoria Tower Residences
+  area: Forten
+  address: 230 W 126th St, New York, NY 10027
+  website: https://victoriatowerresidences.com/
+  availability: https://victoriatowerresidences.com/check-availability/
+  op:
+  emails:
+  phones:
+  notes: Has a 2tour.site link.
+
+- name: Sunrose Tower
+  area: Upper Manhattan
+  address: 620 W 153rd St, New York, NY 10031
+  website: https://sunrosetower.com/
+  op:
+  emails:
+  phones:
+  notes: Dogs allowed. Built in 2023. Strict partition rules; flex walls are not allowed.
 
 - name: DWTN BK
   area: DTBK

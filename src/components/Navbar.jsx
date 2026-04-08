@@ -14,7 +14,7 @@ function Navbar({ favoriteCount, recentBuildings, onSelectBuilding }) {
   const [isRecentOpen, setIsRecentOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-[rgba(35,66,50,0.08)] bg-[rgba(250,248,242,0.72)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[rgba(35,66,50,0.08)] bg-[rgba(250,248,242,0.84)] backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4">
           <div>
