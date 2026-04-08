@@ -76,7 +76,7 @@ function AreaFilterDropdown({ options, selectedOptions, onToggle }) {
 
       <button
         type="button"
-        className="flex min-h-[84px] w-full items-center justify-between gap-3 rounded-[24px] border border-[var(--line)] bg-white/70 px-4 py-3 text-left text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
+        className="flex h-[84px] w-full items-center justify-between gap-3 rounded-[24px] border border-[var(--line)] bg-white/70 px-4 py-3 text-left text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
         onClick={() => setOpen((currentValue) => !currentValue)}
       >
         <div className="min-w-0">
@@ -131,7 +131,7 @@ function PriceRangeControl({ bounds, value, onChange }) {
     <div className="space-y-2">
       <p className="text-xs uppercase tracking-[0.22em] text-[var(--text-muted)]">Price</p>
 
-      <div className="min-h-[84px] rounded-[24px] border border-[var(--line)] bg-white/70 px-4 py-3">
+      <div className="flex h-[84px] flex-col justify-between rounded-[24px] border border-[var(--line)] bg-white/70 px-4 py-3">
         <div className="relative h-[36px]">
           <div className="absolute top-1/2 h-2 w-full -translate-y-1/2 rounded-full bg-[rgba(35,66,50,0.10)]" />
           <div
