@@ -3519,6 +3519,60 @@
     "notes": "Dogs allowed. Built in 2023. Strict partition rules; flex walls are not allowed."
   },
   {
+    "id": 185,
+    "name": "MARC",
+    "lat": 40.765236,
+    "lng": -73.987511,
+    "area": "Midtown West",
+    "address": "900 8th Ave, New York, NY 10019",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "MARC",
+    "website": "https://liveatmarcnyc.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(833) 313-1199"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 186,
+    "name": "The Biltmore",
+    "lat": 40.760973,
+    "lng": -73.986943,
+    "area": "Midtown West",
+    "address": "271 W 47th St, New York, NY 10036",
+    "price": "4397-6897",
+    "type": [
+      "Studio",
+      "1B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "4397-4597"
+      },
+      {
+        "type": "1B",
+        "price": "5986-6897"
+      }
+    ],
+    "mapLabel": "Biltmore",
+    "website": "https://www.thebiltmoreny.com/biltmore/apts",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(332) 281-6209"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Amenity fee is $65 per person per month. About 3 minutes from the Times Square red steps. Renovated units have in-unit washer/dryer; unrenovated units do not. Uses base rent pricing."
+  },
+  {
     "id": 123,
     "name": "DWTN BK",
     "lat": 40.695426,

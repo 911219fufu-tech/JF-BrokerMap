@@ -959,6 +959,24 @@
   phones:
   notes: Dogs allowed. Built in 2023. Strict partition rules; flex walls are not allowed.
 
+- name: MARC
+  area: Midtown West
+  address: 900 8th Ave, New York, NY 10019
+  website: https://liveatmarcnyc.com/
+  op:
+  emails:
+  phones: (833) 313-1199
+  notes: Dogs allowed.
+
+- name: The Biltmore
+  area: Midtown West
+  address: 271 W 47th St, New York, NY 10036
+  website: https://www.thebiltmoreny.com/biltmore/apts
+  op:
+  emails:
+  phones: (332) 281-6209
+  notes: Dogs allowed. Amenity fee is $65 per person per month. About 3 minutes from the Times Square red steps. Renovated units have in-unit washer/dryer; unrenovated units do not.
+
 - name: DWTN BK
   area: DTBK
   address: 67 Prince St, Brooklyn, NY 11201
