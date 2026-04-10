@@ -519,7 +519,7 @@
   address: 1100 S 5th St, Harrison, NJ 07029
   website: https://thewyldes.com/
   availability: https://www.thewyldes.com/availability
-  op:
+  op: 1 OP
   emails:
   phones: (862) 626-2201
   notes: 1 month free on select 1B move-ins by 4/30. Has a schedule.tours link.
@@ -552,6 +552,26 @@
   op:
   emails:
   phones: (855) 623-7351
+  notes: Dogs allowed. Ironstate listing noted.
+
+- name: 300 Somerset St
+  area: Harrison
+  address: 300 Somerset St, Harrison, NJ 07029
+  website: https://ironstate.com/property/300-somerset/?utm_source=minerva_google&utm_medium=search&utm_campaign=IS_Harrison&keyword=300%20somerset&gad_source=1&gad_campaignid=20437411881&gbraid=0AAAAADzDRHeQ3-DlreFQTgMw3UaBHdSRk&gclid=CjwKCAjwnN3OBhA8EiwAfpTYemH4B9rRMLPbTXQuu4VfOp__4iB0c4fgYIv0UiZTMTranEO__bbO1BoCo_0QAvD_BwE
+  availability: https://ironstate.com/property/300-somerset/?utm_source=minerva_google&utm_medium=search&utm_campaign=IS_Harrison&keyword=300%20somerset&gad_source=1&gad_campaignid=20437411881&gbraid=0AAAAADzDRHeQ3-DlreFQTgMw3UaBHdSRk&gclid=CjwKCAjwnN3OBhA8EiwAfpTYemH4B9rRMLPbTXQuu4VfOp__4iB0c4fgYIv0UiZTMTranEO__bbO1BoCo_0QAvD_BwE
+  op: 1 OP
+  emails:
+  phones:
+  notes: Ironstate listing noted.
+
+- name: 330 Angelo Cifelli Dr
+  area: Harrison
+  address: 330 Angelo Cifelli Dr, Harrison, NJ 07029
+  website: https://ironstate.com/property/330-angelo-cifelli/
+  availability: https://ironstate.com/property/330-angelo-cifelli/
+  op: 1 OP
+  emails:
+  phones: (844) 946-2778
   notes: Dogs allowed. Ironstate listing noted.
 
 - name: Bella Vista Apartments
@@ -972,7 +992,7 @@
   area: Midtown West
   address: 271 W 47th St, New York, NY 10036
   website: https://www.thebiltmoreny.com/biltmore/apts
-  op:
+  op: 1 gross OP
   emails:
   phones: (332) 281-6209
   notes: Dogs allowed. Amenity fee is $65 per person per month. About 3 minutes from the Times Square red steps. Renovated units have in-unit washer/dryer; unrenovated units do not.

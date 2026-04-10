@@ -1912,7 +1912,7 @@
     "mapLabel": "Wyldes",
     "website": "https://thewyldes.com/",
     "availability": "https://www.thewyldes.com/availability",
-    "op": "",
+    "op": "1 OP",
     "emails": [],
     "phones": [
       "(862) 626-2201"
@@ -2038,6 +2038,80 @@
     ],
     "flags": [],
     "notes": "Dogs allowed."
+  },
+  {
+    "id": 187,
+    "name": "300 Somerset St",
+    "lat": 40.73892,
+    "lng": -74.15802,
+    "area": "Harrison",
+    "address": "300 Somerset St, Harrison, NJ 07029",
+    "price": "2135-3475",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2135-2430"
+      },
+      {
+        "type": "1B",
+        "price": "2560-2800"
+      },
+      {
+        "type": "2B",
+        "price": "3050-3475"
+      }
+    ],
+    "mapLabel": "300 Somerset",
+    "website": "https://ironstate.com/property/300-somerset/?utm_source=minerva_google&utm_medium=search&utm_campaign=IS_Harrison&keyword=300%20somerset&gad_source=1&gad_campaignid=20437411881&gbraid=0AAAAADzDRHeQ3-DlreFQTgMw3UaBHdSRk&gclid=CjwKCAjwnN3OBhA8EiwAfpTYemH4B9rRMLPbTXQuu4VfOp__4iB0c4fgYIv0UiZTMTranEO__bbO1BoCo_0QAvD_BwE",
+    "availability": "https://ironstate.com/property/300-somerset/?utm_source=minerva_google&utm_medium=search&utm_campaign=IS_Harrison&keyword=300%20somerset&gad_source=1&gad_campaignid=20437411881&gbraid=0AAAAADzDRHeQ3-DlreFQTgMw3UaBHdSRk&gclid=CjwKCAjwnN3OBhA8EiwAfpTYemH4B9rRMLPbTXQuu4VfOp__4iB0c4fgYIv0UiZTMTranEO__bbO1BoCo_0QAvD_BwE",
+    "op": "1 OP",
+    "emails": [],
+    "phones": [],
+    "flags": [],
+    "notes": "Ironstate listing noted."
+  },
+  {
+    "id": 188,
+    "name": "330 Angelo Cifelli Dr",
+    "lat": 40.73983,
+    "lng": -74.15941,
+    "area": "Harrison",
+    "address": "330 Angelo Cifelli Dr, Harrison, NJ 07029",
+    "price": "2110-3365",
+    "type": [
+      "Studio",
+      "1B",
+      "2B"
+    ],
+    "inventory": [
+      {
+        "type": "Studio",
+        "price": "2110-2135"
+      },
+      {
+        "type": "1B",
+        "price": "2495-2670"
+      },
+      {
+        "type": "2B",
+        "price": "3365"
+      }
+    ],
+    "mapLabel": "330 Angelo",
+    "website": "https://ironstate.com/property/330-angelo-cifelli/",
+    "availability": "https://ironstate.com/property/330-angelo-cifelli/",
+    "op": "1 OP",
+    "emails": [],
+    "phones": [
+      "(844) 946-2778"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed. Ironstate listing noted."
   },
   {
     "id": 153,
@@ -3564,7 +3638,7 @@
     "mapLabel": "Biltmore",
     "website": "https://www.thebiltmoreny.com/biltmore/apts",
     "availability": "",
-    "op": "",
+    "op": "1 gross OP",
     "emails": [],
     "phones": [
       "(332) 281-6209"
