@@ -229,6 +229,40 @@ export const WILLOUGHBY_FEE_GUIDE = {
   ],
 };
 
+export const HARRISON_URBY_FEE_GUIDE = {
+  required: [
+    {
+      label: 'Amenity Fee',
+      value: '$50 per month',
+      note: 'Per resident; required and non-refundable',
+    },
+    {
+      label: 'Security Deposit',
+      value: '$1,000',
+      note: "May be one month's rent depending on screening",
+    },
+    {
+      label: "First Month's / Prorated Rent",
+      value: 'Due before move-in',
+    },
+    {
+      label: "Renter's Insurance",
+      value: 'Required',
+      note: 'Minimum $100,000 liability coverage',
+    },
+  ],
+  other: [
+    {
+      label: 'Parking',
+      value: '$225 per month',
+      note: 'Optional assigned spot',
+    },
+  ],
+  utilities: [],
+  notes:
+    "There are no current OP commissions or general concessions for these units. Select immediate-move-in studios on longer lease terms may get up to 2 months free, but none match July timing.",
+};
+
 export function getMinPrice(priceRange) {
   const [minimum] = String(priceRange).split('-');
   const value = Number(minimum);
@@ -382,6 +416,10 @@ export function matchesBuildingFilters(building, selectedPriceRange, selectedTyp
 export function getBuildingFeeGuide(building) {
   if (building?.feeGuide) {
     return building.feeGuide;
+  }
+
+  if (building?.name === 'Harrison Urby Apartments') {
+    return HARRISON_URBY_FEE_GUIDE;
   }
 
   const website = building?.website?.toLowerCase() ?? '';
