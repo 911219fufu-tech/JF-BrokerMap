@@ -3593,6 +3593,174 @@
     "notes": "Dogs allowed. Built in 2023. Strict partition rules; flex walls are not allowed."
   },
   {
+    "id": 189,
+    "name": "The Paris New York - Upper West Side Apartments",
+    "lat": 40.794847,
+    "lng": -73.973973,
+    "area": "Upper Manhattan",
+    "address": "752 West End Ave, New York, NY 10025",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "The Paris",
+    "website": "https://www.stellarmanagement.com/theparisnewyork",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "+12128433784"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 190,
+    "name": "1440 Amsterdam Harlem Luxury Apartment Rentals",
+    "lat": 40.818748,
+    "lng": -73.955535,
+    "area": "Upper Manhattan",
+    "address": "1440 Amsterdam Ave, New York, NY 10027",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "1440 Amsterdam",
+    "website": "https://1440amsterdam.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(347) 508-1440"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 194,
+    "name": "Miramar",
+    "lat": 40.868203,
+    "lng": -73.919334,
+    "area": "Upper Manhattan",
+    "address": "407 W 206th St, New York, NY 10034",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "Miramar",
+    "website": "https://rentmiramar.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(646) 798-9613"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 195,
+    "name": "30 Morningside Drive",
+    "lat": 40.799412,
+    "lng": -73.963622,
+    "area": "Upper Manhattan",
+    "address": "30 Morningside Dr, New York, NY 10025",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "30 Morningside",
+    "website": "https://30morningsidedrive.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(212) 864-3030"
+    ],
+    "flags": [],
+    "notes": "Bookcase wall cannot go to the ceiling. About 2 minutes to the subway and around 5 minutes on foot to A, B, and C lines."
+  },
+  {
+    "id": 196,
+    "name": "Hudson Park NY Llc",
+    "lat": 40.791676,
+    "lng": -73.972913,
+    "area": "Upper Manhattan",
+    "address": "323 W 96th St, New York, NY 10025",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "Hudson Park",
+    "website": "https://hudsonparkny.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(212) 222-5613"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 191,
+    "name": "FIAT House",
+    "lat": 40.853017,
+    "lng": -73.97017,
+    "area": "Fort Lee",
+    "address": "2100 N Central Rd, Fort Lee, NJ 07024",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "FIAT House",
+    "website": "https://fiathouse.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 366-9232"
+    ],
+    "flags": [],
+    "notes": ""
+  },
+  {
+    "id": 192,
+    "name": "Twenty50",
+    "lat": 40.852157,
+    "lng": -73.97052,
+    "area": "Fort Lee",
+    "address": "2050 Central Rd, Fort Lee, NJ 07024",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "Twenty50",
+    "website": "https://twenty50nj.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 592-1911"
+    ],
+    "flags": [],
+    "notes": "Dogs allowed."
+  },
+  {
+    "id": 193,
+    "name": "The Modern",
+    "lat": 40.850638,
+    "lng": -73.972353,
+    "area": "Fort Lee",
+    "address": "800 Park Ave, Fort Lee, NJ 07024",
+    "price": "Ask",
+    "type": [],
+    "inventory": [],
+    "mapLabel": "Modern",
+    "website": "https://themodernlife.com/",
+    "availability": "",
+    "op": "",
+    "emails": [],
+    "phones": [
+      "(201) 676-3988"
+    ],
+    "flags": [],
+    "notes": "Has a schedule.tours link."
+  },
+  {
     "id": 185,
     "name": "MARC",
     "lat": 40.765236,

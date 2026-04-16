@@ -979,6 +979,78 @@
   phones:
   notes: Dogs allowed. Built in 2023. Strict partition rules; flex walls are not allowed.
 
+- name: The Paris New York - Upper West Side Apartments
+  area: Upper Manhattan
+  address: 752 West End Ave, New York, NY 10025
+  website: https://www.stellarmanagement.com/theparisnewyork
+  op:
+  emails:
+  phones: +12128433784
+  notes:
+
+- name: 1440 Amsterdam Harlem Luxury Apartment Rentals
+  area: Upper Manhattan
+  address: 1440 Amsterdam Ave, New York, NY 10027
+  website: https://1440amsterdam.com/
+  op:
+  emails:
+  phones: (347) 508-1440
+  notes:
+
+- name: Miramar
+  area: Upper Manhattan
+  address: 407 W 206th St, New York, NY 10034
+  website: https://rentmiramar.com/
+  op:
+  emails:
+  phones: (646) 798-9613
+  notes:
+
+- name: 30 Morningside Drive
+  area: Upper Manhattan
+  address: 30 Morningside Dr, New York, NY 10025
+  website: https://30morningsidedrive.com/
+  op:
+  emails:
+  phones: (212) 864-3030
+  notes: Bookcase wall cannot go to the ceiling. About 2 minutes to the subway and around 5 minutes on foot to A, B, and C lines.
+
+- name: Hudson Park NY Llc
+  area: Upper Manhattan
+  address: 323 W 96th St, New York, NY 10025
+  website: https://hudsonparkny.com/
+  op:
+  emails:
+  phones: (212) 222-5613
+  notes:
+
+- name: FIAT House
+  area: Fort Lee
+  address: 2100 N Central Rd, Fort Lee, NJ 07024
+  website: https://fiathouse.com/
+  op:
+  emails:
+  phones: (201) 366-9232
+  notes:
+
+- name: Twenty50
+  area: Fort Lee
+  address: 2050 Central Rd, Fort Lee, NJ 07024
+  website: https://twenty50nj.com/
+  op:
+  emails:
+  phones: (201) 592-1911
+  notes: Dogs allowed.
+
+- name: The Modern
+  area: Fort Lee
+  address: 800 Park Ave, Fort Lee, NJ 07024
+  website: https://themodernlife.com/
+  op:
+  emails:
+  phones: (201) 676-3988
+  notes: Has a schedule.tours link.
+
 - name: MARC
   area: Midtown West
   address: 900 8th Ave, New York, NY 10019
