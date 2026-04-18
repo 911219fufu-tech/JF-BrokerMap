@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-function FilterGroup({ label, options, selectedOptions, onToggle }) {
+function FilterGroup({ label, options, selectedOptions, onToggle, size = 'default' }) {
+  const buttonClass =
+    size === 'compact'
+      ? 'min-h-8 max-w-[82px] px-2 py-1 text-[11px] leading-[1rem] whitespace-normal text-center break-words [overflow-wrap:anywhere]'
+      : 'min-h-11 px-3 py-2 text-sm';
+
   return (
     <div className="space-y-3">
       <p className="text-xs uppercase tracking-[0.22em] text-[var(--text-muted)]">{label}</p>
@@ -13,7 +18,7 @@ function FilterGroup({ label, options, selectedOptions, onToggle }) {
             <button
               key={option}
               type="button"
-              className={`min-h-11 shrink-0 rounded-full border px-3 py-2 text-sm font-medium transition ${
+              className={`${buttonClass} shrink-0 rounded-full border font-medium transition ${
                 active
                   ? 'border-pine bg-pine text-white shadow-sm'
                   : 'border-[var(--line)] bg-white/70 text-[var(--text-muted)] hover:border-[var(--line-strong)] hover:bg-white'
@@ -186,16 +191,19 @@ function FilterBar({
   areaOptions,
   priceBounds,
   typeOptions,
+  opOptions,
   selectedAreas,
   selectedPriceRange,
   selectedTypes,
+  selectedOpFilter,
   onAreaToggle,
   onPriceChange,
   onTypeToggle,
+  onOpChange,
   onClear,
 }) {
   return (
-    <div className="relative z-30 mt-4 grid gap-4 border-t border-[var(--line)] pt-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto] xl:items-start">
+    <div className="relative z-30 mt-4 grid gap-4 border-t border-[var(--line)] pt-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto] xl:items-start">
       <AreaFilterDropdown
         options={areaOptions}
         selectedOptions={selectedAreas}
@@ -213,6 +221,14 @@ function FilterBar({
         options={typeOptions}
         selectedOptions={selectedTypes}
         onToggle={onTypeToggle}
+      />
+
+      <FilterGroup
+        label="OP"
+        options={opOptions}
+        selectedOptions={selectedOpFilter === 'ALL' ? [] : [selectedOpFilter]}
+        onToggle={onOpChange}
+        size="compact"
       />
 
       <button

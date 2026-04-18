@@ -1,4 +1,14 @@
 export const TYPE_OPTIONS = ['Studio', '1B', '2B', '3B'];
+export const OP_FILTER_OPTIONS = [
+  'ALL',
+  'Any OP',
+  'Full OP',
+  'Select-unit OP',
+  'Half OP',
+  '$1000/$1500 OP',
+  'Other OP',
+  '1or1',
+];
 export const NEWPORT_RENTALS_FEE_GUIDE = {
   required: [
     {
@@ -385,7 +395,99 @@ export function getPriceBounds(buildings) {
   };
 }
 
-export function matchesBuildingFilters(building, selectedPriceRange, selectedTypes) {
+export function getBuildingOpCategory(building) {
+  const rawValue = building?.op?.trim();
+
+  if (!rawValue || /^0\b/i.test(rawValue)) {
+    return 'none';
+  }
+
+  const normalized = rawValue.toLowerCase();
+
+  if (normalized.includes('1or1')) {
+    return 'oneOrOne';
+  }
+
+  if (normalized.includes('select')) {
+    return 'select';
+  }
+
+  if (normalized.includes('$1000/$1500') || normalized.includes('under 500 sq ft')) {
+    return 'fixed';
+  }
+
+  if (
+    normalized.includes('1/2 month op') ||
+    normalized.includes('half op') ||
+    normalized === '0.5 op'
+  ) {
+    return 'half';
+  }
+
+  if (
+    normalized.includes('after') ||
+    normalized.includes('before') ||
+    normalized.includes('by ') ||
+    normalized.includes('month free')
+  ) {
+    return 'other';
+  }
+
+  if (
+    normalized === '1 op' ||
+    normalized === '1 gross op' ||
+    normalized === '1 month net op' ||
+    normalized === '1 month rent op'
+  ) {
+    return 'full';
+  }
+
+  return 'other';
+}
+
+export function matchesBuildingOpFilter(building, selectedOpFilter) {
+  if (!selectedOpFilter || selectedOpFilter === 'ALL') {
+    return true;
+  }
+
+  const category = getBuildingOpCategory(building);
+
+  if (selectedOpFilter === 'Any OP') {
+    return category !== 'none';
+  }
+
+  if (selectedOpFilter === 'Full OP') {
+    return category === 'full';
+  }
+
+  if (selectedOpFilter === 'Select-unit OP') {
+    return category === 'select';
+  }
+
+  if (selectedOpFilter === 'Half OP') {
+    return category === 'half';
+  }
+
+  if (selectedOpFilter === '$1000/$1500 OP') {
+    return category === 'fixed';
+  }
+
+  if (selectedOpFilter === 'Other OP') {
+    return category === 'other';
+  }
+
+  if (selectedOpFilter === '1or1') {
+    return category === 'oneOrOne';
+  }
+
+  return true;
+}
+
+export function matchesBuildingFilters(building, selectedPriceRange, selectedTypes, selectedOpFilter = 'ALL') {
+  if (!matchesBuildingOpFilter(building, selectedOpFilter)) {
+    return false;
+  }
+
   const inventory = getBuildingInventory(building);
   const hasPriceFilter = Boolean(selectedPriceRange);
 

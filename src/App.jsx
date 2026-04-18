@@ -7,6 +7,7 @@ import BuildingList from './components/BuildingList';
 import DetailPanel from './components/DetailPanel';
 import {
   TYPE_OPTIONS,
+  OP_FILTER_OPTIONS,
   getPriceBounds,
   matchesBuildingFilters,
 } from './lib/buildings';
@@ -40,6 +41,7 @@ function App() {
     max: priceBounds.max,
   }));
   const [selectedTypes, setSelectedTypes] = useState([]);
+  const [selectedOpFilter, setSelectedOpFilter] = useState('ALL');
   const [selectedBuildingId, setSelectedBuildingId] = useState(null);
   const [focusNonce, setFocusNonce] = useState(0);
   const [favoriteIds, setFavoriteIds] = useState(() => loadFavorites());
@@ -79,11 +81,12 @@ function App() {
           building,
           activePriceRange,
           selectedTypes,
+          selectedOpFilter,
         );
 
         return matchesSearch && matchesArea && matchesInventoryFilters;
       }),
-    [searchValue, selectedAreas, activePriceRange, selectedTypes],
+    [searchValue, selectedAreas, activePriceRange, selectedTypes, selectedOpFilter],
   );
 
   const portfolioBuildings = useMemo(() => {
@@ -171,6 +174,10 @@ function App() {
     );
   };
 
+  const updateOpFilter = (value) => {
+    setSelectedOpFilter(value);
+  };
+
   const clearFilters = () => {
     setSelectedAreas([]);
     setSelectedPriceRange({
@@ -178,6 +185,7 @@ function App() {
       max: priceBounds.max,
     });
     setSelectedTypes([]);
+    setSelectedOpFilter('ALL');
     setSearchValue('');
   };
 
@@ -239,12 +247,15 @@ function App() {
             areaOptions={areaOptions}
             priceBounds={priceBounds}
             typeOptions={TYPE_OPTIONS}
+            opOptions={OP_FILTER_OPTIONS}
             selectedAreas={selectedAreas}
             selectedPriceRange={selectedPriceRange}
             selectedTypes={selectedTypes}
+            selectedOpFilter={selectedOpFilter}
             onAreaToggle={updateArea}
             onPriceChange={setSelectedPriceRange}
             onTypeToggle={updateType}
+            onOpChange={updateOpFilter}
             onClear={clearFilters}
           />
         </section>
