@@ -214,7 +214,7 @@
     "mapLabel": "27 on 27th",
     "website": "https://heatherwood.com/our-properties/heritage-27-on-27th",
     "availability": "https://heatherwood.com/our-properties/heritage-27-on-27th",
-    "op": "1 OP",
+    "op": "0 OP",
     "emails": [],
     "phones": [
       "(929) 281-3344",
@@ -864,7 +864,7 @@
     "mapLabel": "5241 CB",
     "website": "https://tfc.com/apartments/5241-center-blvd",
     "availability": "",
-    "op": "",
+    "op": "Select units OP",
     "emails": [
       "emil.popicg@tfc.com"
     ],
@@ -984,7 +984,7 @@
     "mapLabel": "Woodside",
     "website": "https://www.corcoran.com/new-developments/for-rent/maspeth/46-09-69th-street/32912754",
     "availability": "https://www.corcoran.com/new-developments/for-rent/maspeth/46-09-69th-street/32912754",
-    "op": "1 OP",
+    "op": "0 OP",
     "emails": [
       "Inna.Kukharuk@corcoran.com"
     ],
@@ -1025,7 +1025,7 @@
     "mapLabel": "Sola",
     "website": "https://solawoodside.com/",
     "availability": "https://solawoodside.com/availability",
-    "op": "1 OP",
+    "op": "0 OP",
     "emails": [
       "mc@mns.com"
     ],
@@ -1213,7 +1213,7 @@
     "mapLabel": "Parker",
     "website": "https://parkertowers.com/",
     "availability": "https://www.parkertowers.com/nyc-apartments-for-rent",
-    "op": "1 OP",
+    "op": "0 OP",
     "emails": [
       "liveparker@beamliving.com",
       "shirley.chen@beamliving.com"
@@ -1312,7 +1312,7 @@
     "mapLabel": "LeFrak City Apartments",
     "website": "https://www.lefrakcity.com/apartments-for-rent-queens-nyc/",
     "availability": "https://www.lefrakcity.com/apartments-for-rent-queens-nyc/",
-    "op": "1 OP",
+    "op": "0 OP",
     "emails": [
       "RAinfo@realtyoperations.com"
     ],
@@ -1604,7 +1604,7 @@
     "mapLabel": "The Journal",
     "website": "https://journaljc.com/",
     "availability": "https://www.journaljc.com/availability",
-    "op": "1 OP",
+    "op": "0 OP",
     "emails": [],
     "phones": [
       "(551) 209-2121"
@@ -3605,7 +3605,7 @@
     "mapLabel": "The Paris",
     "website": "https://www.stellarmanagement.com/theparisnewyork",
     "availability": "",
-    "op": "",
+    "op": "1 OP",
     "emails": [],
     "phones": [
       "+12128433784"
@@ -3626,7 +3626,7 @@
     "mapLabel": "1440 Amsterdam",
     "website": "https://1440amsterdam.com/",
     "availability": "",
-    "op": "",
+    "op": "1 OP",
     "emails": [],
     "phones": [
       "(347) 508-1440"
@@ -3647,7 +3647,7 @@
     "mapLabel": "Miramar",
     "website": "https://rentmiramar.com/",
     "availability": "",
-    "op": "",
+    "op": "1 OP",
     "emails": [],
     "phones": [
       "(646) 798-9613"
@@ -3668,7 +3668,7 @@
     "mapLabel": "30 Morningside",
     "website": "https://30morningsidedrive.com/",
     "availability": "",
-    "op": "",
+    "op": "Select units OP",
     "emails": [],
     "phones": [
       "(212) 864-3030"
@@ -3689,7 +3689,7 @@
     "mapLabel": "Hudson Park",
     "website": "https://hudsonparkny.com/",
     "availability": "",
-    "op": "",
+    "op": "Select units OP",
     "emails": [],
     "phones": [
       "(212) 222-5613"
@@ -3710,7 +3710,7 @@
     "mapLabel": "FIAT House",
     "website": "https://fiathouse.com/",
     "availability": "",
-    "op": "",
+    "op": "1 OP",
     "emails": [],
     "phones": [
       "(201) 366-9232"
@@ -3731,7 +3731,7 @@
     "mapLabel": "Twenty50",
     "website": "https://twenty50nj.com/",
     "availability": "",
-    "op": "",
+    "op": "1 OP",
     "emails": [],
     "phones": [
       "(201) 592-1911"
@@ -3752,7 +3752,7 @@
     "mapLabel": "Modern",
     "website": "https://themodernlife.com/",
     "availability": "",
-    "op": "",
+    "op": "$1000/$1500 OP",
     "emails": [],
     "phones": [
       "(201) 676-3988"
