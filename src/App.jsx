@@ -131,7 +131,7 @@ function App() {
 
   const favoriteCount = favoriteIds.length;
   const areaOptions = useMemo(() => {
-    const areaOrder = ['LIC', 'Queens', 'DTBK', 'DTJC', 'JSQ', 'Newport', 'Harrison', 'Union City', 'Forten', 'Midtown West', 'Upper Manhattan', 'Fort Lee', 'West NY'];
+    const areaOrder = ['LIC', 'Queens', 'DTBK', 'DTJC', 'JSQ', 'Newport', 'Harrison', 'Bayonne', 'Union City', 'Forten', 'Midtown West', 'Roosevelt Island', 'Upper East Side', 'Upper Manhattan', 'Fort Lee', 'West NY'];
     const existingAreas = new Set(buildings.map((building) => building.area));
     return ['ALL', ...areaOrder.filter((area) => existingAreas.has(area))];
   }, []);
