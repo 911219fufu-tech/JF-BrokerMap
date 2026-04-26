@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import FilterBar from './components/FilterBar';
 import BuildingList from './components/BuildingList';
 import DetailPanel from './components/DetailPanel';
+import ClientsPage from './components/ClientsPage';
 import {
   TYPE_OPTIONS,
   OP_FILTER_OPTIONS,
@@ -13,6 +14,7 @@ import {
 } from './lib/buildings';
 import {
   loadFavorites,
+  loadClients,
   loadNotes,
   loadRecentViews,
   saveFavorites,
@@ -33,6 +35,9 @@ function MapLoadingState() {
 }
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(() =>
+    window.location.hash === '#/clients' ? 'clients' : 'home',
+  );
   const priceBounds = useMemo(() => getPriceBounds(buildings), []);
   const [searchValue, setSearchValue] = useState('');
   const [selectedAreas, setSelectedAreas] = useState([]);
@@ -47,6 +52,35 @@ function App() {
   const [favoriteIds, setFavoriteIds] = useState(() => loadFavorites());
   const [notesById, setNotesById] = useState(() => loadNotes());
   const [recentIds, setRecentIds] = useState(() => loadRecentViews());
+  const [clientCount, setClientCount] = useState(() => loadClients().length);
+
+  useEffect(() => {
+    const syncPageFromHash = () => {
+      setCurrentPage(window.location.hash === '#/clients' ? 'clients' : 'home');
+    };
+
+    syncPageFromHash();
+    window.addEventListener('hashchange', syncPageFromHash);
+
+    return () => {
+      window.removeEventListener('hashchange', syncPageFromHash);
+    };
+  }, []);
+
+  useEffect(() => {
+    const syncClientCount = () => {
+      setClientCount(loadClients().length);
+    };
+
+    syncClientCount();
+    window.addEventListener('storage', syncClientCount);
+    window.addEventListener('broker-atlas:clients-updated', syncClientCount);
+
+    return () => {
+      window.removeEventListener('storage', syncClientCount);
+      window.removeEventListener('broker-atlas:clients-updated', syncClientCount);
+    };
+  }, []);
 
   useEffect(() => {
     saveFavorites(favoriteIds);
@@ -216,88 +250,105 @@ function App() {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const navigateToHome = () => {
+    window.location.hash = '#/';
+  };
+
+  const navigateToClients = () => {
+    window.location.hash = '#/clients';
+    setClientCount(loadClients().length);
+  };
+
   return (
     <div className="min-h-screen bg-transparent text-[var(--text-main)]">
       <Navbar
         favoriteCount={favoriteCount}
         recentBuildings={recentBuildings}
         onSelectBuilding={toggleSelection}
+        currentPage={currentPage}
+        onNavigateHome={navigateToHome}
+        onNavigateClients={navigateToClients}
+        clientCount={clientCount}
       />
 
-      <main className="mx-auto flex max-w-[1600px] flex-col gap-4 px-4 pb-4 pt-3 sm:px-6 lg:px-8">
-        <section className="glass-panel relative z-20 overflow-visible rounded-[28px] p-4 sm:p-5">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
-            <SearchBar
-              value={searchValue}
-              onChange={setSearchValue}
-              resultCount={filteredBuildings.length}
-            />
+      {currentPage === 'clients' ? (
+        <ClientsPage buildings={buildings} />
+      ) : (
+        <main className="mx-auto flex max-w-[1600px] flex-col gap-4 px-4 pb-4 pt-3 sm:px-6 lg:px-8">
+          <section className="glass-panel relative z-20 overflow-visible rounded-[28px] p-4 sm:p-5">
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+              <SearchBar
+                value={searchValue}
+                onChange={setSearchValue}
+                resultCount={filteredBuildings.length}
+              />
 
-            <div className="hidden items-center justify-end gap-2 lg:flex">
-              <div className="rounded-full border border-[var(--line)] bg-white/70 px-4 py-2 text-sm text-[var(--text-muted)]">
-                {favoriteCount} favorites saved
-              </div>
-              <div className="rounded-full border border-[var(--line)] bg-white/70 px-4 py-2 text-sm text-[var(--text-muted)]">
-                {recentBuildings.length} recent views
+              <div className="hidden items-center justify-end gap-2 lg:flex">
+                <div className="rounded-full border border-[var(--line)] bg-white/70 px-4 py-2 text-sm text-[var(--text-muted)]">
+                  {favoriteCount} favorites saved
+                </div>
+                <div className="rounded-full border border-[var(--line)] bg-white/70 px-4 py-2 text-sm text-[var(--text-muted)]">
+                  {recentBuildings.length} recent views
+                </div>
               </div>
             </div>
-          </div>
 
-          <FilterBar
-            areaOptions={areaOptions}
-            priceBounds={priceBounds}
-            typeOptions={TYPE_OPTIONS}
-            opOptions={OP_FILTER_OPTIONS}
-            selectedAreas={selectedAreas}
-            selectedPriceRange={selectedPriceRange}
-            selectedTypes={selectedTypes}
-            selectedOpFilter={selectedOpFilter}
-            onAreaToggle={updateArea}
-            onPriceChange={setSelectedPriceRange}
-            onTypeToggle={updateType}
-            onOpChange={updateOpFilter}
-            onClear={clearFilters}
-          />
-        </section>
-
-        <section className="flex flex-col gap-4 xl:grid xl:min-h-[calc(100vh-12.5rem)] xl:grid-cols-[minmax(340px,34%)_minmax(0,66%)]">
-          <div className="order-2 xl:order-1">
-            <BuildingList
-              buildings={portfolioBuildings}
-              selectedBuildingId={selectedBuildingId}
-              favoriteIds={favoriteIds}
-              onSelectBuilding={toggleSelection}
-              onToggleFavorite={toggleFavorite}
-              onOpenWebsite={openWebsite}
+            <FilterBar
+              areaOptions={areaOptions}
+              priceBounds={priceBounds}
+              typeOptions={TYPE_OPTIONS}
+              opOptions={OP_FILTER_OPTIONS}
+              selectedAreas={selectedAreas}
+              selectedPriceRange={selectedPriceRange}
+              selectedTypes={selectedTypes}
+              selectedOpFilter={selectedOpFilter}
+              onAreaToggle={updateArea}
+              onPriceChange={setSelectedPriceRange}
+              onTypeToggle={updateType}
+              onOpChange={updateOpFilter}
+              onClear={clearFilters}
             />
-          </div>
+          </section>
 
-          <div className="order-1 xl:order-2">
-            <div className="relative h-[54vh] min-h-[360px] overflow-hidden rounded-[32px] border border-[var(--line)] shadow-panel xl:min-h-[520px] xl:h-full">
-              <Suspense fallback={<MapLoadingState />}>
-                <MapView
-                  buildings={filteredBuildings}
-                  selectedBuilding={selectedBuilding}
-                  favoriteIds={favoriteIds}
-                  focusNonce={focusNonce}
-                  onSelectBuilding={toggleSelection}
-                />
-              </Suspense>
-
-              <DetailPanel
-                building={selectedBuilding}
-                isFavorite={selectedBuilding ? favoriteIds.includes(selectedBuilding.id) : false}
-                noteValue={selectedBuilding ? notesById[selectedBuilding.id] ?? '' : ''}
-                onClose={() => setSelectedBuildingId(null)}
-                onOpenWebsite={openWebsite}
-                onCopyLink={copyWebsiteLink}
+          <section className="flex flex-col gap-4 xl:grid xl:min-h-[calc(100vh-12.5rem)] xl:grid-cols-[minmax(340px,34%)_minmax(0,66%)]">
+            <div className="order-2 xl:order-1">
+              <BuildingList
+                buildings={portfolioBuildings}
+                selectedBuildingId={selectedBuildingId}
+                favoriteIds={favoriteIds}
+                onSelectBuilding={toggleSelection}
                 onToggleFavorite={toggleFavorite}
-                onNoteChange={updateNote}
+                onOpenWebsite={openWebsite}
               />
             </div>
-          </div>
-        </section>
-      </main>
+
+            <div className="order-1 xl:order-2">
+              <div className="relative h-[54vh] min-h-[360px] overflow-hidden rounded-[32px] border border-[var(--line)] shadow-panel xl:min-h-[520px] xl:h-full">
+                <Suspense fallback={<MapLoadingState />}>
+                  <MapView
+                    buildings={filteredBuildings}
+                    selectedBuilding={selectedBuilding}
+                    favoriteIds={favoriteIds}
+                    focusNonce={focusNonce}
+                    onSelectBuilding={toggleSelection}
+                  />
+                </Suspense>
+
+                <DetailPanel
+                  building={selectedBuilding}
+                  isFavorite={selectedBuilding ? favoriteIds.includes(selectedBuilding.id) : false}
+                  noteValue={selectedBuilding ? notesById[selectedBuilding.id] ?? '' : ''}
+                  onClose={() => setSelectedBuildingId(null)}
+                  onOpenWebsite={openWebsite}
+                  onCopyLink={copyWebsiteLink}
+                  onToggleFavorite={toggleFavorite}
+                  onNoteChange={updateNote}
+                />
+              </div>
+            </div>
+          </section>
+        </main>
+      )}
     </div>
   );
 }
