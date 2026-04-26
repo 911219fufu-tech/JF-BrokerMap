@@ -25,10 +25,17 @@ export const LIVING_SETUP_OPTIONS = [
 ];
 
 export const LAYOUT_OPTIONS = [
+  { value: 'any', label: 'Any suitable layout' },
   { value: 'studio', label: 'Studio' },
   { value: '1br', label: '1 Bedroom' },
   { value: '2br', label: '2 Bedroom' },
   { value: '3br_plus', label: '3 Bedroom+' },
+];
+
+export const LIVING_ROOM_OPTIONS = [
+  { value: 'yes', label: 'Yes' },
+  { value: 'maybe', label: 'Maybe' },
+  { value: 'no', label: 'No' },
 ];
 
 export const GENDER_OPTIONS = [
@@ -92,6 +99,7 @@ export const MUST_HAVE_OPTIONS = [
 const STATUS_LABELS = toLookup(CLIENT_STATUS_OPTIONS);
 const LIVING_SETUP_LABELS = toLookup(LIVING_SETUP_OPTIONS);
 const LAYOUT_LABELS = toLookup(LAYOUT_OPTIONS);
+const LIVING_ROOM_LABELS = toLookup(LIVING_ROOM_OPTIONS);
 const GENDER_LABELS = toLookup(GENDER_OPTIONS);
 const ROOMMATE_GENDER_LABELS = toLookup(ROOMMATE_GENDER_PREFERENCE_OPTIONS);
 const OCCUPATION_LABELS = toLookup(OCCUPATION_OPTIONS);
@@ -264,6 +272,10 @@ function getMoveInCompatibility(client, candidate) {
 }
 
 function getBaseLayoutCapacity(layout) {
+  if (layout === 'any') {
+    return 4;
+  }
+
   if (layout === 'studio') {
     return 1;
   }
@@ -281,6 +293,26 @@ function getBaseLayoutCapacity(layout) {
   }
 
   return 2;
+}
+
+function getBedroomCount(layout) {
+  if (layout === 'studio') {
+    return 0;
+  }
+
+  if (layout === '1br') {
+    return 1;
+  }
+
+  if (layout === '2br') {
+    return 2;
+  }
+
+  if (layout === '3br_plus') {
+    return 3;
+  }
+
+  return null;
 }
 
 export function getAllowedOccupancyOptions(layout) {
@@ -343,6 +375,56 @@ function getOccupancyCompatibility(client, candidate) {
     eligible: true,
     score: 10,
     reason: `Occupancy limits can work together (${clientMaxOccupants} and ${candidateMaxOccupants} people).`,
+  };
+}
+
+function isLivingRoomSlotRequired(client) {
+  const maxOccupants = parseOccupancyValue(client.maxOccupants);
+  const bedroomCount = getBedroomCount(client.preferredLayout);
+
+  if (maxOccupants === null || bedroomCount === null) {
+    return false;
+  }
+
+  return bedroomCount > 0 && maxOccupants > bedroomCount;
+}
+
+function getLivingRoomCompatibility(client, candidate) {
+  const requiresLivingRoomSlot =
+    isLivingRoomSlotRequired(client) || isLivingRoomSlotRequired(candidate);
+
+  if (!requiresLivingRoomSlot) {
+    return {
+      eligible: true,
+      score: 4,
+      reason: 'No living-room sleeper is required for this pairing.',
+    };
+  }
+
+  const selfFlexible =
+    client.acceptsLivingRoomForSelf !== 'no' || candidate.acceptsLivingRoomForSelf !== 'no';
+  const hostFlexible =
+    client.acceptsLivingRoomOccupant !== 'no' &&
+    candidate.acceptsLivingRoomOccupant !== 'no';
+
+  if (!selfFlexible || !hostFlexible) {
+    return {
+      eligible: false,
+      score: 0,
+      reason: 'Living-room sleeping preferences conflict.',
+    };
+  }
+
+  const strongSelfFlex =
+    client.acceptsLivingRoomForSelf === 'yes' || candidate.acceptsLivingRoomForSelf === 'yes';
+  const strongHostFlex =
+    client.acceptsLivingRoomOccupant === 'yes' &&
+    candidate.acceptsLivingRoomOccupant === 'yes';
+
+  return {
+    eligible: true,
+    score: strongSelfFlex && strongHostFlex ? 12 : 8,
+    reason: 'Both sides can work with a living-room sleeping setup if needed.',
   };
 }
 
@@ -438,9 +520,11 @@ export function createEmptyClient() {
     budgetMax: '',
     areas: [],
     moveInDate: '',
-    preferredLayout: '',
+    preferredLayout: 'any',
     livingSetup: 'open_to_share',
     maxOccupants: '2',
+    acceptsLivingRoomForSelf: 'maybe',
+    acceptsLivingRoomOccupant: 'maybe',
     clientGender: 'unspecified',
     roommateGenderPreference: 'any',
     occupationType: '',
@@ -460,7 +544,7 @@ export function createClientRecord(formState, existingClient) {
   const trimmedContact = formState.contact.trim();
   const trimmedCustomNeeds = formState.customNeeds.trim();
   const trimmedNotes = formState.notes.trim();
-  const normalizedLayout = formState.preferredLayout || '';
+  const normalizedLayout = formState.preferredLayout || 'any';
   const normalizedLivingSetup =
     normalizedLayout === 'studio'
       ? 'solo_only'
@@ -486,6 +570,14 @@ export function createClientRecord(formState, existingClient) {
     preferredLayout: normalizedLayout,
     livingSetup: normalizedLivingSetup,
     maxOccupants: normalizedMaxOccupants,
+    acceptsLivingRoomForSelf:
+      normalizedLayout === 'studio'
+        ? 'no'
+        : formState.acceptsLivingRoomForSelf || 'maybe',
+    acceptsLivingRoomOccupant:
+      normalizedLayout === 'studio'
+        ? 'no'
+        : formState.acceptsLivingRoomOccupant || 'maybe',
     clientGender: formState.clientGender || 'unspecified',
     roommateGenderPreference: formState.roommateGenderPreference || 'any',
     occupationType: formState.occupationType || '',
@@ -567,6 +659,10 @@ export function getClientMeta(client) {
     maxOccupantsLabel: parseOccupancyValue(client.maxOccupants)
       ? `${client.maxOccupants} ${Number(client.maxOccupants) === 1 ? 'person' : 'people'} max`
       : 'Not set',
+    livingRoomSelfLabel:
+      LIVING_ROOM_LABELS[client.acceptsLivingRoomForSelf] ?? 'Unknown',
+    livingRoomOccupantLabel:
+      LIVING_ROOM_LABELS[client.acceptsLivingRoomOccupant] ?? 'Unknown',
     genderLabel: GENDER_LABELS[client.clientGender] ?? 'Unknown',
     roommateGenderLabel:
       ROOMMATE_GENDER_LABELS[client.roommateGenderPreference] ?? 'Unknown',
@@ -612,11 +708,13 @@ export function getClientMatchSuggestions(client, clients) {
       const budgetCompatibility = getBudgetCompatibility(client, candidate);
       const moveInCompatibility = getMoveInCompatibility(client, candidate);
       const occupancyCompatibility = getOccupancyCompatibility(client, candidate);
+      const livingRoomCompatibility = getLivingRoomCompatibility(client, candidate);
 
       if (
         !budgetCompatibility.eligible ||
         !moveInCompatibility.eligible ||
-        !occupancyCompatibility.eligible
+        !occupancyCompatibility.eligible ||
+        !livingRoomCompatibility.eligible
       ) {
         return null;
       }
@@ -631,6 +729,7 @@ export function getClientMatchSuggestions(client, clients) {
         sharedAreaScore +
         roommateReadinessScore +
         occupancyCompatibility.score +
+        livingRoomCompatibility.score +
         budgetCompatibility.score +
         moveInCompatibility.score +
         lifestyleCompatibility.score +
@@ -639,6 +738,7 @@ export function getClientMatchSuggestions(client, clients) {
       const reasons = [
         `Shared target areas: ${sharedAreas.join(', ')}.`,
         occupancyCompatibility.reason,
+        livingRoomCompatibility.reason,
         budgetCompatibility.reason,
         moveInCompatibility.reason,
         ...lifestyleCompatibility.reasons,

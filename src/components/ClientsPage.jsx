@@ -4,6 +4,7 @@ import {
   GENDER_OPTIONS,
   LAYOUT_OPTIONS,
   LIFESTYLE_OPTIONS,
+  LIVING_ROOM_OPTIONS,
   LIVING_SETUP_OPTIONS,
   MUST_HAVE_OPTIONS,
   OCCUPATION_OPTIONS,
@@ -307,6 +308,8 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
       if (value === 'studio') {
         nextState.livingSetup = 'solo_only';
         nextState.maxOccupants = '1';
+        nextState.acceptsLivingRoomForSelf = 'no';
+        nextState.acceptsLivingRoomOccupant = 'no';
         return nextState;
       }
 
@@ -316,6 +319,14 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
 
       if (currentState.livingSetup === 'solo_only') {
         nextState.livingSetup = 'open_to_share';
+      }
+
+      if (currentState.acceptsLivingRoomForSelf === 'no') {
+        nextState.acceptsLivingRoomForSelf = 'maybe';
+      }
+
+      if (currentState.acceptsLivingRoomOccupant === 'no') {
+        nextState.acceptsLivingRoomOccupant = 'maybe';
       }
 
       return nextState;
@@ -559,7 +570,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                 value={formState.preferredLayout}
                 onChange={updatePreferredLayout}
                 options={LAYOUT_OPTIONS}
-                placeholder="Flexible"
+                placeholder="Select layout"
               />
               <SelectField
                 label="Max occupants"
@@ -567,6 +578,21 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                 onChange={(value) => updateFormField('maxOccupants', value)}
                 options={occupancyOptions}
                 placeholder="Select max"
+              />
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <SelectField
+                label="Can client sleep in living room"
+                value={formState.acceptsLivingRoomForSelf}
+                onChange={(value) => updateFormField('acceptsLivingRoomForSelf', value)}
+                options={LIVING_ROOM_OPTIONS}
+              />
+              <SelectField
+                label="Can client accept someone in living room"
+                value={formState.acceptsLivingRoomOccupant}
+                onChange={(value) => updateFormField('acceptsLivingRoomOccupant', value)}
+                options={LIVING_ROOM_OPTIONS}
               />
             </div>
 
@@ -761,6 +787,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                         <div className="mt-4 flex flex-wrap gap-2">
                           <DetailTag>{formatBudgetRange(client)}</DetailTag>
                           <DetailTag>{formatMoveInDate(client.moveInDate)}</DetailTag>
+                          <DetailTag>{client.preferredLayout === 'any' ? 'Any layout' : client.preferredLayout.toUpperCase()}</DetailTag>
                           <DetailTag>
                             {isClientMatchEligible(client) ? 'Open to match' : 'Solo setup'}
                           </DetailTag>
@@ -818,6 +845,8 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                             <DetailTag>Layout: {meta.layoutLabel}</DetailTag>
                             <DetailTag>Setup: {meta.livingSetupLabel}</DetailTag>
                             <DetailTag>Capacity: {meta.maxOccupantsLabel}</DetailTag>
+                            <DetailTag>Can sleep in LR: {meta.livingRoomSelfLabel}</DetailTag>
+                            <DetailTag>Accepts LR occupant: {meta.livingRoomOccupantLabel}</DetailTag>
                             <DetailTag>Gender: {meta.genderLabel}</DetailTag>
                             <DetailTag>Prefers: {meta.roommateGenderLabel}</DetailTag>
                             <DetailTag>Occupation: {meta.occupationLabel}</DetailTag>

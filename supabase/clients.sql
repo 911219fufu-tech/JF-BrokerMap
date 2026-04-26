@@ -13,6 +13,8 @@ create table if not exists public.clients (
   preferred_layout text,
   living_setup text not null default 'open_to_share',
   max_occupants integer not null default 2,
+  accepts_living_room_for_self text not null default 'maybe',
+  accepts_living_room_occupant text not null default 'maybe',
   client_gender text not null default 'unspecified',
   roommate_gender_preference text not null default 'any',
   occupation_type text,
@@ -26,6 +28,12 @@ create table if not exists public.clients (
   created_at timestamptz not null default timezone('utc', now()),
   updated_at timestamptz not null default timezone('utc', now())
 );
+
+alter table public.clients add column if not exists preferred_layout text;
+alter table public.clients add column if not exists living_setup text not null default 'open_to_share';
+alter table public.clients add column if not exists max_occupants integer not null default 2;
+alter table public.clients add column if not exists accepts_living_room_for_self text not null default 'maybe';
+alter table public.clients add column if not exists accepts_living_room_occupant text not null default 'maybe';
 
 create index if not exists clients_user_id_idx on public.clients (user_id);
 create index if not exists clients_updated_at_idx on public.clients (updated_at desc);
