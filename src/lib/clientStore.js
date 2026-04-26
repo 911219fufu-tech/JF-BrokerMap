@@ -13,7 +13,14 @@ function mapRowToClient(row) {
     areas: row.areas ?? [],
     moveInDate: row.move_in_date ?? '',
     preferredLayout: row.preferred_layout ?? '',
-    roommateInterest: row.roommate_interest ?? 'maybe',
+    livingSetup: row.living_setup ?? (
+      row.roommate_interest === 'no'
+        ? 'solo_only'
+        : row.roommate_interest === 'yes'
+          ? 'must_share'
+          : 'open_to_share'
+    ),
+    maxOccupants: row.max_occupants === null ? '' : String(row.max_occupants),
     clientGender: row.client_gender ?? 'unspecified',
     roommateGenderPreference: row.roommate_gender_preference ?? 'any',
     occupationType: row.occupation_type ?? '',
@@ -47,7 +54,8 @@ function mapClientToRow(client, userId) {
     areas: client.areas,
     move_in_date: client.moveInDate || null,
     preferred_layout: client.preferredLayout || null,
-    roommate_interest: client.roommateInterest,
+    living_setup: client.livingSetup,
+    max_occupants: toNullableInteger(client.maxOccupants),
     client_gender: client.clientGender,
     roommate_gender_preference: client.roommateGenderPreference,
     occupation_type: client.occupationType || null,

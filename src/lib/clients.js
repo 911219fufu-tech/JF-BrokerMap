@@ -18,10 +18,10 @@ export const CLIENT_STATUS_OPTIONS = [
   { value: 'paused', label: 'Paused' },
 ];
 
-export const ROOMMATE_OPTIONS = [
-  { value: 'yes', label: 'Yes' },
-  { value: 'maybe', label: 'Maybe' },
-  { value: 'no', label: 'No' },
+export const LIVING_SETUP_OPTIONS = [
+  { value: 'solo_only', label: 'Solo only' },
+  { value: 'open_to_share', label: 'Prefer solo but open to sharing' },
+  { value: 'must_share', label: 'Need roommate(s)' },
 ];
 
 export const LAYOUT_OPTIONS = [
@@ -90,7 +90,7 @@ export const MUST_HAVE_OPTIONS = [
 ];
 
 const STATUS_LABELS = toLookup(CLIENT_STATUS_OPTIONS);
-const ROOMMATE_LABELS = toLookup(ROOMMATE_OPTIONS);
+const LIVING_SETUP_LABELS = toLookup(LIVING_SETUP_OPTIONS);
 const LAYOUT_LABELS = toLookup(LAYOUT_OPTIONS);
 const GENDER_LABELS = toLookup(GENDER_OPTIONS);
 const ROOMMATE_GENDER_LABELS = toLookup(ROOMMATE_GENDER_PREFERENCE_OPTIONS);
@@ -119,6 +119,19 @@ function parseBudgetValue(value) {
 
   const parsedValue = Number(value);
   if (!Number.isFinite(parsedValue) || parsedValue < 0) {
+    return null;
+  }
+
+  return parsedValue;
+}
+
+function parseOccupancyValue(value) {
+  if (value === '' || value === null || value === undefined) {
+    return null;
+  }
+
+  const parsedValue = Number(value);
+  if (!Number.isFinite(parsedValue) || parsedValue < 1) {
     return null;
   }
 
@@ -250,6 +263,89 @@ function getMoveInCompatibility(client, candidate) {
   };
 }
 
+function getBaseLayoutCapacity(layout) {
+  if (layout === 'studio') {
+    return 1;
+  }
+
+  if (layout === '1br') {
+    return 2;
+  }
+
+  if (layout === '2br') {
+    return 3;
+  }
+
+  if (layout === '3br_plus') {
+    return 4;
+  }
+
+  return 2;
+}
+
+export function getAllowedOccupancyOptions(layout) {
+  const baseCapacity = getBaseLayoutCapacity(layout);
+  return Array.from({ length: baseCapacity }, (_value, index) => {
+    const count = index + 1;
+    return {
+      value: String(count),
+      label: `${count} ${count === 1 ? 'person' : 'people'}`,
+    };
+  });
+}
+
+export function isClientMatchEligible(client) {
+  if (!client) {
+    return false;
+  }
+
+  if (client.preferredLayout === 'studio') {
+    return false;
+  }
+
+  if (client.livingSetup === 'solo_only') {
+    return false;
+  }
+
+  const maxOccupants = parseOccupancyValue(client.maxOccupants);
+  return maxOccupants !== null && maxOccupants > 1;
+}
+
+function getOccupancyCompatibility(client, candidate) {
+  const clientMaxOccupants = parseOccupancyValue(client.maxOccupants);
+  const candidateMaxOccupants = parseOccupancyValue(candidate.maxOccupants);
+
+  if (clientMaxOccupants === null || candidateMaxOccupants === null) {
+    return {
+      eligible: true,
+      score: 6,
+      reason: 'Occupancy setup still needs confirmation.',
+    };
+  }
+
+  if (clientMaxOccupants < 2 || candidateMaxOccupants < 2) {
+    return {
+      eligible: false,
+      score: 0,
+      reason: 'One client only supports a solo setup.',
+    };
+  }
+
+  if (clientMaxOccupants === candidateMaxOccupants) {
+    return {
+      eligible: true,
+      score: 14,
+      reason: `Both accept up to ${clientMaxOccupants} people in the home.`,
+    };
+  }
+
+  return {
+    eligible: true,
+    score: 10,
+    reason: `Occupancy limits can work together (${clientMaxOccupants} and ${candidateMaxOccupants} people).`,
+  };
+}
+
 function matchesGenderPreference(preference, gender) {
   if (preference === 'any') {
     return true;
@@ -343,7 +439,8 @@ export function createEmptyClient() {
     areas: [],
     moveInDate: '',
     preferredLayout: '',
-    roommateInterest: 'maybe',
+    livingSetup: 'open_to_share',
+    maxOccupants: '2',
     clientGender: 'unspecified',
     roommateGenderPreference: 'any',
     occupationType: '',
@@ -363,6 +460,17 @@ export function createClientRecord(formState, existingClient) {
   const trimmedContact = formState.contact.trim();
   const trimmedCustomNeeds = formState.customNeeds.trim();
   const trimmedNotes = formState.notes.trim();
+  const normalizedLayout = formState.preferredLayout || '';
+  const normalizedLivingSetup =
+    normalizedLayout === 'studio'
+      ? 'solo_only'
+      : formState.livingSetup || 'open_to_share';
+  const normalizedMaxOccupants =
+    normalizedLayout === 'studio' || normalizedLivingSetup === 'solo_only'
+      ? '1'
+      : formState.maxOccupants === ''
+        ? ''
+        : String(formState.maxOccupants);
 
   return {
     id: existingClient?.id ?? `client-${Date.now()}`,
@@ -375,8 +483,9 @@ export function createClientRecord(formState, existingClient) {
     budgetMax: formState.budgetMax === '' ? '' : String(formState.budgetMax),
     areas: uniqueValues(formState.areas ?? []),
     moveInDate: formState.moveInDate || '',
-    preferredLayout: formState.preferredLayout || '',
-    roommateInterest: formState.roommateInterest || 'maybe',
+    preferredLayout: normalizedLayout,
+    livingSetup: normalizedLivingSetup,
+    maxOccupants: normalizedMaxOccupants,
     clientGender: formState.clientGender || 'unspecified',
     roommateGenderPreference: formState.roommateGenderPreference || 'any',
     occupationType: formState.occupationType || '',
@@ -431,8 +540,11 @@ export function getOptionLabel(optionsMap, value) {
 export function getClientMeta(client) {
   return {
     statusLabel: getClientStatusLabel(client.status),
-    roommateLabel: ROOMMATE_LABELS[client.roommateInterest] ?? 'Unknown',
+    livingSetupLabel: LIVING_SETUP_LABELS[client.livingSetup] ?? 'Unknown',
     layoutLabel: client.preferredLayout ? LAYOUT_LABELS[client.preferredLayout] : 'Flexible',
+    maxOccupantsLabel: parseOccupancyValue(client.maxOccupants)
+      ? `${client.maxOccupants} ${Number(client.maxOccupants) === 1 ? 'person' : 'people'} max`
+      : 'Not set',
     genderLabel: GENDER_LABELS[client.clientGender] ?? 'Unknown',
     roommateGenderLabel:
       ROOMMATE_GENDER_LABELS[client.roommateGenderPreference] ?? 'Unknown',
@@ -451,13 +563,13 @@ export function getMustHaveLabel(value) {
 }
 
 export function getClientMatchSuggestions(client, clients) {
-  if (!client || client.roommateInterest === 'no') {
+  if (!isClientMatchEligible(client)) {
     return [];
   }
 
   return clients
     .filter((candidate) => candidate.id !== client.id)
-    .filter((candidate) => candidate.roommateInterest !== 'no')
+    .filter((candidate) => isClientMatchEligible(candidate))
     .map((candidate) => {
       const sharedAreas = getIntersection(client.areas, candidate.areas);
       if (sharedAreas.length === 0) {
@@ -477,20 +589,26 @@ export function getClientMatchSuggestions(client, clients) {
 
       const budgetCompatibility = getBudgetCompatibility(client, candidate);
       const moveInCompatibility = getMoveInCompatibility(client, candidate);
+      const occupancyCompatibility = getOccupancyCompatibility(client, candidate);
 
-      if (!budgetCompatibility.eligible || !moveInCompatibility.eligible) {
+      if (
+        !budgetCompatibility.eligible ||
+        !moveInCompatibility.eligible ||
+        !occupancyCompatibility.eligible
+      ) {
         return null;
       }
 
       const sharedAreaScore = Math.min(20, 12 + sharedAreas.length * 4);
       const roommateReadinessScore =
-        client.roommateInterest === 'yes' && candidate.roommateInterest === 'yes' ? 8 : 5;
+        client.livingSetup === 'must_share' && candidate.livingSetup === 'must_share' ? 8 : 5;
       const lifestyleCompatibility = getLifestyleCompatibility(client, candidate);
       const mustHaveCompatibility = getMustHaveCompatibility(client, candidate);
 
       const score =
         sharedAreaScore +
         roommateReadinessScore +
+        occupancyCompatibility.score +
         budgetCompatibility.score +
         moveInCompatibility.score +
         lifestyleCompatibility.score +
@@ -498,6 +616,7 @@ export function getClientMatchSuggestions(client, clients) {
 
       const reasons = [
         `Shared target areas: ${sharedAreas.join(', ')}.`,
+        occupancyCompatibility.reason,
         budgetCompatibility.reason,
         moveInCompatibility.reason,
         ...lifestyleCompatibility.reasons,

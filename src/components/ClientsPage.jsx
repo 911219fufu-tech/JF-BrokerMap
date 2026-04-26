@@ -4,11 +4,11 @@ import {
   GENDER_OPTIONS,
   LAYOUT_OPTIONS,
   LIFESTYLE_OPTIONS,
+  LIVING_SETUP_OPTIONS,
   MUST_HAVE_OPTIONS,
   OCCUPATION_OPTIONS,
   PET_OPTIONS,
   ROOMMATE_GENDER_PREFERENCE_OPTIONS,
-  ROOMMATE_OPTIONS,
   SCHEDULE_OPTIONS,
   SMOKING_OPTIONS,
   buildClientAreaOptions,
@@ -16,6 +16,8 @@ import {
   createEmptyClient,
   formatBudgetRange,
   formatMoveInDate,
+  getAllowedOccupancyOptions,
+  isClientMatchEligible,
   getClientMatchSuggestions,
   getClientMeta,
   getClientStatusLabel,
@@ -181,6 +183,10 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const areaOptions = useMemo(() => buildClientAreaOptions(buildings), [buildings]);
+  const occupancyOptions = useMemo(
+    () => getAllowedOccupancyOptions(formState.preferredLayout),
+    [formState.preferredLayout],
+  );
 
   useEffect(() => {
     let ignore = false;
@@ -264,10 +270,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
         client.areas.some((area) => area.toLowerCase().includes(searchTerm));
 
       const matchesStatus = statusFilter === 'all' || client.status === statusFilter;
-      const matchesRoommate =
-        !roommateOnlyFilter ||
-        client.roommateInterest === 'yes' ||
-        client.roommateInterest === 'maybe';
+      const matchesRoommate = !roommateOnlyFilter || isClientMatchEligible(client);
 
       return matchesSearch && matchesStatus && matchesRoommate;
     });
@@ -279,7 +282,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
   );
 
   const totalClients = clients.length;
-  const roommateReadyCount = clients.filter((client) => client.roommateInterest !== 'no').length;
+  const roommateReadyCount = clients.filter((client) => isClientMatchEligible(client)).length;
   const activeClientCount = clients.filter(
     (client) => client.status !== 'closed' && client.status !== 'paused',
   ).length;
@@ -289,6 +292,56 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
       ...currentState,
       [field]: value,
     }));
+  };
+
+  const updatePreferredLayout = (value) => {
+    const allowedOccupancies = getAllowedOccupancyOptions(value);
+    const defaultMaxOccupants = allowedOccupancies[allowedOccupancies.length - 1]?.value ?? '1';
+
+    setFormState((currentState) => {
+      const nextState = {
+        ...currentState,
+        preferredLayout: value,
+      };
+
+      if (value === 'studio') {
+        nextState.livingSetup = 'solo_only';
+        nextState.maxOccupants = '1';
+        return nextState;
+      }
+
+      if (!allowedOccupancies.some((option) => option.value === currentState.maxOccupants)) {
+        nextState.maxOccupants = defaultMaxOccupants;
+      }
+
+      if (currentState.livingSetup === 'solo_only') {
+        nextState.livingSetup = 'open_to_share';
+      }
+
+      return nextState;
+    });
+  };
+
+  const updateLivingSetup = (value) => {
+    setFormState((currentState) => {
+      if (value === 'solo_only') {
+        return {
+          ...currentState,
+          livingSetup: value,
+          maxOccupants: '1',
+        };
+      }
+
+      const allowedOccupancies = getAllowedOccupancyOptions(currentState.preferredLayout);
+      const fallbackMaxOccupants = allowedOccupancies[allowedOccupancies.length - 1]?.value ?? '2';
+
+      return {
+        ...currentState,
+        livingSetup: value,
+        maxOccupants:
+          currentState.maxOccupants === '1' ? fallbackMaxOccupants : currentState.maxOccupants,
+      };
+    });
   };
 
   const toggleArrayField = (field, value) => {
@@ -463,10 +516,10 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                 options={CLIENT_STATUS_OPTIONS}
               />
               <SelectField
-                label="Roommate interest"
-                value={formState.roommateInterest}
-                onChange={(value) => updateFormField('roommateInterest', value)}
-                options={ROOMMATE_OPTIONS}
+                label="Living setup"
+                value={formState.livingSetup}
+                onChange={updateLivingSetup}
+                options={LIVING_SETUP_OPTIONS}
               />
             </div>
 
@@ -504,9 +557,16 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
               <SelectField
                 label="Preferred layout"
                 value={formState.preferredLayout}
-                onChange={(value) => updateFormField('preferredLayout', value)}
+                onChange={updatePreferredLayout}
                 options={LAYOUT_OPTIONS}
                 placeholder="Flexible"
+              />
+              <SelectField
+                label="Max occupants"
+                value={formState.maxOccupants}
+                onChange={(value) => updateFormField('maxOccupants', value)}
+                options={occupancyOptions}
+                placeholder="Select max"
               />
             </div>
 
@@ -564,6 +624,13 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                 options={PET_OPTIONS}
               />
             </div>
+
+            {formState.preferredLayout === 'studio' ? (
+              <Notice>
+                Studio leads are automatically treated as solo-only and excluded from roommate
+                matching.
+              </Notice>
+            ) : null}
 
             <MultiSelectField
               label="Must-have features"
@@ -695,7 +762,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                           <DetailTag>{formatBudgetRange(client)}</DetailTag>
                           <DetailTag>{formatMoveInDate(client.moveInDate)}</DetailTag>
                           <DetailTag>
-                            {client.roommateInterest === 'no' ? 'Solo search' : 'Open to match'}
+                            {isClientMatchEligible(client) ? 'Open to match' : 'Solo setup'}
                           </DetailTag>
                         </div>
 
@@ -748,8 +815,9 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                         const meta = getClientMeta(selectedClient);
                         return (
                           <>
-                            <DetailTag>Roommate: {meta.roommateLabel}</DetailTag>
                             <DetailTag>Layout: {meta.layoutLabel}</DetailTag>
+                            <DetailTag>Setup: {meta.livingSetupLabel}</DetailTag>
+                            <DetailTag>Capacity: {meta.maxOccupantsLabel}</DetailTag>
                             <DetailTag>Gender: {meta.genderLabel}</DetailTag>
                             <DetailTag>Prefers: {meta.roommateGenderLabel}</DetailTag>
                             <DetailTag>Occupation: {meta.occupationLabel}</DetailTag>
@@ -809,9 +877,10 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                         </div>
                       </div>
 
-                      {selectedClient.roommateInterest === 'no' ? (
+                      {!isClientMatchEligible(selectedClient) ? (
                         <div className="mt-4 rounded-[24px] border border-dashed border-[var(--line)] bg-white/60 px-4 py-5 text-sm text-[var(--text-muted)]">
-                          This client is marked as solo only, so roommate suggestions are hidden.
+                          This client is currently set up for solo living, so roommate suggestions
+                          are hidden.
                         </div>
                       ) : matchSuggestions.length > 0 ? (
                         <div className="mt-4 space-y-3">
