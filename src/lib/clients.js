@@ -500,7 +500,29 @@ export function createClientRecord(formState, existingClient) {
 }
 
 export function buildClientAreaOptions(buildings) {
-  return [...new Set(buildings.map((building) => building.area))].sort((leftArea, rightArea) =>
+  const preferredAreas = [
+    'LIC',
+    'Queens',
+    'Midtown',
+    'DTBK',
+    'DTJC',
+    'JSQ',
+    'Newport',
+    'Harrison',
+    'Bayonne',
+    'Union City',
+    'Forten',
+    'Midtown West',
+    'Roosevelt Island',
+    'Upper East Side',
+    'Upper Manhattan',
+    'Fort Lee',
+    'West NY',
+  ];
+  const existingAreas = new Set(buildings.map((building) => building.area));
+  const mergedAreas = [...preferredAreas, ...existingAreas];
+
+  return [...new Set(mergedAreas)].sort((leftArea, rightArea) =>
     leftArea.localeCompare(rightArea),
   );
 }
