@@ -21,7 +21,12 @@ import {
   getClientStatusLabel,
   getMustHaveLabel,
 } from '../lib/clients';
-import { loadClients, saveClients } from '../lib/storage';
+import {
+  createRemoteClient,
+  deleteRemoteClient,
+  fetchClients,
+  updateRemoteClient,
+} from '../lib/clientStore';
 
 function SummaryCard({ label, value, detail }) {
   return (
@@ -133,6 +138,19 @@ function DetailTag({ children }) {
   );
 }
 
+function Notice({ tone = 'neutral', children }) {
+  const toneClass =
+    tone === 'error'
+      ? 'border-[rgba(164,78,54,0.2)] bg-[rgba(164,78,54,0.08)]'
+      : 'border-[var(--line)] bg-white/70';
+
+  return (
+    <div className={`rounded-[24px] border px-4 py-4 text-sm leading-6 text-[var(--text-main)] ${toneClass}`}>
+      {children}
+    </div>
+  );
+}
+
 function getStatusTone(status) {
   if (status === 'closed') {
     return 'bg-[rgba(35,66,50,0.1)] text-[var(--text-main)]';
@@ -149,20 +167,58 @@ function getStatusTone(status) {
   return 'bg-[rgba(35,66,50,0.14)] text-[var(--accent)]';
 }
 
-function ClientsPage({ buildings }) {
-  const [clients, setClients] = useState(() => loadClients());
-  const [selectedClientId, setSelectedClientId] = useState(() => loadClients()[0]?.id ?? null);
+function ClientsPage({ buildings, user, onClientCountChange }) {
+  const [clients, setClients] = useState([]);
+  const [selectedClientId, setSelectedClientId] = useState(null);
   const [editingClientId, setEditingClientId] = useState(null);
   const [formState, setFormState] = useState(() => createEmptyClient());
   const [searchValue, setSearchValue] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [roommateOnlyFilter, setRoommateOnlyFilter] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const areaOptions = useMemo(() => buildClientAreaOptions(buildings), [buildings]);
 
   useEffect(() => {
-    saveClients(clients);
-  }, [clients]);
+    let ignore = false;
+
+    const load = async () => {
+      setIsLoading(true);
+      setErrorMessage('');
+
+      try {
+        const remoteClients = await fetchClients();
+        if (ignore) {
+          return;
+        }
+
+        setClients(remoteClients);
+        onClientCountChange(remoteClients.length);
+        setSelectedClientId((currentId) => currentId ?? remoteClients[0]?.id ?? null);
+      } catch (error) {
+        if (!ignore) {
+          setErrorMessage(error.message || 'Unable to load clients from Supabase.');
+        }
+      } finally {
+        if (!ignore) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    load();
+
+    return () => {
+      ignore = true;
+    };
+  }, [onClientCountChange]);
+
+  useEffect(() => {
+    onClientCountChange(clients.length);
+  }, [clients, onClientCountChange]);
 
   useEffect(() => {
     if (clients.length === 0) {
@@ -258,8 +314,9 @@ function ClientsPage({ buildings }) {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setErrorMessage('');
 
     if (!formState.name.trim()) {
       window.alert('Please add the client name.');
@@ -274,25 +331,37 @@ function ClientsPage({ buildings }) {
     const existingClient = clients.find((client) => client.id === editingClientId) ?? null;
     const nextClient = createClientRecord(formState, existingClient);
 
-    setClients((currentClients) => {
-      if (existingClient) {
-        return currentClients.map((client) =>
-          client.id === existingClient.id ? nextClient : client,
-        );
-      }
+    setIsSaving(true);
 
-      return [nextClient, ...currentClients];
-    });
+    try {
+      const savedClient = existingClient
+        ? await updateRemoteClient(existingClient.id, nextClient, user.id)
+        : await createRemoteClient(nextClient, user.id);
 
-    setEditingClientId(nextClient.id);
-    setSelectedClientId(nextClient.id);
-    setFormState({
-      ...createEmptyClient(),
-      ...nextClient,
-    });
+      setClients((currentClients) => {
+        if (existingClient) {
+          return currentClients.map((client) =>
+            client.id === existingClient.id ? savedClient : client,
+          );
+        }
+
+        return [savedClient, ...currentClients];
+      });
+
+      setEditingClientId(savedClient.id);
+      setSelectedClientId(savedClient.id);
+      setFormState({
+        ...createEmptyClient(),
+        ...savedClient,
+      });
+    } catch (error) {
+      setErrorMessage(error.message || 'Unable to save this client.');
+    } finally {
+      setIsSaving(false);
+    }
   };
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (!editingClientId) {
       return;
     }
@@ -307,11 +376,21 @@ function ClientsPage({ buildings }) {
       return;
     }
 
-    setClients((currentClients) =>
-      currentClients.filter((client) => client.id !== clientToDelete.id),
-    );
-    setEditingClientId(null);
-    setFormState(createEmptyClient());
+    setIsDeleting(true);
+    setErrorMessage('');
+
+    try {
+      await deleteRemoteClient(clientToDelete.id);
+      setClients((currentClients) =>
+        currentClients.filter((client) => client.id !== clientToDelete.id),
+      );
+      setEditingClientId(null);
+      setFormState(createEmptyClient());
+    } catch (error) {
+      setErrorMessage(error.message || 'Unable to delete this client.');
+    } finally {
+      setIsDeleting(false);
+    }
   };
 
   return (
@@ -320,7 +399,7 @@ function ClientsPage({ buildings }) {
         <SummaryCard
           label="Clients"
           value={totalClients}
-          detail="Saved locally in this browser for quick follow-up."
+          detail="Private broker records synced from Supabase."
         />
         <SummaryCard
           label="Roommate Ready"
@@ -333,6 +412,8 @@ function ClientsPage({ buildings }) {
           detail="Open leads still moving through matching or touring."
         />
       </section>
+
+      {errorMessage ? <Notice tone="error">{errorMessage}</Notice> : null}
 
       <section className="grid gap-4 xl:grid-cols-[420px_minmax(0,1fr)]">
         <form className="glass-panel rounded-[32px] p-5 sm:p-6" onSubmit={handleSubmit}>
@@ -510,18 +591,24 @@ function ClientsPage({ buildings }) {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
               type="submit"
-              className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+              disabled={isSaving}
+              className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-65"
             >
-              {editingClientId ? 'Save changes' : 'Create client'}
+              {isSaving
+                ? 'Saving...'
+                : editingClientId
+                  ? 'Save changes'
+                  : 'Create client'}
             </button>
 
             {editingClientId ? (
               <button
                 type="button"
+                disabled={isDeleting}
                 onClick={handleDelete}
-                className="rounded-full border border-[var(--line)] bg-white/80 px-5 py-2.5 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
+                className="rounded-full border border-[var(--line)] bg-white/80 px-5 py-2.5 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white disabled:cursor-not-allowed disabled:opacity-65"
               >
-                Delete client
+                {isDeleting ? 'Deleting...' : 'Delete client'}
               </button>
             ) : null}
           </div>
@@ -572,7 +659,9 @@ function ClientsPage({ buildings }) {
 
             <div className="mt-5 grid gap-4 2xl:grid-cols-[minmax(340px,380px)_minmax(0,1fr)]">
               <div className="max-h-[780px] space-y-3 overflow-y-auto pr-1 soft-scrollbar">
-                {visibleClients.length > 0 ? (
+                {isLoading ? (
+                  <Notice>Loading your clients from Supabase...</Notice>
+                ) : visibleClients.length > 0 ? (
                   visibleClients.map((client) => {
                     const isSelected = client.id === selectedClientId;
                     return (
@@ -779,7 +868,9 @@ function ClientsPage({ buildings }) {
                   </>
                 ) : (
                   <div className="flex h-full min-h-[360px] items-center justify-center rounded-[24px] border border-dashed border-[var(--line)] bg-white/60 px-6 text-center text-sm text-[var(--text-muted)]">
-                    Select a client from the list to review preferences and roommate matches.
+                    {isLoading
+                      ? 'Loading your client workspace...'
+                      : 'Select a client from the list to review preferences and roommate matches.'}
                   </div>
                 )}
               </div>

@@ -6,6 +6,8 @@ import FilterBar from './components/FilterBar';
 import BuildingList from './components/BuildingList';
 import DetailPanel from './components/DetailPanel';
 import ClientsPage from './components/ClientsPage';
+import AuthPage from './components/AuthPage';
+import SetupPage from './components/SetupPage';
 import {
   TYPE_OPTIONS,
   OP_FILTER_OPTIONS,
@@ -14,13 +16,13 @@ import {
 } from './lib/buildings';
 import {
   loadFavorites,
-  loadClients,
   loadNotes,
   loadRecentViews,
   saveFavorites,
   saveNotes,
   saveRecentViews,
 } from './lib/storage';
+import { isSupabaseConfigured, supabase } from './lib/supabase';
 
 const MapView = lazy(() => import('./components/MapView'));
 
@@ -35,6 +37,9 @@ function MapLoadingState() {
 }
 
 function App() {
+  const [authStatus, setAuthStatus] = useState(isSupabaseConfigured ? 'loading' : 'unconfigured');
+  const [session, setSession] = useState(null);
+  const [isSigningOut, setIsSigningOut] = useState(false);
   const [currentPage, setCurrentPage] = useState(() =>
     window.location.hash === '#/clients' ? 'clients' : 'home',
   );
@@ -52,7 +57,46 @@ function App() {
   const [favoriteIds, setFavoriteIds] = useState(() => loadFavorites());
   const [notesById, setNotesById] = useState(() => loadNotes());
   const [recentIds, setRecentIds] = useState(() => loadRecentViews());
-  const [clientCount, setClientCount] = useState(() => loadClients().length);
+  const [clientCount, setClientCount] = useState(0);
+
+  useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setAuthStatus('unconfigured');
+      return;
+    }
+
+    let ignore = false;
+
+    const bootstrapAuth = async () => {
+      const { data, error } = await supabase.auth.getSession();
+
+      if (ignore) {
+        return;
+      }
+
+      if (error) {
+        setSession(null);
+      } else {
+        setSession(data.session ?? null);
+      }
+
+      setAuthStatus('ready');
+    };
+
+    bootstrapAuth();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+      setSession(nextSession ?? null);
+      setAuthStatus('ready');
+    });
+
+    return () => {
+      ignore = true;
+      subscription.unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     const syncPageFromHash = () => {
@@ -64,21 +108,6 @@ function App() {
 
     return () => {
       window.removeEventListener('hashchange', syncPageFromHash);
-    };
-  }, []);
-
-  useEffect(() => {
-    const syncClientCount = () => {
-      setClientCount(loadClients().length);
-    };
-
-    syncClientCount();
-    window.addEventListener('storage', syncClientCount);
-    window.addEventListener('broker-atlas:clients-updated', syncClientCount);
-
-    return () => {
-      window.removeEventListener('storage', syncClientCount);
-      window.removeEventListener('broker-atlas:clients-updated', syncClientCount);
     };
   }, []);
 
@@ -256,8 +285,38 @@ function App() {
 
   const navigateToClients = () => {
     window.location.hash = '#/clients';
-    setClientCount(loadClients().length);
   };
+
+  const handleSignOut = async () => {
+    setIsSigningOut(true);
+
+    try {
+      await supabase.auth.signOut({ scope: 'local' });
+      setCurrentPage('home');
+      window.location.hash = '#/';
+      setClientCount(0);
+    } finally {
+      setIsSigningOut(false);
+    }
+  };
+
+  if (!isSupabaseConfigured) {
+    return <SetupPage />;
+  }
+
+  if (authStatus === 'loading') {
+    return (
+      <div className="flex min-h-screen items-center justify-center px-4">
+        <div className="glass-panel rounded-[28px] px-6 py-5 text-sm text-[var(--text-muted)]">
+          Connecting to broker workspace...
+        </div>
+      </div>
+    );
+  }
+
+  if (!session) {
+    return <AuthPage />;
+  }
 
   return (
     <div className="min-h-screen bg-transparent text-[var(--text-main)]">
@@ -269,10 +328,17 @@ function App() {
         onNavigateHome={navigateToHome}
         onNavigateClients={navigateToClients}
         clientCount={clientCount}
+        userEmail={session.user.email}
+        onSignOut={handleSignOut}
+        isSigningOut={isSigningOut}
       />
 
       {currentPage === 'clients' ? (
-        <ClientsPage buildings={buildings} />
+        <ClientsPage
+          buildings={buildings}
+          user={session.user}
+          onClientCountChange={setClientCount}
+        />
       ) : (
         <main className="mx-auto flex max-w-[1600px] flex-col gap-4 px-4 pb-4 pt-3 sm:px-6 lg:px-8">
           <section className="glass-panel relative z-20 overflow-visible rounded-[28px] p-4 sm:p-5">

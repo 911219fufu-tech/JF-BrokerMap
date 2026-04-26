@@ -1,8 +1,6 @@
 const FAVORITES_KEY = 'broker-atlas:favorites';
 const NOTES_KEY = 'broker-atlas:notes';
 const RECENT_KEY = 'broker-atlas:recent';
-const CLIENTS_KEY = 'broker-atlas:clients';
-
 function readStorage(key, fallbackValue) {
   if (typeof window === 'undefined') {
     return fallbackValue;
@@ -46,16 +44,4 @@ export function loadRecentViews() {
 
 export function saveRecentViews(value) {
   writeStorage(RECENT_KEY, value);
-}
-
-export function loadClients() {
-  return readStorage(CLIENTS_KEY, []);
-}
-
-export function saveClients(value) {
-  writeStorage(CLIENTS_KEY, value);
-
-  if (typeof window !== 'undefined') {
-    window.dispatchEvent(new CustomEvent('broker-atlas:clients-updated'));
-  }
 }

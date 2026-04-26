@@ -35,6 +35,9 @@ function Navbar({
   onNavigateHome,
   onNavigateClients,
   clientCount,
+  userEmail,
+  onSignOut,
+  isSigningOut,
 }) {
   const [isRecentOpen, setIsRecentOpen] = useState(false);
 
@@ -120,6 +123,19 @@ function Navbar({
               {clientCount} client records
             </div>
           )}
+
+          <div className="hidden rounded-full border border-[var(--line)] bg-white/75 px-4 py-2 text-sm text-[var(--text-muted)] lg:block">
+            {userEmail}
+          </div>
+
+          <button
+            type="button"
+            onClick={onSignOut}
+            disabled={isSigningOut}
+            className="rounded-full border border-[var(--line)] bg-white/80 px-4 py-2 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white disabled:cursor-not-allowed disabled:opacity-65"
+          >
+            {isSigningOut ? 'Signing out...' : 'Logout'}
+          </button>
         </div>
       </div>
     </header>

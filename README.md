@@ -55,10 +55,12 @@ Install dependencies:
 npm install
 ```
 
-Add a Mapbox token to `.env`:
+Add your environment variables to `.env`:
 
 ```bash
 VITE_MAPBOX_TOKEN=your_mapbox_public_token
+VITE_SUPABASE_URL=your-project-url
+VITE_SUPABASE_ANON_KEY=your-project-anon-key
 ```
 
 Start the app:
@@ -66,6 +68,17 @@ Start the app:
 ```bash
 npm run dev
 ```
+
+## Supabase Setup
+
+This app now expects:
+
+- `Supabase Auth` for `signup`, `login`, and `logout`
+- a `clients` table protected by `Row Level Security`
+
+Run the SQL in [supabase/clients.sql](/Users/fujiayin/Desktop/仲介/Broker%20Website/supabase/clients.sql) inside the Supabase SQL editor.
+
+Each client row is tied to `auth.users.id` through `user_id`, and the RLS policies ensure authenticated brokers can only select, insert, update, and delete their own rows.
 
 ## Data Workflow
 
