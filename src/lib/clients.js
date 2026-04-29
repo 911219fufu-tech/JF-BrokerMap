@@ -602,6 +602,7 @@ export function buildClientAreaOptions(buildings) {
     'Newport',
     'Harrison',
     'Bayonne',
+    'Totowa',
     'Union City',
     'Forten',
     'Midtown West',
