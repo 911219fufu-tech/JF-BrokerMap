@@ -141,6 +141,14 @@ function DetailTag({ children }) {
   );
 }
 
+function CompactTag({ children }) {
+  return (
+    <span className="rounded-full border border-[var(--line)] bg-white/80 px-2.5 py-1 text-xs font-medium text-[var(--text-main)]">
+      {children}
+    </span>
+  );
+}
+
 function Notice({ tone = 'neutral', children }) {
   const toneClass =
     tone === 'error'
@@ -168,6 +176,10 @@ function getStatusTone(status) {
   }
 
   return 'bg-[rgba(35,66,50,0.14)] text-[var(--accent)]';
+}
+
+function getPrimaryAreaLabel(client) {
+  return client.areas[0] ?? 'Flexible areas';
 }
 
 function ClientsPage({ buildings, user, onClientCountChange }) {
@@ -281,6 +293,32 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
     () => (selectedClient ? getClientMatchSuggestions(selectedClient, sortedClients) : []),
     [selectedClient, sortedClients],
   );
+
+  const groupedVisibleClients = useMemo(() => {
+    const groups = visibleClients.reduce((accumulator, client) => {
+      const area = getPrimaryAreaLabel(client);
+      if (!accumulator.has(area)) {
+        accumulator.set(area, []);
+      }
+
+      accumulator.get(area).push(client);
+      return accumulator;
+    }, new Map());
+
+    return [...groups.entries()]
+      .map(([area, clientsInArea]) => ({
+        area,
+        count: clientsInArea.length,
+        clients: clientsInArea,
+      }))
+      .sort((leftGroup, rightGroup) => {
+        if (leftGroup.count !== rightGroup.count) {
+          return rightGroup.count - leftGroup.count;
+        }
+
+        return leftGroup.area.localeCompare(rightGroup.area);
+      });
+  }, [visibleClients]);
 
   const totalClients = clients.length;
   const roommateReadyCount = clients.filter((client) => isClientMatchEligible(client)).length;
@@ -754,51 +792,80 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
               <div className="max-h-[780px] space-y-3 overflow-y-auto pr-1 soft-scrollbar">
                 {isLoading ? (
                   <Notice>Loading your clients from Supabase...</Notice>
-                ) : visibleClients.length > 0 ? (
-                  visibleClients.map((client) => {
-                    const isSelected = client.id === selectedClientId;
-                    return (
-                      <button
-                        key={client.id}
-                        type="button"
-                        onClick={() => setSelectedClientId(client.id)}
-                        className={`w-full rounded-[28px] border p-4 text-left transition ${
-                          isSelected
-                            ? 'border-[var(--accent)] bg-[rgba(220,227,210,0.5)] shadow-panel'
-                            : 'border-[var(--line)] bg-white/75 hover:border-[var(--line-strong)] hover:bg-white'
-                        }`}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <h3 className="text-lg font-semibold text-[var(--text-main)]">
-                              {client.name}
-                            </h3>
-                            <p className="mt-1 text-sm text-[var(--text-muted)]">
-                              {client.contact || 'No contact added yet'}
-                            </p>
-                          </div>
-                          <span
-                            className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
-                          >
-                            {getClientStatusLabel(client.status)}
-                          </span>
+                ) : groupedVisibleClients.length > 0 ? (
+                  groupedVisibleClients.map((group) => (
+                    <section key={group.area} className="space-y-3">
+                      <div className="sticky top-0 z-10 flex items-center justify-between rounded-[20px] border border-[var(--line)] bg-[rgba(250,248,242,0.94)] px-4 py-3 backdrop-blur">
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                            Area
+                          </p>
+                          <h3 className="mt-1 text-lg font-semibold text-[var(--text-main)]">
+                            {group.area}
+                          </h3>
                         </div>
+                        <span className="rounded-full bg-[rgba(35,66,50,0.1)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
+                          {group.count} {group.count === 1 ? 'client' : 'clients'}
+                        </span>
+                      </div>
 
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          <DetailTag>{formatBudgetRange(client)}</DetailTag>
-                          <DetailTag>{formatMoveInDate(client.moveInDate)}</DetailTag>
-                          <DetailTag>{client.preferredLayout === 'any' ? 'Any layout' : client.preferredLayout.toUpperCase()}</DetailTag>
-                          <DetailTag>
-                            {isClientMatchEligible(client) ? 'Open to match' : 'Solo setup'}
-                          </DetailTag>
-                        </div>
+                      <div className="grid gap-3 md:grid-cols-2 2xl:grid-cols-1">
+                        {group.clients.map((client) => {
+                          const isSelected = client.id === selectedClientId;
+                          const meta = getClientMeta(client);
 
-                        <p className="mt-4 text-sm text-[var(--text-muted)]">
-                          {client.areas.join(', ')}
-                        </p>
-                      </button>
-                    );
-                  })
+                          return (
+                            <button
+                              key={client.id}
+                              type="button"
+                              onClick={() => setSelectedClientId(client.id)}
+                              className={`w-full rounded-[24px] border p-4 text-left transition ${
+                                isSelected
+                                  ? 'border-[var(--accent)] bg-[rgba(220,227,210,0.52)] shadow-panel'
+                                  : 'border-[var(--line)] bg-white/75 hover:border-[var(--line-strong)] hover:bg-white'
+                              }`}
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="min-w-0">
+                                  <h4 className="truncate text-lg font-semibold text-[var(--text-main)]">
+                                    {client.name}
+                                  </h4>
+                                  <p className="mt-1 truncate text-sm text-[var(--text-muted)]">
+                                    {client.contact || 'No contact added yet'}
+                                  </p>
+                                </div>
+                                <span
+                                  className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                >
+                                  {getClientStatusLabel(client.status)}
+                                </span>
+                              </div>
+
+                              <div className="mt-3 flex flex-wrap gap-2">
+                                <CompactTag>{formatBudgetRange(client)}</CompactTag>
+                                <CompactTag>{formatMoveInDate(client.moveInDate)}</CompactTag>
+                                <CompactTag>{meta.layoutLabel}</CompactTag>
+                                <CompactTag>{meta.livingSetupLabel}</CompactTag>
+                              </div>
+
+                              <div className="mt-3 flex flex-wrap gap-2">
+                                <CompactTag>{meta.maxOccupantsLabel}</CompactTag>
+                                <CompactTag>
+                                  {isClientMatchEligible(client) ? 'Roommate-ready' : 'Solo setup'}
+                                </CompactTag>
+                              </div>
+
+                              {client.areas.length > 1 ? (
+                                <p className="mt-3 text-xs text-[var(--text-muted)]">
+                                  Also looking in {client.areas.slice(1).join(', ')}
+                                </p>
+                              ) : null}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </section>
+                  ))
                 ) : (
                   <div className="rounded-[28px] border border-dashed border-[var(--line)] bg-white/60 px-5 py-8 text-sm text-[var(--text-muted)]">
                     No clients match the current filters.
