@@ -598,6 +598,8 @@ export function buildClientAreaOptions(buildings) {
     'Midtown',
     'DTBK',
     'DTJC',
+    'Grove St',
+    'Hoboken',
     'JSQ',
     'Newport',
     'Harrison',
