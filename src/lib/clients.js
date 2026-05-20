@@ -608,6 +608,7 @@ export function buildClientAreaOptions(buildings) {
     'Union City',
     'Forten',
     'Midtown West',
+    'Inwood',
     'Roosevelt Island',
     'Upper East Side',
     'Upper Manhattan',
