@@ -596,6 +596,7 @@ export function buildClientAreaOptions(buildings) {
     'LIC',
     'Queens',
     'Midtown',
+    'Lower Manhattan',
     'DTBK',
     'DTJC',
     'Grove St',
