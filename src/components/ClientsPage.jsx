@@ -425,6 +425,11 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
       return;
     }
 
+    if (!formState.contact.trim()) {
+      window.alert('Please add the client contact.');
+      return;
+    }
+
     if (formState.areas.length === 0) {
       window.alert('Please choose at least one target area.');
       return;
