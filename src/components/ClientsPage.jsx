@@ -182,6 +182,33 @@ function getPrimaryAreaLabel(client) {
   return client.areas[0] ?? 'Flexible areas';
 }
 
+function getSortableContactDigits(contact) {
+  const digitsOnly = (contact ?? '').replace(/\D/g, '');
+  return digitsOnly || null;
+}
+
+function compareContactValues(leftClient, rightClient) {
+  const leftDigits = getSortableContactDigits(leftClient.contact);
+  const rightDigits = getSortableContactDigits(rightClient.contact);
+
+  if (leftDigits && rightDigits) {
+    if (leftDigits.length !== rightDigits.length) {
+      return leftDigits.length - rightDigits.length;
+    }
+
+    const comparison = leftDigits.localeCompare(rightDigits);
+    if (comparison !== 0) {
+      return comparison;
+    }
+  } else if (leftDigits) {
+    return -1;
+  } else if (rightDigits) {
+    return 1;
+  }
+
+  return leftClient.name.localeCompare(rightClient.name);
+}
+
 function ClientsPage({ buildings, user, onClientCountChange }) {
   const [clients, setClients] = useState([]);
   const [selectedClientId, setSelectedClientId] = useState(null);
@@ -189,6 +216,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
   const [formState, setFormState] = useState(() => createEmptyClient());
   const [searchValue, setSearchValue] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [sortMode, setSortMode] = useState('area');
   const [roommateOnlyFilter, setRoommateOnlyFilter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
@@ -216,7 +244,6 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
 
         setClients(remoteClients);
         onClientCountChange(remoteClients.length);
-        setSelectedClientId((currentId) => currentId ?? remoteClients[0]?.id ?? null);
       } catch (error) {
         if (!ignore) {
           setErrorMessage(error.message || 'Unable to load clients from Supabase.');
@@ -250,7 +277,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
 
     const selectedStillExists = clients.some((client) => client.id === selectedClientId);
     if (!selectedStillExists) {
-      setSelectedClientId(clients[0].id);
+      setSelectedClientId(null);
     }
 
     if (editingClientId && !clients.some((client) => client.id === editingClientId)) {
@@ -294,6 +321,11 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
     [selectedClient, sortedClients],
   );
 
+  const contactSortedClients = useMemo(
+    () => [...visibleClients].sort(compareContactValues),
+    [visibleClients],
+  );
+
   const groupedVisibleClients = useMemo(() => {
     const groups = visibleClients.reduce((accumulator, client) => {
       const area = getPrimaryAreaLabel(client);
@@ -319,6 +351,14 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
         return leftGroup.area.localeCompare(rightGroup.area);
       });
   }, [visibleClients]);
+
+  const overviewClients = useMemo(() => {
+    if (sortMode === 'contact') {
+      return contactSortedClients;
+    }
+
+    return groupedVisibleClients.flatMap((group) => group.clients);
+  }, [sortMode, contactSortedClients, groupedVisibleClients]);
 
   const totalClients = clients.length;
   const roommateReadyCount = clients.filter((client) => isClientMatchEligible(client)).length;
@@ -782,6 +822,15 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                     </option>
                   ))}
                 </select>
+
+                <select
+                  value={sortMode}
+                  onChange={(event) => setSortMode(event.target.value)}
+                  className="rounded-2xl border border-[var(--line)] bg-white/80 px-4 py-3 text-sm text-[var(--text-main)] outline-none transition focus:border-[var(--line-strong)] focus:bg-white"
+                >
+                  <option value="area">Sort by area</option>
+                  <option value="contact">Sort by contact number</option>
+                </select>
               </div>
             </div>
 
@@ -793,29 +842,95 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
               />
             </div>
 
-            <div className="mt-5 grid gap-4 2xl:grid-cols-[minmax(340px,380px)_minmax(0,1fr)]">
-              <div className="max-h-[780px] space-y-3 overflow-y-auto pr-1 soft-scrollbar">
-                {isLoading ? (
-                  <Notice>Loading your clients from Supabase...</Notice>
-                ) : groupedVisibleClients.length > 0 ? (
-                  groupedVisibleClients.map((group) => (
-                    <section key={group.area} className="space-y-3">
-                      <div className="sticky top-0 z-10 flex items-center justify-between rounded-[20px] border border-[var(--line)] bg-[rgba(250,248,242,0.94)] px-4 py-3 backdrop-blur">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                            Area
-                          </p>
-                          <h3 className="mt-1 text-lg font-semibold text-[var(--text-main)]">
-                            {group.area}
-                          </h3>
+            <div
+              className={`mt-5 grid gap-4 ${
+                selectedClient
+                  ? '2xl:grid-cols-[minmax(340px,380px)_minmax(0,1fr)]'
+                  : 'grid-cols-1'
+              }`}
+            >
+              {selectedClient ? (
+                <div className="max-h-[780px] space-y-3 overflow-y-auto pr-1 soft-scrollbar">
+                  {isLoading ? (
+                    <Notice>Loading your clients from Supabase...</Notice>
+                  ) : sortMode === 'area' && groupedVisibleClients.length > 0 ? (
+                    groupedVisibleClients.map((group) => (
+                      <section key={group.area} className="space-y-3">
+                        <div className="sticky top-0 z-10 flex items-center justify-between rounded-[20px] border border-[var(--line)] bg-[rgba(250,248,242,0.94)] px-4 py-3 backdrop-blur">
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                              Area
+                            </p>
+                            <h3 className="mt-1 text-lg font-semibold text-[var(--text-main)]">
+                              {group.area}
+                            </h3>
+                          </div>
+                          <span className="rounded-full bg-[rgba(35,66,50,0.1)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
+                            {group.count} {group.count === 1 ? 'client' : 'clients'}
+                          </span>
                         </div>
-                        <span className="rounded-full bg-[rgba(35,66,50,0.1)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
-                          {group.count} {group.count === 1 ? 'client' : 'clients'}
-                        </span>
-                      </div>
 
+                        <div className="grid gap-3 md:grid-cols-2 2xl:grid-cols-1">
+                          {group.clients.map((client) => {
+                            const isSelected = client.id === selectedClientId;
+                            const meta = getClientMeta(client);
+
+                            return (
+                              <button
+                                key={client.id}
+                                type="button"
+                                onClick={() => setSelectedClientId(client.id)}
+                                className={`w-full rounded-[24px] border p-4 text-left transition ${
+                                  isSelected
+                                    ? 'border-[var(--accent)] bg-[rgba(220,227,210,0.52)] shadow-panel'
+                                    : 'border-[var(--line)] bg-white/75 hover:border-[var(--line-strong)] hover:bg-white'
+                                }`}
+                              >
+                                <div className="flex items-start justify-between gap-3">
+                                  <div className="min-w-0">
+                                    <h4 className="truncate text-lg font-semibold text-[var(--text-main)]">
+                                      {client.name}
+                                    </h4>
+                                    <p className="mt-1 truncate text-sm text-[var(--text-muted)]">
+                                      {client.contact || 'No contact added yet'}
+                                    </p>
+                                  </div>
+                                  <span
+                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                  >
+                                    {getClientStatusLabel(client.status)}
+                                  </span>
+                                </div>
+
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <CompactTag>{formatBudgetRange(client)}</CompactTag>
+                                  <CompactTag>{formatMoveInDate(client.moveInDate)}</CompactTag>
+                                  <CompactTag>{meta.layoutLabel}</CompactTag>
+                                  <CompactTag>{meta.livingSetupLabel}</CompactTag>
+                                </div>
+
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <CompactTag>{meta.maxOccupantsLabel}</CompactTag>
+                                  <CompactTag>
+                                    {isClientMatchEligible(client) ? 'Roommate-ready' : 'Solo setup'}
+                                  </CompactTag>
+                                </div>
+
+                                {client.areas.length > 1 ? (
+                                  <p className="mt-3 text-xs text-[var(--text-muted)]">
+                                    Also looking in {client.areas.slice(1).join(', ')}
+                                  </p>
+                                ) : null}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </section>
+                    ))
+                  ) : sortMode === 'contact' && contactSortedClients.length > 0 ? (
+                    <section className="space-y-3">
                       <div className="grid gap-3 md:grid-cols-2 2xl:grid-cols-1">
-                        {group.clients.map((client) => {
+                        {contactSortedClients.map((client) => {
                           const isSelected = client.id === selectedClientId;
                           const meta = getClientMeta(client);
 
@@ -854,29 +969,24 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                               </div>
 
                               <div className="mt-3 flex flex-wrap gap-2">
+                                <CompactTag>{getPrimaryAreaLabel(client)}</CompactTag>
                                 <CompactTag>{meta.maxOccupantsLabel}</CompactTag>
                                 <CompactTag>
                                   {isClientMatchEligible(client) ? 'Roommate-ready' : 'Solo setup'}
                                 </CompactTag>
                               </div>
-
-                              {client.areas.length > 1 ? (
-                                <p className="mt-3 text-xs text-[var(--text-muted)]">
-                                  Also looking in {client.areas.slice(1).join(', ')}
-                                </p>
-                              ) : null}
                             </button>
                           );
                         })}
                       </div>
                     </section>
-                  ))
-                ) : (
-                  <div className="rounded-[28px] border border-dashed border-[var(--line)] bg-white/60 px-5 py-8 text-sm text-[var(--text-muted)]">
-                    No clients match the current filters.
-                  </div>
-                )}
-              </div>
+                  ) : (
+                    <div className="rounded-[28px] border border-dashed border-[var(--line)] bg-white/60 px-5 py-8 text-sm text-[var(--text-muted)]">
+                      No clients match the current filters.
+                    </div>
+                  )}
+                </div>
+              ) : null}
 
               <div className="glass-panel min-h-[420px] rounded-[28px] p-5">
                 {selectedClient ? (
@@ -894,13 +1004,23 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                         </p>
                       </div>
 
-                      <button
-                        type="button"
-                        onClick={() => startEditClient(selectedClient)}
-                        className="rounded-full border border-[var(--line)] bg-white/80 px-4 py-2 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
-                      >
-                        Edit in form
-                      </button>
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedClientId(null)}
+                          className="rounded-full border border-[var(--line)] bg-white/80 px-4 py-2 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
+                        >
+                          Back to overview
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => startEditClient(selectedClient)}
+                          className="rounded-full border border-[var(--line)] bg-white/80 px-4 py-2 text-sm font-medium text-[var(--text-main)] transition hover:border-[var(--line-strong)] hover:bg-white"
+                        >
+                          Edit in form
+                        </button>
+                      </div>
                     </div>
 
                     <div className="mt-5 flex flex-wrap gap-2">
@@ -1037,10 +1157,146 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                     </div>
                   </>
                 ) : (
-                  <div className="flex h-full min-h-[360px] items-center justify-center rounded-[24px] border border-dashed border-[var(--line)] bg-white/60 px-6 text-center text-sm text-[var(--text-muted)]">
-                    {isLoading
-                      ? 'Loading your client workspace...'
-                      : 'Select a client from the list to review preferences and roommate matches.'}
+                  <div className="space-y-4">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                          Client overview
+                        </p>
+                        <h3 className="mt-1 text-2xl font-semibold text-[var(--text-main)]">
+                          Browse clients before opening details
+                        </h3>
+                      </div>
+                      <span className="rounded-full bg-[rgba(35,66,50,0.1)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
+                        {overviewClients.length} {overviewClients.length === 1 ? 'client' : 'clients'}
+                      </span>
+                    </div>
+
+                    {isLoading ? (
+                      <div className="flex min-h-[360px] items-center justify-center rounded-[24px] border border-dashed border-[var(--line)] bg-white/60 px-6 text-center text-sm text-[var(--text-muted)]">
+                        Loading your client workspace...
+                      </div>
+                    ) : overviewClients.length > 0 ? (
+                      sortMode === 'area' ? (
+                        <div className="max-h-[760px] space-y-4 overflow-y-auto pr-1 soft-scrollbar">
+                          {groupedVisibleClients.map((group) => (
+                            <section key={group.area} className="space-y-3">
+                              <div className="flex items-center justify-between rounded-[20px] border border-[var(--line)] bg-[rgba(250,248,242,0.94)] px-4 py-3">
+                                <div>
+                                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                                    Area
+                                  </p>
+                                  <h3 className="mt-1 text-lg font-semibold text-[var(--text-main)]">
+                                    {group.area}
+                                  </h3>
+                                </div>
+                                <span className="rounded-full bg-[rgba(35,66,50,0.1)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
+                                  {group.count} {group.count === 1 ? 'client' : 'clients'}
+                                </span>
+                              </div>
+
+                              <div className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
+                                {group.clients.map((client) => {
+                                  const meta = getClientMeta(client);
+
+                                  return (
+                                    <button
+                                      key={client.id}
+                                      type="button"
+                                      onClick={() => setSelectedClientId(client.id)}
+                                      className="rounded-[24px] border border-[var(--line)] bg-white/75 p-4 text-left transition hover:border-[var(--line-strong)] hover:bg-white"
+                                    >
+                                      <div className="flex items-start justify-between gap-3">
+                                        <div className="min-w-0">
+                                          <h4 className="truncate text-lg font-semibold text-[var(--text-main)]">
+                                            {client.name}
+                                          </h4>
+                                          <p className="mt-1 truncate text-sm text-[var(--text-muted)]">
+                                            {client.contact || 'No contact added yet'}
+                                          </p>
+                                        </div>
+                                        <span
+                                          className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                        >
+                                          {getClientStatusLabel(client.status)}
+                                        </span>
+                                      </div>
+
+                                      <div className="mt-3 flex flex-wrap gap-2">
+                                        <CompactTag>{meta.layoutLabel}</CompactTag>
+                                        <CompactTag>{meta.maxOccupantsLabel}</CompactTag>
+                                        <CompactTag>{formatBudgetRange(client)}</CompactTag>
+                                      </div>
+
+                                      <div className="mt-3 flex flex-wrap gap-2">
+                                        <CompactTag>{formatMoveInDate(client.moveInDate)}</CompactTag>
+                                        <CompactTag>{meta.livingSetupLabel}</CompactTag>
+                                        <CompactTag>
+                                          {isClientMatchEligible(client) ? 'Roommate-ready' : 'Solo setup'}
+                                        </CompactTag>
+                                      </div>
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            </section>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="grid max-h-[760px] gap-3 overflow-y-auto pr-1 soft-scrollbar sm:grid-cols-2 2xl:grid-cols-3">
+                          {overviewClients.map((client) => {
+                            const meta = getClientMeta(client);
+
+                            return (
+                              <button
+                                key={client.id}
+                                type="button"
+                                onClick={() => setSelectedClientId(client.id)}
+                                className="rounded-[24px] border border-[var(--line)] bg-white/75 p-4 text-left transition hover:border-[var(--line-strong)] hover:bg-white"
+                              >
+                                <div className="flex items-start justify-between gap-3">
+                                  <div className="min-w-0">
+                                    <h4 className="truncate text-lg font-semibold text-[var(--text-main)]">
+                                      {client.name}
+                                    </h4>
+                                    <p className="mt-1 truncate text-sm text-[var(--text-muted)]">
+                                      {client.contact || 'No contact added yet'}
+                                    </p>
+                                  </div>
+                                  <span
+                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                  >
+                                    {getClientStatusLabel(client.status)}
+                                  </span>
+                                </div>
+
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <CompactTag>{getPrimaryAreaLabel(client)}</CompactTag>
+                                  <CompactTag>{meta.layoutLabel}</CompactTag>
+                                  <CompactTag>{meta.maxOccupantsLabel}</CompactTag>
+                                </div>
+
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <CompactTag>{formatBudgetRange(client)}</CompactTag>
+                                  <CompactTag>{formatMoveInDate(client.moveInDate)}</CompactTag>
+                                </div>
+
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <CompactTag>{meta.livingSetupLabel}</CompactTag>
+                                  <CompactTag>
+                                    {isClientMatchEligible(client) ? 'Roommate-ready' : 'Solo setup'}
+                                  </CompactTag>
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )
+                    ) : (
+                      <div className="flex min-h-[360px] items-center justify-center rounded-[24px] border border-dashed border-[var(--line)] bg-white/60 px-6 text-center text-sm text-[var(--text-muted)]">
+                        No clients match the current filters.
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
