@@ -162,7 +162,17 @@ function Notice({ tone = 'neutral', children }) {
   );
 }
 
-function getStatusTone(status) {
+function getStatusTone(client) {
+  if (client?.clientGender === 'male') {
+    return 'bg-[rgba(120,170,230,0.22)] text-[rgb(48,96,158)]';
+  }
+
+  if (client?.clientGender === 'female') {
+    return 'bg-[rgba(236,172,206,0.24)] text-[rgb(171,76,127)]';
+  }
+
+  const status = client?.status;
+
   if (status === 'closed') {
     return 'bg-[rgba(35,66,50,0.1)] text-[var(--text-main)]';
   }
@@ -896,7 +906,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                                     </p>
                                   </div>
                                   <span
-                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client)}`}
                                   >
                                     {getClientStatusLabel(client.status)}
                                   </span>
@@ -955,7 +965,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                                   </p>
                                 </div>
                                 <span
-                                  className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                  className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client)}`}
                                 >
                                   {getClientStatusLabel(client.status)}
                                 </span>
@@ -1216,7 +1226,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                                           </p>
                                         </div>
                                         <span
-                                          className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                          className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client)}`}
                                         >
                                           {getClientStatusLabel(client.status)}
                                         </span>
@@ -1264,7 +1274,7 @@ function ClientsPage({ buildings, user, onClientCountChange }) {
                                     </p>
                                   </div>
                                   <span
-                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client.status)}`}
+                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${getStatusTone(client)}`}
                                   >
                                     {getClientStatusLabel(client.status)}
                                   </span>
